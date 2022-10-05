@@ -1,13 +1,13 @@
 all: build run
 	
 build:
-	gcc -pg matrix_mult.c -o matrix_mult.o
+	gcc -pg matrix_mult.c -o matrix_mult.out
 
 run:
-	./matrix_mult.o 2 2 2 2
+	./matrix_mult.out
 
 profile:
-	gprof matrix_mult.o gmon.out
+	gprof matrix_mult.out gmon.out
 
 clean:
-	rm *.o
+	rm *.out
