@@ -4,9 +4,18 @@
 
 #define MAX_ARRAY_ELEMENTS 100
 
-// Rows x Columns
-int a[1][3];
-int b[3][1];
+// 0 - Active, 1 - Inactive
+#define DEBUG 0
+
+// Multiplication of m x n * n x p produces m x p 
+// <=> a_y = b_x !
+#define M 2
+#define N 3
+#define P 2
+
+int a[M][N];
+int b[N][P];
+int c[M][P];
 
 /**
  * Prints the content of a 2d-array
@@ -90,34 +99,27 @@ void randomize(int* arr, int x, int y){
  * @param b_y as y-dimension of b
  * @return a new matrix c = a x b
  */
-int* multiply_2d_array(int a[][MAX_ARRAY_ELEMENTS], int a_x, int a_y, int b[][MAX_ARRAY_ELEMENTS], int b_x, int b_y){
-
-    printf("Multiplying %dx%d with %dx%d array\n", a_x, a_y, b_x, b_y);
-
-    int c[a_y][b_x];
-
+void multiply_2d_array(int a[][MAX_ARRAY_ELEMENTS], int a_x, int a_y, int b[][MAX_ARRAY_ELEMENTS], int b_x, int b_y){
+    printf("Multiplying %dx%d with %dx%d array to generate %dx%d array\n", a_x, a_y, b_x, b_y, a_x, b_y);
 
     // For each row of array 1
       // For each column of array 2
         // For each row of array 2 (= the element)
           // Do something
-
-
     for(int i = 0; i < a_x; i++){
         for(int j = 0; j < b_y; j++){
+            c[i][j] = 0; // FIXME :: Otherwise bugs?
             for(int k = 0; k < b_x; k++){
-
-
+                c[i][j] += a[i][k] * b[k][j];
+                printf("\n\tc[%d][%d] += a[%d][%d] * b[%d][%d] ... %d * %d = %d", i,j,i,k,k,j, a[i][k], b[k][j], c[i][j]);
             }
         }
     }
-
-
-
+    printf("\n"); 
 }
 
 /**
- * Main entry point. Multiplies 2 matrices a,b as specified in global scope.
+ * Main entry point. Multiplies 2 matrices a,b as specified in global scope, stores result in c.
  * @return 0 on success, 1 on error
  */
 int main(void){
@@ -141,8 +143,9 @@ int main(void){
     printArray(a, a_x, a_y);
     printArray(b, b_x, b_y);
 
-    int c = multiply_2d_array(a, a_x, a_y, b, b_x, b_y);
-    
+    multiply_2d_array(a, a_x, a_y, b, b_x, b_y);
+    printArray(c, a_x, b_y);
+
     return 0;
 }
 
