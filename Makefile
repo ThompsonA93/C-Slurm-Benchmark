@@ -1,18 +1,22 @@
 help:
-	@echo "Run project via make using command: all, build, run, profile, clean"
+	@echo "Run project via make using command: matmul sieve"
 
-all: build run profile
-	
-build:
+
+matmul: 
 	gcc -pg matrix_mult.c -o matrix_mult.out
-
-run:
 	./matrix_mult.out
-
-profile:
 	mkdir -p gprof
 	gprof matrix_mult.out gmon.out > gprof/matrix_mult.log
+
+sieve:
+	gcc -pg eratostenes_sieve.c -o eratostenes_sieve.out
+	./eratostenes_sieve.out
+	mkdir -p gprof
+	gprof eratostenes_sieve.out gmon.out > gprof/eratostenes_sieve.log
+
+
 
 clean:
 	rm -f *.out
 	rm -rf ./gprof
+
