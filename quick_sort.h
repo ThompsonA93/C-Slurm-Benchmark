@@ -12,8 +12,6 @@ int assemblePartition(int arr[], int low, int high){
 
 }
 
-
-
 /**
  * Implementation for simple quick sort
  * @param arr as array to sort

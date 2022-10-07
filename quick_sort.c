@@ -15,6 +15,6 @@ int main(void){
     printArray(arr, MAX_ARRAY_ELEMENTS);
     randomizeArray(arr, MAX_ARRAY_ELEMENTS);
     printArray(arr, MAX_ARRAY_ELEMENTS);
-    quickSort(arr, MAX_ARRAY_ELEMENTS);
+    quickSort(arr, 0, MAX_ARRAY_ELEMENTS);
     printArray(arr, MAX_ARRAY_ELEMENTS);
 }
