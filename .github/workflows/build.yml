@@ -1,0 +1,14 @@
+name: C Build
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  c:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile C
+        run: |
+          make all
