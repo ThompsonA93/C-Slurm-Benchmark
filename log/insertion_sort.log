@@ -5,9 +5,8 @@ Each sample counts as 0.01 seconds.
 
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  Ts/call  Ts/call  name    
-  0.00      0.00     0.00        5     0.00     0.00  assemblePartition
   0.00      0.00     0.00        3     0.00     0.00  printArray
-  0.00      0.00     0.00        1     0.00     0.00  quickSort
+  0.00      0.00     0.00        1     0.00     0.00  insertionSort
   0.00      0.00     0.00        1     0.00     0.00  randomizeArray
 
  %         the percentage of the total running time of the
@@ -49,20 +48,14 @@ notice and this notice are preserved.
 granularity: each sample hit covers 2 byte(s) no time propagated
 
 index % time    self  children    called     name
-                0.00    0.00       5/5           quickSort [3]
-[1]      0.0    0.00    0.00       5         assemblePartition [1]
+                0.00    0.00       3/3           main [9]
+[1]      0.0    0.00    0.00       3         printArray [1]
 -----------------------------------------------
-                0.00    0.00       3/3           main [10]
-[2]      0.0    0.00    0.00       3         printArray [2]
+                0.00    0.00       1/1           main [9]
+[2]      0.0    0.00    0.00       1         insertionSort [2]
 -----------------------------------------------
-                                  10             quickSort [3]
-                0.00    0.00       1/1           main [10]
-[3]      0.0    0.00    0.00       1+10      quickSort [3]
-                0.00    0.00       5/5           assemblePartition [1]
-                                  10             quickSort [3]
------------------------------------------------
-                0.00    0.00       1/1           main [10]
-[4]      0.0    0.00    0.00       1         randomizeArray [4]
+                0.00    0.00       1/1           main [9]
+[3]      0.0    0.00    0.00       1         randomizeArray [3]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -155,5 +148,4 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [1] assemblePartition       [3] quickSort
-   [2] printArray              [4] randomizeArray
+   [2] insertionSort           [1] printArray              [3] randomizeArray

@@ -1,13 +1,12 @@
 help:
 	@echo "Run project via make using command: all matmul sieve bubble quick"
 
-all: lint matmul sieve bubble quick
+all: lint matmul sieve bubble quick insertion
 
 mkdirs:
 	mkdir -p gprof
 	mkdir -p build
 	mkdir -p log
-
 
 matmul: mkdirs
 	gcc -pg matrix_mult.c -o build/matrix_mult.out; build/matrix_mult.out
@@ -24,6 +23,10 @@ bubble: mkdirs
 quick: mkdirs
 	gcc -pg quick_sort.c -o build/quick_sort.out; build/quick_sort.out
 	gprof build/quick_sort.out gmon.out > log/quick_sort.log
+
+insertion: mkdirs
+	gcc -pg insertion_sort.c -o build/insertion_sort.out; build/insertion_sort.out
+	gprof build/insertion_sort.out gmon.out > log/insertion_sort.log
 
 clean:
 	rm -f *.out

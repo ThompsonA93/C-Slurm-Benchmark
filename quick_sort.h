@@ -6,10 +6,17 @@
 
 
 /*
- * TODO
+ * FIXME not quite working
  */
 int assemblePartition(int arr[], int low, int high){
-
+    int pt = low;
+    for(int i = low; i < high; i++){
+        if(arr[i] <= arr[high]){
+            printf("\tSwapping %d with %d\n", arr[pt], arr[i]);
+            swap(&arr[pt], &arr[i]);
+        }
+    }
+    return pt;
 }
 
 /**
