@@ -1,7 +1,7 @@
 help:
 	@echo "Run project via make using command: all matmul sieve bubble quick"
 
-all: matmul sieve bubble quick insertion
+all: matmul sieve bubble insertion quick 
 
 clean:
 	rm -f *.out

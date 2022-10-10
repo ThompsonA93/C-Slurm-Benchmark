@@ -9,14 +9,14 @@
 | GNU Make | 4.2.1 |
 
 ## Todo
-- [] Matrix Multiplication
+- [ ] Matrix Multiplication
     - Error storing rows after first row
-- [] Gaussian Elimination
-- [] Dijstkra
+- [ ] Gaussian Elimination
+- [ ] Dijstkra
 - [x] Sieve of Eratosthenes
 - [x] Bubble sort
-- [] Bucket sort
-- [] Counting sort
+- [ ] Bucket sort
+- [ ] Counting sort
 - [x] Insertion sort
-- [] Selection sort
-- [] Quick sort
+- [ ] Selection sort
+- [ ] Quick sort

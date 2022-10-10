@@ -17,4 +17,10 @@ int main(void){
     printArray(arr, MAX_ARRAY_ELEMENTS);
     insertionSort(arr, MAX_ARRAY_ELEMENTS);
     printArray(arr, MAX_ARRAY_ELEMENTS);
+
+    if(isSorted(arr, MAX_ARRAY_ELEMENTS)){
+        printf("! Sorting array was successfull.\n");
+    }else{
+        printf("! Sorting array was not successfull.\n");
+    }
 }

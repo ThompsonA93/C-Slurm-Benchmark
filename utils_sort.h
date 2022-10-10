@@ -12,6 +12,23 @@ void swap(int* x, int* y){
     *x ^= *y;
 }
 
+/**
+ * Checks if an array is sorted
+ * @param arr as array to check
+ * @param n as array lenght
+ * @return 1 if sorted, 0 if not sorted
+ */
+int isSorted(int arr[], int n){
+
+    for(int i = 1; i < n; i++){
+        for(int j = 0; j < i; j++){
+            if(arr[j] > arr[i]){
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
 
 
 
