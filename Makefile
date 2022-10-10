@@ -1,7 +1,15 @@
 help:
 	@echo "Run project via make using command: all matmul sieve bubble quick"
 
-all: lint matmul sieve bubble quick insertion
+all: matmul sieve bubble quick insertion
+
+clean:
+	rm -f *.out
+	rm -rf ./gprof
+	rm -rf ./build
+
+lint:
+	cppcheck . -i ./log 
 
 mkdirs:
 	mkdir -p gprof
@@ -28,10 +36,3 @@ insertion: mkdirs
 	gcc -pg insertion_sort.c -o build/insertion_sort.out; build/insertion_sort.out
 	gprof build/insertion_sort.out gmon.out > log/insertion_sort.log
 
-clean:
-	rm -f *.out
-	rm -rf ./gprof
-	rm -rf ./build
-
-lint:
-	cppcheck . -i ./log 
