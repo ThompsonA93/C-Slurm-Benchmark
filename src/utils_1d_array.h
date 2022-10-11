@@ -4,6 +4,7 @@
 
 #define MAX_ARRAY_ELEMENTS 10000
 #define ELEMENT_VALUE_RANGE 10
+FILE *fp;
 
 /**
  * Prints the content of a 1d-array

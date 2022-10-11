@@ -4,7 +4,6 @@
 
 #include "utils_1d_array.h"
 #include "utils_sort.h"
-#include "utils_log.h"
 #include "insertion_sort.h"
 
 int arr[MAX_ARRAY_ELEMENTS];
@@ -31,5 +30,7 @@ int main(void){
         printf("! Sorting array was not successfull.\n");
     }
 
-    printf("\tRequired time: %f\n", time_spent);
+    fp = fopen("log/c_std.log", "a");
+    fprintf(fp, "Insertion Sort, %f\n", time_spent);
+    fclose(fp);
 }

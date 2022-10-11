@@ -4,10 +4,10 @@
 
 #include "utils_1d_array.h"
 #include "utils_sort.h"
-#include "utils_log.h"
 #include "bubble_sort.h"
 
 int arr[MAX_ARRAY_ELEMENTS];
+
 
 int main(void){
     srand(time(NULL));  // Initialization for randomization process
@@ -30,6 +30,8 @@ int main(void){
     }else{
         printf("! Sorting array was not successfull.\n");
     }
-
-    printf("\tRequired time: %f\n", time_spent);
+    
+    fp = fopen("log/c_std.log", "a");
+    fprintf(fp, "Bubble Sort, %f\n", time_spent);
+    fclose(fp);
 }
