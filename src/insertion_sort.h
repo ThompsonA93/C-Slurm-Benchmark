@@ -8,6 +8,7 @@
  * @param arr as array to sort
  * @param n as amount of elements in the array
  */
+
 void insertionSort(int arr[], int n){
     int cur_el, j;
     for(int i = 1; i < n; i++){

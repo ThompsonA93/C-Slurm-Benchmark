@@ -1,2 +1,4 @@
 #!/bin/bash
-cd src; make all
+cd src
+make lint
+make all

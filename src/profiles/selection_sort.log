@@ -6,10 +6,9 @@ Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  Ts/call  Ts/call  name    
   0.00      0.00     0.00        3     0.00     0.00  printArray
-  0.00      0.00     0.00        3     0.00     0.00  swap
-  0.00      0.00     0.00        1     0.00     0.00  bubbleSort
   0.00      0.00     0.00        1     0.00     0.00  isSorted
   0.00      0.00     0.00        1     0.00     0.00  randomizeArray
+  0.00      0.00     0.00        1     0.00     0.00  selectionSort
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -50,21 +49,17 @@ notice and this notice are preserved.
 granularity: each sample hit covers 2 byte(s) no time propagated
 
 index % time    self  children    called     name
-                0.00    0.00       3/3           main [11]
+                0.00    0.00       3/3           main [10]
 [1]      0.0    0.00    0.00       3         printArray [1]
 -----------------------------------------------
-                0.00    0.00       3/3           bubbleSort [3]
-[2]      0.0    0.00    0.00       3         swap [2]
+                0.00    0.00       1/1           main [10]
+[2]      0.0    0.00    0.00       1         isSorted [2]
 -----------------------------------------------
-                0.00    0.00       1/1           main [11]
-[3]      0.0    0.00    0.00       1         bubbleSort [3]
-                0.00    0.00       3/3           swap [2]
+                0.00    0.00       1/1           main [10]
+[3]      0.0    0.00    0.00       1         randomizeArray [3]
 -----------------------------------------------
-                0.00    0.00       1/1           main [11]
-[4]      0.0    0.00    0.00       1         isSorted [4]
------------------------------------------------
-                0.00    0.00       1/1           main [11]
-[5]      0.0    0.00    0.00       1         randomizeArray [5]
+                0.00    0.00       1/1           main [10]
+[4]      0.0    0.00    0.00       1         selectionSort [4]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -157,5 +152,5 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [3] bubbleSort              [1] printArray              [2] swap
-   [4] isSorted                [5] randomizeArray
+   [2] isSorted                [3] randomizeArray
+   [1] printArray              [4] selectionSort

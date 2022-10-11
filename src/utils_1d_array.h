@@ -2,7 +2,7 @@
 #define D1_ARRAY_UTILS
 #include <stdio.h>
 
-#define MAX_ARRAY_ELEMENTS 5
+#define MAX_ARRAY_ELEMENTS 10000
 #define ELEMENT_VALUE_RANGE 10
 
 /**

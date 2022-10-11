@@ -1,12 +1,13 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
 
 #include "utils_1d_array.h"
 #include "utils_sort.h"
+#include "utils_log.h"
 #include "bubble_sort.h"
 
-#define ARRAY_SIZE 100
-int arr[ARRAY_SIZE];
+int arr[MAX_ARRAY_ELEMENTS];
 
 int main(void){
     srand(time(NULL));  // Initialization for randomization process
@@ -14,7 +15,14 @@ int main(void){
     printArray(arr, MAX_ARRAY_ELEMENTS);
     randomizeArray(arr, MAX_ARRAY_ELEMENTS);
     printArray(arr, MAX_ARRAY_ELEMENTS);
+
+    double time_spent = 0.0;
+    clock_t begin = clock();
     bubbleSort(arr, MAX_ARRAY_ELEMENTS);
+    clock_t end = clock();
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+
+
     printArray(arr, MAX_ARRAY_ELEMENTS);
     
     if(isSorted(arr, MAX_ARRAY_ELEMENTS)){
@@ -22,4 +30,6 @@ int main(void){
     }else{
         printf("! Sorting array was not successfull.\n");
     }
+
+    printf("\tRequired time: %f\n", time_spent);
 }
