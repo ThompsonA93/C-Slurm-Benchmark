@@ -2,9 +2,14 @@
 #define D1_ARRAY_UTILS
 #include <stdio.h>
 
+/** Length of arrays to use **/
 #define MAX_ARRAY_ELEMENTS 10000
+
+/** Highest allowed value per array element**/
 #define ELEMENT_VALUE_RANGE 100
 
+/** Filepointer for custom logger used within main() functions **/
+// TODO :: Proper refactor
 FILE *fp;
 
 /**
