@@ -1,3 +1,2 @@
 #!/bin/bash
-cd src
-make all
+cd src; make all
