@@ -31,6 +31,6 @@ int main(void){
     }
 
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Counting Sort, %f\n", time_spent);
+    fprintf(fp, "Counting Sort, %d, %f\n", MAX_ARRAY_ELEMENTS, time_spent);
     fclose(fp);
 }
