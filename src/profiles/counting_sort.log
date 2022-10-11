@@ -1,14 +1,13 @@
 Flat profile:
 
 Each sample counts as 0.01 seconds.
- no time accumulated
-
   %   cumulative   self              self     total           
- time   seconds   seconds    calls  Ts/call  Ts/call  name    
-  0.00      0.00     0.00        3     0.00     0.00  printArray
-  0.00      0.00     0.00        1     0.00     0.00  countingSort
-  0.00      0.00     0.00        1     0.00     0.00  isSorted
-  0.00      0.00     0.00        1     0.00     0.00  randomizeArray
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+100.51      0.10     0.10        1   100.51   100.51  isSorted
+  0.00      0.10     0.00        3     0.00     0.00  printArray
+  0.00      0.10     0.00        1     0.00     0.00  countingSort
+  0.00      0.10     0.00        1     0.00     0.00  getMaxValue
+  0.00      0.10     0.00        1     0.00     0.00  randomizeArray
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -46,20 +45,31 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 2 byte(s) no time propagated
+granularity: each sample hit covers 2 byte(s) for 9.95% of 0.10 seconds
 
 index % time    self  children    called     name
-                0.00    0.00       3/3           main [10]
-[1]      0.0    0.00    0.00       3         printArray [1]
+                0.10    0.00       1/1           main [2]
+[1]    100.0    0.10    0.00       1         isSorted [1]
 -----------------------------------------------
-                0.00    0.00       1/1           main [10]
-[2]      0.0    0.00    0.00       1         countingSort [2]
+                                                 <spontaneous>
+[2]    100.0    0.00    0.10                 main [2]
+                0.10    0.00       1/1           isSorted [1]
+                0.00    0.00       3/3           printArray [3]
+                0.00    0.00       1/1           randomizeArray [6]
+                0.00    0.00       1/1           countingSort [4]
 -----------------------------------------------
-                0.00    0.00       1/1           main [10]
-[3]      0.0    0.00    0.00       1         isSorted [3]
+                0.00    0.00       3/3           main [2]
+[3]      0.0    0.00    0.00       3         printArray [3]
 -----------------------------------------------
-                0.00    0.00       1/1           main [10]
-[4]      0.0    0.00    0.00       1         randomizeArray [4]
+                0.00    0.00       1/1           main [2]
+[4]      0.0    0.00    0.00       1         countingSort [4]
+                0.00    0.00       1/1           getMaxValue [5]
+-----------------------------------------------
+                0.00    0.00       1/1           countingSort [4]
+[5]      0.0    0.00    0.00       1         getMaxValue [5]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[6]      0.0    0.00    0.00       1         randomizeArray [6]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -152,5 +162,5 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [2] countingSort            [1] printArray
-   [3] isSorted                [4] randomizeArray
+   [4] countingSort            [1] isSorted                [6] randomizeArray
+   [5] getMaxValue             [3] printArray

@@ -8,6 +8,9 @@
 
 int arr[MAX_ARRAY_ELEMENTS];
 
+/**
+ * FIXME -- For some reason, time required shows as 0.000000 for counting sort
+ */
 int main(void){
     srand(time(NULL));  // Initialization for randomization process
                         // Should only be called once.
@@ -21,16 +24,16 @@ int main(void){
     clock_t end = clock();
     time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
 
-
     printArray(arr, MAX_ARRAY_ELEMENTS);
     
-    if(isSorted(arr, MAX_ARRAY_ELEMENTS)){
+    int status = isSorted(arr, MAX_ARRAY_ELEMENTS);
+    if(status){
         printf("! Sorting array was successfull.\n");
     }else{
         printf("! Sorting array was not successfull.\n");
     }
-
+    
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Counting Sort, %d, %f\n", MAX_ARRAY_ELEMENTS, time_spent);
+    fprintf(fp, "Counting Sort, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
     fclose(fp);
 }

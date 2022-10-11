@@ -24,15 +24,15 @@ int main(void){
 
     printArray(arr, MAX_ARRAY_ELEMENTS);
     
-    if(isSorted(arr, MAX_ARRAY_ELEMENTS)){
+    int status = isSorted(arr, MAX_ARRAY_ELEMENTS);
+    if(status){
         printf("! Sorting array was successfull.\n");
     }else{
         printf("! Sorting array was not successfull.\n");
     }
-
-
+    
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Selection Sort, %d, %f\n", MAX_ARRAY_ELEMENTS, time_spent);
+    fprintf(fp, "Selection Sort, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
     fclose(fp);
 
 }

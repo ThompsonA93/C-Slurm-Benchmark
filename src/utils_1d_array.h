@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 #define MAX_ARRAY_ELEMENTS 10000
-#define ELEMENT_VALUE_RANGE 10
+#define ELEMENT_VALUE_RANGE 100
+
 FILE *fp;
 
 /**
