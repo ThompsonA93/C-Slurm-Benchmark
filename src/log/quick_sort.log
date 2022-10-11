@@ -9,6 +9,7 @@ Each sample counts as 0.01 seconds.
   0.00      0.00     0.00        3     0.00     0.00  printArray
   0.00      0.00     0.00        1     0.00     0.00  quickSort
   0.00      0.00     0.00        1     0.00     0.00  randomizeArray
+  0.00      0.00     0.00        1     0.00     0.00  swap
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -51,18 +52,22 @@ granularity: each sample hit covers 2 byte(s) no time propagated
 index % time    self  children    called     name
                 0.00    0.00       5/5           quickSort [3]
 [1]      0.0    0.00    0.00       5         assemblePartition [1]
+                0.00    0.00       1/1           swap [5]
 -----------------------------------------------
-                0.00    0.00       3/3           main [11]
+                0.00    0.00       3/3           main [12]
 [2]      0.0    0.00    0.00       3         printArray [2]
 -----------------------------------------------
                                   10             quickSort [3]
-                0.00    0.00       1/1           main [11]
+                0.00    0.00       1/1           main [12]
 [3]      0.0    0.00    0.00       1+10      quickSort [3]
                 0.00    0.00       5/5           assemblePartition [1]
                                   10             quickSort [3]
 -----------------------------------------------
-                0.00    0.00       1/1           main [11]
+                0.00    0.00       1/1           main [12]
 [4]      0.0    0.00    0.00       1         randomizeArray [4]
+-----------------------------------------------
+                0.00    0.00       1/1           assemblePartition [1]
+[5]      0.0    0.00    0.00       1         swap [5]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -155,5 +160,5 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [1] assemblePartition       [3] quickSort
+   [1] assemblePartition       [3] quickSort               [5] swap
    [2] printArray              [4] randomizeArray
