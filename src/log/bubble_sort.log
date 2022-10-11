@@ -5,8 +5,8 @@ Each sample counts as 0.01 seconds.
 
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00        5     0.00     0.00  swap
   0.00      0.00     0.00        3     0.00     0.00  printArray
-  0.00      0.00     0.00        3     0.00     0.00  swap
   0.00      0.00     0.00        1     0.00     0.00  bubbleSort
   0.00      0.00     0.00        1     0.00     0.00  isSorted
   0.00      0.00     0.00        1     0.00     0.00  randomizeArray
@@ -50,15 +50,15 @@ notice and this notice are preserved.
 granularity: each sample hit covers 2 byte(s) no time propagated
 
 index % time    self  children    called     name
-                0.00    0.00       3/3           main [11]
-[1]      0.0    0.00    0.00       3         printArray [1]
+                0.00    0.00       5/5           bubbleSort [3]
+[1]      0.0    0.00    0.00       5         swap [1]
 -----------------------------------------------
-                0.00    0.00       3/3           bubbleSort [3]
-[2]      0.0    0.00    0.00       3         swap [2]
+                0.00    0.00       3/3           main [11]
+[2]      0.0    0.00    0.00       3         printArray [2]
 -----------------------------------------------
                 0.00    0.00       1/1           main [11]
 [3]      0.0    0.00    0.00       1         bubbleSort [3]
-                0.00    0.00       3/3           swap [2]
+                0.00    0.00       5/5           swap [1]
 -----------------------------------------------
                 0.00    0.00       1/1           main [11]
 [4]      0.0    0.00    0.00       1         isSorted [4]
@@ -157,5 +157,5 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [3] bubbleSort              [1] printArray              [2] swap
+   [3] bubbleSort              [2] printArray              [1] swap
    [4] isSorted                [5] randomizeArray
