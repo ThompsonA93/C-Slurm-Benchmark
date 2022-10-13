@@ -17,6 +17,7 @@
 - [x] Bubble sort
 - [ ] Bucket sort
 - [ ] Counting sort
+    - Incorrect time displayed by clock_t
 - [x] Insertion sort
 - [x] Selection sort
 - [ ] Quick sort

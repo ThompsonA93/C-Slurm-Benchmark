@@ -13,7 +13,7 @@ void swap(int* x, int* y){
 }
 
 /**
- * Checks if an array is sorted
+ * Checks if an 1d-array is sorted
  * @param arr as array to check
  * @param n as array lenght
  * @return 1 if sorted, 0 if not sorted

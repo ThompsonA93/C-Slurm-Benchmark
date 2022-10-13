@@ -3,6 +3,12 @@
 
 #include "utils_2d_array.h"
 
+/**
+ * FIXME Requires some major refactoring
+ * - Focus on sorting algorithms for now
+ */
+
+
 // Multiplication of m x n * n x p produces m x p 
 // <=> a_y = b_x !
 #define M 2

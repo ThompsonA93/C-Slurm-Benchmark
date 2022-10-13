@@ -4,7 +4,7 @@
 
 #include "utils_1d_array.h"
 #include "utils_sort.h"
-#include "insertion_sort.h"
+#include "selection_sort.h"
 
 int arr[MAX_ARRAY_ELEMENTS];
 
@@ -17,20 +17,22 @@ int main(void){
 
     double time_spent = 0.0;
     clock_t begin = clock();
-    insertionSort(arr, MAX_ARRAY_ELEMENTS);
+    selectionSort(arr, MAX_ARRAY_ELEMENTS);
     clock_t end = clock();
     time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
 
 
     printArray(arr, MAX_ARRAY_ELEMENTS);
     
-    if(isSorted(arr, MAX_ARRAY_ELEMENTS)){
+    int status = isSorted(arr, MAX_ARRAY_ELEMENTS);
+    if(status){
         printf("! Sorting array was successfull.\n");
     }else{
         printf("! Sorting array was not successfull.\n");
     }
-
+    
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Insertion Sort, %d, %f\n", MAX_ARRAY_ELEMENTS, time_spent);
+    fprintf(fp, "Selection Sort, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
     fclose(fp);
+
 }

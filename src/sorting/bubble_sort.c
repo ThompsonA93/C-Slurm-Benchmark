@@ -4,7 +4,7 @@
 
 #include "utils_1d_array.h"
 #include "utils_sort.h"
-#include "quick_sort.h"
+#include "bubble_sort.h"
 
 int arr[MAX_ARRAY_ELEMENTS];
 
@@ -17,22 +17,21 @@ int main(void){
 
     double time_spent = 0.0;
     clock_t begin = clock();
-    quickSort(arr, 0, MAX_ARRAY_ELEMENTS);
+    bubbleSort(arr, MAX_ARRAY_ELEMENTS);
     clock_t end = clock();
     time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
 
 
     printArray(arr, MAX_ARRAY_ELEMENTS);
-    
-    if(isSorted(arr, MAX_ARRAY_ELEMENTS)){
+
+    int status = isSorted(arr, MAX_ARRAY_ELEMENTS);
+    if(status){
         printf("! Sorting array was successfull.\n");
     }else{
         printf("! Sorting array was not successfull.\n");
     }
-
-
+    
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Quick Sort, %d, %f\n", MAX_ARRAY_ELEMENTS, time_spent);
+    fprintf(fp, "Bubble Sort, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
     fclose(fp);
-
 }
