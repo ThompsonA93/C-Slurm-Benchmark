@@ -10,17 +10,17 @@
  */
 void selectionSort(int arr[], int n)
 {
-    int i,j,minimum;
+    int i, j, minimum;
     for (i = 0; i < n - 1; i++)
     {
         minimum = i;
         for (j = i + 1; j < n; j++)
         {
             if (arr[minimum] > arr[j])
-            {
-                swap(&arr[minimum],&arr[i]);
-            }
+                minimum = j;
         }
+        if (minimum != i)
+            swap(&arr[minimum], &arr[i]);
     }
 }
 
