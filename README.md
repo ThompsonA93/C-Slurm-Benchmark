@@ -18,5 +18,5 @@
 - [ ] Bucket sort
 - [ ] Counting sort
 - [x] Insertion sort
-- [ ] Selection sort
+- [x] Selection sort
 - [ ] Quick sort

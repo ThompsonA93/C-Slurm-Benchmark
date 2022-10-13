@@ -3,16 +3,25 @@
 
 #include "utils_sort.h"
 
-
 /**
  * Implementation for simple selection sort
  * @param arr as array to sort
  * @param n as amount of elements in the array
  */
-void selectionSort(int arr[], int n){
-
-
+void selectionSort(int arr[], int n)
+{
+    int i,j,minimum;
+    for (i = 0; i < n - 1; i++)
+    {
+        minimum = i;
+        for (j = i + 1; j < n; j++)
+        {
+            if (arr[minimum] > arr[j])
+            {
+                swap(&arr[minimum],&arr[i]);
+            }
+        }
+    }
 }
-
 
 #endif
