@@ -5,7 +5,7 @@
 #include "utils_1d_array.h"
 #include "utils_sort.h"
 #include "selection_sort.h"
-
+FILE *fp;
 int arr[MAX_ARRAY_ELEMENTS];
 
 int main(void){

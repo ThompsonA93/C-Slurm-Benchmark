@@ -8,9 +8,21 @@
 | GCC | 9.4.0 |
 | GNU Make | 4.2.1 |
 
+## Installation & Execution 
+Refer to __install.sh and __run.sh respectively.
+
+## Folder structure
+```
+// Generated using 'tree'
+├── arithmetic      -- Arithmetic programs
+├── build           -- .out directory 
+├── log             -- .log directory (custom)
+├── profiles        -- .gprof directory
+└── sorting         -- Sorting programs
+```
+
 ## Todo
-- [ ] Matrix Multiplication
-    - Error storing rows after first row
+- [X] Matrix Multiplication
 - [ ] Gaussian Elimination
 - [ ] Dijstkra
 - [x] Sieve of Eratosthenes
@@ -21,3 +33,4 @@
 - [x] Insertion sort
 - [x] Selection sort
 - [ ] Quick sort
+

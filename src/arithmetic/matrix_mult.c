@@ -1,81 +1,74 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
 
-#include "utils_2d_array.h"
+#define M 30
+#define N 30
+#define P 30
 
-/**
- * FIXME Requires some major refactoring
- * - Focus on sorting algorithms for now
- */
-
-
-// Multiplication of m x n * n x p produces m x p 
-// <=> a_y = b_x !
-#define M 2
-#define N 3
-#define P 2
+FILE *fp;
 
 int a[M][N];
 int b[N][P];
 int c[M][P];
 
-/**
- * Multiply 2 2d-arrays, interpreted as pointers
- * @param a as first matrix
- * @param a_x as x-dimension of a
- * @param a_y as y-dimension of a
- * @param b as second matrix
- * @param b_x as x-dimension of b
- * @param b_y as y-dimension of b
- * @return a new matrix c = a x b
- */
-void multiply_2d_array(int a[][MAX_ARRAY_ELEMENTS], int a_x, int a_y, int b[][MAX_ARRAY_ELEMENTS], int b_x, int b_y){
-    printf("Multiplying %dx%d with %dx%d array to generate %dx%d array\n", a_x, a_y, b_x, b_y, a_x, b_y);
-
-    // For each row of array 1
-      // For each column of array 2
-        // For each row of array 2 (= the element)
-          // Do something
-    for(int i = 0; i < a_x; i++){
-        for(int j = 0; j < b_y; j++){
-            c[i][j] = 0; // FIXME :: Otherwise bugs?
-            for(int k = 0; k < b_x; k++){
-                c[i][j] += a[i][k] * b[k][j];
-                printf("\n\tc[%d][%d] += a[%d][%d] * b[%d][%d] ... %d * %d = %d", i,j,i,k,k,j, a[i][k], b[k][j], c[i][j]);
+void initialize2DArray(){
+    printf("Initializing Array with randomized values.\n");
+    for(int m = 0; m < M; m++){
+        for(int n = 0; n < N; n++){
+            for(int p = 0; p < P; p++){
+                c[m][p] = 0;
+                b[n][p] = rand() % 10;
             }
+            a[m][n] = rand() % 10; 
         }
     }
-    printf("\n"); 
 }
 
-/**
- * Main entry point. Multiplies 2 matrices a,b as specified in global scope, stores result in c.
- * @return 0 on success, 1 on error
- */
+void print2DArray(int* arr, int x, int y){
+    printf("Printing array:\n\t");
+    for(int i = 0; i < x; i++){
+        for(int j = 0; j < y; j++){
+            printf("%d ", *arr);
+            arr++;
+        }
+        printf("\n\t");
+    }
+    printf("\n");
+}
+
+void multiplyMatrices(){
+    printf("Multiplying matrices.\n");
+    for(int i = 0; i < M; i++){
+        for(int j = 0; j < P; j++){
+            for(int k = 0; k < N; k++){
+                c[i][j] += a[i][k] * b[k][j];
+                printf("\tc[%d][%d] += a[%d][%d] * b[%d][%d] ... %d * %d = %d\n", i,j,i,k,k,j, a[i][k], b[k][j], c[i][j]);
+            }
+            printf("\t\tc[%d][%d] = %d\n", i, j, c[i][j]);
+        }
+    }
+}
+
 int main(void){
     srand(time(NULL));  // Initialization for randomization process
                         // Should only be called once.
 
-    int a_x = sizeof(a)/sizeof(a[0]);
-    int a_y = sizeof(a[0])/sizeof(a[0][0]);
-    printf("a_x: %d\ta_y: %d\n", a_x, a_y);
+    initialize2DArray();
 
-    int b_x = sizeof(b)/sizeof(b[0]);
-    int b_y = sizeof(b[0])/sizeof(b[0][0]);
-    printf("b_x: %d\tb_y: %d\n", b_x, b_y);
+    print2DArray(a, M, N);
+    print2DArray(b, N, P);
 
-    printArray(a, a_x, a_y);
-    printArray(b, b_x, b_y);
 
-    randomizeArray(a, a_x, a_y);
-    randomizeArray(b, b_x, b_y);
+    double time_spent = 0.0;
+    clock_t begin = clock();
+    multiplyMatrices();
+    clock_t end = clock();
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
 
-    printArray(a, a_x, a_y);
-    printArray(b, b_x, b_y);
-
-    multiply_2d_array(a, a_x, a_y, b, b_x, b_y);
-    printArray(c, a_x, b_y);
+    fp = fopen("log/c_std.log", "a");
+    fprintf(fp, "Matrix multiplication, %dx%dx%d, %f, %d\n", M,N,P , time_spent, 1);  // If at this point, likely was successfull hence 1.
+    fclose(fp);
 
     return 0;
 }
-

@@ -3,14 +3,10 @@
 #include <stdio.h>
 
 /** Length of arrays to use **/
-#define MAX_ARRAY_ELEMENTS 38
+#define MAX_ARRAY_ELEMENTS 30000
 
 /** Highest allowed value per array element**/
-#define ELEMENT_VALUE_RANGE 100
-
-/** Filepointer for custom logger used within main() functions **/
-// TODO :: Proper refactor
-FILE *fp;
+#define ELEMENT_VALUE_RANGE 254
 
 /**
  * Prints the content of a 1d-array

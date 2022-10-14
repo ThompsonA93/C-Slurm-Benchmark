@@ -3,21 +3,19 @@ help:
 
 all: matmul gauss dijkstra sieve bubble bucket counting insertion selection quick 
 
+lint:
+	cppcheck .
+
 clean:
 	rm -f *.out
-	rm -rf ./gprof
 	rm -rf ./build
 	rm -rf ./log
 	rm -rf ./profiles
 
-lint:
-	cppcheck .
-
 mkdirs:
-	mkdir -p gprof
 	mkdir -p build
-	mkdir -p profiles
 	mkdir -p log
+	mkdir -p profiles
 
 matmul: mkdirs
 	gcc -pg arithmetic/matrix_mult.c -o build/matrix_mult.out; build/matrix_mult.out

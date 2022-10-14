@@ -6,6 +6,7 @@
 #include "utils_sort.h"
 #include "bubble_sort.h"
 
+FILE *fp;
 int arr[MAX_ARRAY_ELEMENTS];
 
 int main(void){
