@@ -12,7 +12,7 @@ int a[M][N];
 int b[N][P];
 int c[M][P];
 
-void initialize2DArray(){
+void initialize_2d_array(){
     printf("Initializing Array with randomized values.\n");
     for(int m = 0; m < M; m++){
         for(int n = 0; n < N; n++){
@@ -25,7 +25,7 @@ void initialize2DArray(){
     }
 }
 
-void print2DArray(int* arr, int x, int y){
+void print_2d_array(int* arr, int x, int y){
     printf("Printing array:\n\t");
     for(int i = 0; i < x; i++){
         for(int j = 0; j < y; j++){
@@ -37,7 +37,7 @@ void print2DArray(int* arr, int x, int y){
     printf("\n");
 }
 
-void multiplyMatrices(){
+void multiply_matrices(){
     printf("Multiplying matrices.\n");
     for(int i = 0; i < M; i++){
         for(int j = 0; j < P; j++){
@@ -54,15 +54,14 @@ int main(void){
     srand(time(NULL));  // Initialization for randomization process
                         // Should only be called once.
 
-    initialize2DArray();
+    initialize_2d_array();
 
-    print2DArray(a, M, N);
-    print2DArray(b, N, P);
-
+    print_2d_array(a, M, N);
+    print_2d_array(b, N, P);
 
     double time_spent = 0.0;
     clock_t begin = clock();
-    multiplyMatrices();
+    multiply_matrices();
     clock_t end = clock();
     time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
 

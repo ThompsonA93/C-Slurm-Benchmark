@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define MAX_VALUE 30
+#define MAX_VALUE 1000
 
 void filter_primes(int limit){
     printf("Scanning values up to %d to be prime.\n", limit);

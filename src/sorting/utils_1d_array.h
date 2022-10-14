@@ -1,9 +1,9 @@
-#ifndef D1_ARRAY_UTILS
-#define D1_ARRAY_UTILS
+#ifndef UTILS_1D_ARRAY
+#define UTILS_1D_ARRAY
 #include <stdio.h>
 
 /** Length of arrays to use **/
-#define MAX_ARRAY_ELEMENTS 30000
+#define MAX_ARRAY_ELEMENTS 100
 
 /** Highest allowed value per array element**/
 #define ELEMENT_VALUE_RANGE 254
@@ -14,7 +14,7 @@
  * @param x as dimension x
  * @attention '0' as array-parameter will cause error
  */
-void printArray(int arr[MAX_ARRAY_ELEMENTS], int x){
+void print_array(int arr[MAX_ARRAY_ELEMENTS], int x){
     printf("Printing array:\n\t");
     for(int i = 0; i < x; i++){
         printf("%d ", arr[i]);
@@ -28,7 +28,7 @@ void printArray(int arr[MAX_ARRAY_ELEMENTS], int x){
  * @param x as dimension x
  * @attention '0' as array-parameter will cause error
  */
-void randomizeArray(int arr[MAX_ARRAY_ELEMENTS], int x){
+void randomize_array(int arr[MAX_ARRAY_ELEMENTS], int x){
     printf("Randomizing %d array with elements\n\t", x);
     for(int i = 0; i < x; i++){
         int el = rand() % ELEMENT_VALUE_RANGE;

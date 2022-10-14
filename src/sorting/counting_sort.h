@@ -9,7 +9,7 @@
  * @param n as array length
  * @return highest value of an array 
  */
-int getMaxValue(int arr[], int n){
+int get_max_value(int arr[], int n){
     int max_element = 0;
     for(int i = 0; i < n; i++){
         if(max_element < arr[i]){
@@ -24,10 +24,10 @@ int getMaxValue(int arr[], int n){
  * @param arr as arr to sort
  * @param n as amount of elements in the arr
  */
-void countingSort(int arr[], int n){
+void counting_sort(int arr[], int n){
 
     // Find the largest element of the arr
-    const int max = getMaxValue(arr, n);
+    const int max = get_max_value(arr, n);
     int count[max+1];
     int output[n];
 

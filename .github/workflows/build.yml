@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: Compile C Programs
         run: |
-          cd src; make lint; make all
+          cd src; make all

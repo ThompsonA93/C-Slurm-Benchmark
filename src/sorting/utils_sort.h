@@ -1,5 +1,5 @@
-#ifndef SORT_UTILS
-#define SORT_UTILS
+#ifndef UTILS_SORT
+#define UTILS_SORT
 
 
 /**
@@ -18,7 +18,7 @@ void swap(int* x, int* y){
  * @param n as array lenght
  * @return 1 if sorted, 0 if not sorted
  */
-int isSorted(int arr[], int n){
+int is_sorted(int arr[], int n){
 
     for(int i = 1; i < n; i++){
         for(int j = 0; j < i; j++){

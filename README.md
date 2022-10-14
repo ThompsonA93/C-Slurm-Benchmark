@@ -8,6 +8,20 @@
 | GCC | 9.4.0 |
 | GNU Make | 4.2.1 |
 
+## Todo
+- [X] Matrix Multiplication
+- [ ] Gaussian Elimination
+- [ ] Dijstkra
+- [x] Sieve of Eratosthenes
+- [x] Bubble sort
+- [ ] Bucket sort
+- [X] Counting sort
+    - Incorrect time displayed by clock_t
+- [x] Insertion sort
+- [x] Selection sort
+- [ ] Quick sort
+
+# Misc. Information
 ## Installation & Execution 
 Refer to __install.sh and __run.sh respectively.
 
@@ -21,16 +35,17 @@ Refer to __install.sh and __run.sh respectively.
 └── sorting         -- Sorting programs
 ```
 
-## Todo
-- [X] Matrix Multiplication
-- [ ] Gaussian Elimination
-- [ ] Dijstkra
-- [x] Sieve of Eratosthenes
-- [x] Bubble sort
-- [ ] Bucket sort
-- [ ] Counting sort
-    - Incorrect time displayed by clock_t
-- [x] Insertion sort
-- [x] Selection sort
-- [ ] Quick sort
+## C Naming Convention
+```
+Struct              TitleCase
+Struct Members      lower_case or lowerCase
 
+Enum                ETitleCase
+Enum Members        ALL_CAPS or lowerCase
+
+Public functions    pfx_TitleCase (pfx = two or three letter module prefix)
+Private functions   TitleCase
+Trivial variables   i,x,n,f etc...
+Local variables     lower_case or lowerCase
+Global variables    g_lowerCase or g_lower_case (searchable by g_ prefix)
+```

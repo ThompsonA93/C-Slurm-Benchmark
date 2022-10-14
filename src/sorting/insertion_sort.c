@@ -11,20 +11,20 @@ int arr[MAX_ARRAY_ELEMENTS];
 int main(void){
     srand(time(NULL));  // Initialization for randomization process
                         // Should only be called once.
-    printArray(arr, MAX_ARRAY_ELEMENTS);
-    randomizeArray(arr, MAX_ARRAY_ELEMENTS);
-    printArray(arr, MAX_ARRAY_ELEMENTS);
+    print_array(arr, MAX_ARRAY_ELEMENTS);
+    randomize_array(arr, MAX_ARRAY_ELEMENTS);
+    print_array(arr, MAX_ARRAY_ELEMENTS);
 
     double time_spent = 0.0;
     clock_t begin = clock();
-    insertionSort(arr, MAX_ARRAY_ELEMENTS);
+    insertion_sort(arr, MAX_ARRAY_ELEMENTS);
     clock_t end = clock();
     time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
 
 
-    printArray(arr, MAX_ARRAY_ELEMENTS);
+    print_array(arr, MAX_ARRAY_ELEMENTS);
     
-    int status = isSorted(arr, MAX_ARRAY_ELEMENTS);
+    int status = is_sorted(arr, MAX_ARRAY_ELEMENTS);
     if(status){
         printf("! Sorting array was successfull.\n");
     }else{

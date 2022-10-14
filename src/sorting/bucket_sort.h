@@ -3,7 +3,6 @@
 
 #include "utils_sort.h"
 
-
 /**
  * Approximates square root for given value
  * @see https://en.wikipedia.org/wiki/Integer_square_root#Algorithm_using_linear_search
@@ -24,7 +23,7 @@ int isqrt(int value){
  * @param arr as array to sort
  * @param n as amount of elements in the array
  */
-void bucketSort(int arr[], int n){
+void bucket_sort(int arr[], int n){
     
     int bucket_count = (isqrt(n));
     int bucket_interval = n / bucket_count;
