@@ -27,10 +27,10 @@ int isqrt(int value){
 void bucketSort(int arr[], int n){
     
     int bucket_count = (isqrt(n));
-    int bucket_interval = n / buckets;
+    int bucket_interval = n / bucket_count;
 
     // Increase offset in order not to lose any values
-    while( buckets*bucket_interval < n){
+    while( bucket_count*bucket_interval < n){
         bucket_interval+=1;
     }
 
