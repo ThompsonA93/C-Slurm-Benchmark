@@ -19,7 +19,8 @@
     - Incorrect time displayed by clock_t
 - [x] Insertion sort
 - [x] Selection sort
-- [ ] Quick sort
+- [x] Quick sort
+    - Implementation is not pretty...
 
 # Misc. Information
 ## Installation & Execution 
