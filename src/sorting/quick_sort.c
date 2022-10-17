@@ -17,7 +17,7 @@ int main(void){
 
     double time_spent = 0.0;
     clock_t begin = clock();
-    quick_sort(arr, 0, MAX_ARRAY_ELEMENTS);
+    quick_sort(arr, 0, MAX_ARRAY_ELEMENTS-1);
     clock_t end = clock();
     time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
 
