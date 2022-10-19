@@ -9,13 +9,13 @@
 | GNU Make | 4.2.1 |
 
 ## Todo
-- [X] Matrix Multiplication
+- [x] Matrix Multiplication
 - [ ] Gaussian Elimination
 - [ ] Dijstkra
 - [x] Sieve of Eratosthenes
 - [x] Bubble sort
-- [ ] Bucket sort
-- [X] Counting sort
+- [x] Bucket sort
+- [x] Counting sort
     - Incorrect time displayed by clock_t
 - [x] Insertion sort
 - [x] Selection sort
