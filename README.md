@@ -10,7 +10,8 @@
 
 ## Todo
 - [x] Matrix Multiplication
-- [ ] Gaussian Elimination
+- [~] Gaussian Elimination
+    - Bugs the array to 0 on higher dimensions for some reasons.
 - [ ] Dijstkra
 - [x] Sieve of Eratosthenes
 - [x] Bubble sort
