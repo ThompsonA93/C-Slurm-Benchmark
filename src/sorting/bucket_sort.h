@@ -38,7 +38,7 @@ void bucket_sort(int arr[], int n)
         bucket_interval += 1;
     }
 
-    int buckets[bucket_count][n / 2]; // how should be best assign the size of each bucket??
+    int buckets[bucket_count][bucket_interval*2]; // how should be best assign the size of each bucket??
     int bucket_index_count[bucket_count];
     for (int i = 0; i < bucket_count; i++)
         bucket_index_count[i] = 0;
