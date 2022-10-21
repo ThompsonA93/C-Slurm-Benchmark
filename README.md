@@ -21,7 +21,7 @@
 - [x] Insertion sort
 - [x] Selection sort
 - [x] Quick sort
-    - Implementation is not pretty...
+ 
 
 # Misc. Information
 ## Installation & Execution 
