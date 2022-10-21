@@ -7,9 +7,9 @@
  * @see https://en.wikipedia.org/wiki/XOR_swap_algorithm#Code_example
  */ 
 void swap(int* x, int* y){
-    *x ^= *y;
-    *y ^= *x;
-    *x ^= *y;
+    int t = *x;
+    *x = *y;
+    *y = t;
 }
 
 /**

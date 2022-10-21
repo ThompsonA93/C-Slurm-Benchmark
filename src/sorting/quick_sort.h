@@ -5,34 +5,21 @@
 
 int assemble_partition(int arr[], int low, int high)
 {
-    int pt, flag;
-    pt = low;
-    flag = 0;
-    while (flag != 1)
+
+    int pivot = arr[high];
+    int i = low - 1;
+
+    for (int j = low; j < high; j++)
     {
-        while ((arr[pt] <= arr[high] && (pt != high)))
-            high--;
-        if (pt == high)
-            flag = 1;
-        else if (arr[pt] > arr[high])
+        if (arr[j] <= pivot)
         {
-            swap(&arr[pt], &arr[high]);
-            pt = high;
-        }
-        if (flag != 1)
-        {
-            while ((arr[pt] >= arr[low]) && (pt != low))
-                low++;
-            if (pt == low)
-                flag = 1;
-            else if (arr[pt] < arr[low])
-            {
-                swap(&arr[pt], &arr[low]);
-                pt = low;
-            }
+            i++;
+            swap(&arr[i], &arr[j]);
         }
     }
-    return pt;
+    i++;
+    swap(&arr[i], &arr[high]);
+    return i;
 }
 
 /**
@@ -43,12 +30,13 @@ int assemble_partition(int arr[], int low, int high)
  */
 void quick_sort(int arr[], int p1, int p2)
 {
-    if (p1 < p2)
+    if (p1 >= p2 || p1 < 0)
     {
-        int pt = assemble_partition(arr, p1, p2);
-        quick_sort(arr, p1, pt - 1);
-        quick_sort(arr, pt + 1, p2);
+        return;
     }
+    int pt = assemble_partition(arr, p1, p2);
+    quick_sort(arr, p1, pt - 1);
+    quick_sort(arr, pt + 1, p2);
 }
 
 #endif
