@@ -18,7 +18,9 @@ int main(void){
 
     double time_spent = 0.0;
     clock_t begin = clock();
+    
     bubble_sort(arr, MAX_ARRAY_ELEMENTS);
+
     clock_t end = clock();
     time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
 
@@ -35,4 +37,5 @@ int main(void){
     fp = fopen("log/c_std.log", "a");
     fprintf(fp, "Bubble Sort, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
     fclose(fp);
+
 }

@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /** Length of arrays to use **/
-#define MAX_ARRAY_ELEMENTS 100
+#define MAX_ARRAY_ELEMENTS 25000
 
 /** Highest allowed value per array element**/
 #define ELEMENT_VALUE_RANGE 254

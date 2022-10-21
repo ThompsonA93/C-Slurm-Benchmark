@@ -3,8 +3,8 @@
 #include <time.h>
 
 #define MAX_INTEGER_RANGE 255
-#define M 5
-#define N 5
+#define M 25
+#define N 25
 
 int a[M][N];
 
@@ -21,6 +21,10 @@ int main(void){
         }
         printf("\n");
     }
+
+
+    double time_spent = 0.0;
+    clock_t begin = clock();
 
     printf("Executing Gauss-Jordan Elimination.\n");
     for(int k = 0; k < M; k++){
@@ -39,6 +43,9 @@ int main(void){
         }
     }
 
+    clock_t end = clock();
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+
     printf("Printing resulting array.\n");
     for(int m = 0; m < M; m++){
         for(int n = 0; n < N; n++){
@@ -47,6 +54,11 @@ int main(void){
         printf("\n");
     }
 
+    fp = fopen("log/c_std.log", "a");
+    fprintf(fp, "Gaussian Elimination, %dx%d, %f, %d\n", M, N, time_spent, 1);
+    fclose(fp);
+
+    return 0;
 }
 
 /* Bugs the array to 0 on higher dimensions for some reasons. Keeping for reference.

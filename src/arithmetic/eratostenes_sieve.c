@@ -1,7 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
-#define MAX_VALUE 1000
+#define MAX_VALUE 100000
+
+FILE *fp;
 
 void filter_primes(int limit){
     printf("Scanning values up to %d to be prime.\n", limit);
@@ -23,10 +26,17 @@ void filter_primes(int limit){
 }
 
 int main(void){
-
     int max_val = MAX_VALUE;
-
+    
+    double time_spent = 0.0;
+    clock_t begin = clock();
     filter_primes(MAX_VALUE);
+    clock_t end = clock();
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+
+    fp = fopen("log/c_std.log", "a");
+    fprintf(fp, "Sieve of eratostenes, %d, %f, %d\n", MAX_VALUE, time_spent, 1);
+    fclose(fp);
 
     return 0;
 }
