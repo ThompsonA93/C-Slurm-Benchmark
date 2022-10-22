@@ -1,9 +1,0 @@
-Matrix multiplication, 30x30x30, 0.625000, 1
-Gaussian Elimination, 25x25, 1.171875, 1
-Sieve of eratostenes, 100000, 0.546875, 1
-Bubble Sort, 25000, 2.812500, 1
-Bucket Sort, 25000, 0.000000, 1
-Counting Sort, 25000, 0.000000, 1
-Insertion Sort, 25000, 0.312500, 1
-Selection Sort, 25000, 0.531250, 1
-Quick Sort, 25000, 0.000000, 1
