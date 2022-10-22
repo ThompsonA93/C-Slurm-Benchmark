@@ -1,23 +1,8 @@
-#ifndef BUCKET_SORT
-#define BUCKET_SORT
+#ifndef COUNTING_SORT
+#define COUNTING_SORT
 
 #include "utils_sort.h"
 
-/**
- * Returns highest value of an array 
- * @param arr as array to search
- * @param n as array length
- * @return highest value of an array 
- */
-int get_max_value(int arr[], int n){
-    int max_element = 0;
-    for(int i = 0; i < n; i++){
-        if(max_element < arr[i]){
-            max_element = arr[i];
-        }
-    }
-    return max_element;
-}
 
 /**
  * Implementation for simple counting sort
@@ -27,7 +12,12 @@ int get_max_value(int arr[], int n){
 void counting_sort(int arr[], int n){
 
     // Find the largest element of the arr
-    const int max = get_max_value(arr, n);
+    int max = 0;
+    for(int i = 0; i < n; i++){
+        if(max < arr[i]){
+            max = arr[i];
+        }
+    }
     int count[max+1];
     int output[n];
 
