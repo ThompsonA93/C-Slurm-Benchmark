@@ -1,13 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <sys/time.h>
 
-#define MAX_VALUE 100000
+#define MAX_VALUE 175000
 
 FILE *fp;
 
 void filter_primes(int limit){
-    printf("Scanning values up to %d to be prime.\n", limit);
+    //printf("Scanning values up to %d to be prime.\n", limit);
 
     int isPrime = 0;
     for(int i = 0; i <= limit; i++){
@@ -20,7 +21,7 @@ void filter_primes(int limit){
             }       
         }
         if(!isPrime){
-            printf("\t%d is prime\n", i);
+            //printf("\t%d is prime\n", i);
         }
     }
 }
@@ -28,11 +29,18 @@ void filter_primes(int limit){
 int main(void){
     int max_val = MAX_VALUE;
     
-    double time_spent = 0.0;
-    clock_t begin = clock();
+    // Start measuring time
+    struct timeval begin, end;
+    gettimeofday(&begin, 0);
+    
     filter_primes(MAX_VALUE);
-    clock_t end = clock();
-    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+
+    // Stop measuring time and calculate the elapsed time
+    gettimeofday(&end, 0);
+    long seconds = end.tv_sec - begin.tv_sec;
+    long microseconds = end.tv_usec - begin.tv_usec;
+    double time_spent = seconds + microseconds*1e-6;
+
 
     fp = fopen("log/c_std.log", "a");
     fprintf(fp, "Sieve of eratostenes, %d, %f, %d\n", MAX_VALUE, time_spent, 1);

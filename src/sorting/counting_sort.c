@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <sys/time.h>
 
 #include "utils_1d_array.h"
 #include "utils_sort.h"
@@ -18,19 +19,27 @@ int main(void){
     randomize_array(arr, MAX_ARRAY_ELEMENTS);
     print_array(arr, MAX_ARRAY_ELEMENTS);
 
-    double time_spent = 0.0;
-    clock_t begin = clock();
+    // Start measuring time
+    struct timeval begin, end;
+    gettimeofday(&begin, 0);
+    
+
     counting_sort(arr, MAX_ARRAY_ELEMENTS);
-    clock_t end = clock();
-    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+
+    // Stop measuring time and calculate the elapsed time
+    gettimeofday(&end, 0);
+    long seconds = end.tv_sec - begin.tv_sec;
+    long microseconds = end.tv_usec - begin.tv_usec;
+    double time_spent = seconds + microseconds*1e-6;
+
 
     print_array(arr, MAX_ARRAY_ELEMENTS);
     
     int status = is_sorted(arr, MAX_ARRAY_ELEMENTS);
     if(status){
-        printf("! Sorting array was successfull.\n");
+        //printf("! Sorting array was successfull.\n");
     }else{
-        printf("! Sorting array was not successfull.\n");
+        //printf("! Sorting array was not successfull.\n");
     }
     
     fp = fopen("log/c_std.log", "a");

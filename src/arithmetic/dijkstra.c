@@ -3,11 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <sys/time.h>
 
-#define VERTICE 10
+#define VERTICE 50000
 #define MAX_PATH_COST 100
 
 int graph[VERTICE][VERTICE];
+FILE *fp;
 
 int minDistance(int dist[], bool sptSet[]){
     int min = INT_MAX; 
@@ -22,9 +24,10 @@ int minDistance(int dist[], bool sptSet[]){
 }
  
 void printSolution(int dist[]){
-    printf("Vertex \t\t Distance from Source\n");
-    for (int i = 0; i < VERTICE; i++)
-        printf("%d \t\t\t\t %d\n", i, dist[i]);
+    ////printf("Vertex \t\t Distance from Source\n");
+    for (int i = 0; i < VERTICE; i++){
+        ////printf("%d \t\t\t\t %d\n", i, dist[i]);
+    }
 }
  
 void dijkstra(int graph[VERTICE][VERTICE], int src){
@@ -76,7 +79,7 @@ int main(){
     srand(time(NULL));  // Initialization for randomization process
                         // Should only be called once.
 
-    printf("Initiating cost array\n");
+    ////printf("Initiating cost array\n");
     int count = 0;
     for(int m = 0; m < VERTICE; m++){
         for(int n = count; n < VERTICE; n++){
@@ -96,13 +99,27 @@ int main(){
 
     for(int i = 0; i < VERTICE; i++){
         for(int j = 0; j < VERTICE; j++){
-            printf("\t%d", graph[i][j]);
+            ////printf("\t%d", graph[i][j]);
         }
-        printf("\n");
+        ////printf("\n");
     }
 
-    // Function call
+    // Start measuring time
+    struct timeval begin, end;
+    gettimeofday(&begin, 0);
+    
+
     dijkstra(graph, 0);
- 
+
+    // Stop measuring time and calculate the elapsed time
+    gettimeofday(&end, 0);
+    long seconds = end.tv_sec - begin.tv_sec;
+    long microseconds = end.tv_usec - begin.tv_usec;
+    double time_spent = seconds + microseconds*1e-6;
+
+    fp = fopen("log/c_std.log", "a");
+    fprintf(fp, "Dijkstra, %d, %5.2lf, %d\n", VERTICE, time_spent, 1);
+    fclose(fp);
+
     return 0;
 }

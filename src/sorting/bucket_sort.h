@@ -51,14 +51,14 @@ void bucket_sort(int arr[], int n)
     }
     max++;
 
-    printf("bucket_count: %d,  max: %d\n", bucket_count, max);
+    //printf("bucket_count: %d,  max: %d\n", bucket_count, max);
     // Create buckets
     for (int i = 0; i < n; i++)
     {
         int bucket_index = (bucket_count * arr[i]) / (max);
         buckets[bucket_index][bucket_index_count[bucket_index]] = arr[i];
         bucket_index_count[bucket_index]++;
-        //printf("Inserting value  %d, into bucket %d, bucket size new: %d\n", arr[i], ((bucket_count * arr[i]) / (max)), bucket_index_count[bucket_index]);
+        ////printf("Inserting value  %d, into bucket %d, bucket size new: %d\n", arr[i], ((bucket_count * arr[i]) / (max)), bucket_index_count[bucket_index]);
     }
     int arr_index = 0;
     for (int i = 0; i < bucket_count; i++)

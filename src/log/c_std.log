@@ -1,0 +1,34 @@
+Matrix multiplication, 30x30x30, 0.000169, 1
+Gaussian Elimination, 25x25, 0.000118, 1
+Dijkstra, 25000,  4.87, 1
+Sieve of eratostenes, 100000, 0.548921, 1
+Bubble Sort, 25000, 3.210632, 1
+Bucket Sort, 25000, 0.002094, 1
+Counting Sort, 25000, 0.000249, 1
+Insertion Sort, 25000, 0.326175, 1
+Selection Sort, 25000, 0.515811, 1
+Quick Sort, 25000, 0.021114, 1
+Matrix multiplication, 40x40x40, 0.000219, 1
+Gaussian Elimination, 35x35, 0.000169, 1
+Dijkstra, 30000,  6.59, 1
+Sieve of eratostenes, 125000, 0.854804, 1
+Bubble Sort, 50000, 12.612241, 1
+Bucket Sort, 50000, 0.002059, 1
+Counting Sort, 50000, 0.000507, 1
+Insertion Sort, 50000, 1.351756, 1
+Selection Sort, 50000, 2.080227, 1
+Quick Sort, 50000, 0.065598, 1
+Matrix multiplication, 50x50x50, 0.000933, 1
+Gaussian Elimination, 50x50, 0.000551, 1
+Dijkstra, 40000,  9.68, 1
+Sieve of eratostenes, 150000, 1.165276, 1
+Bubble Sort, 75000, 28.582355, 1
+Bucket Sort, 75000, 0.001072, 1
+Counting Sort, 75000, 0.000951, 1
+Insertion Sort, 75000, 2.922481, 1
+Selection Sort, 75000, 4.551051, 1
+Quick Sort, 75000, 0.147131, 1
+Matrix multiplication, 60x60x60, 0.001444, 1
+Gaussian Elimination, 60x60, 0.000734, 1
+Dijkstra, 50000, 14.39, 1
+Sieve of eratostenes, 175000, 1.556500, 1
