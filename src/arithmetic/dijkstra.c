@@ -1,78 +1,108 @@
-#include <stdlib.h>
+#include <limits.h>
+#include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
-#define MAX_PATH_COST 10
+#define VERTICE 10
+#define MAX_PATH_COST 100
 
-#define GOAL_X 3
-#define GOAL_Y 3
+int graph[VERTICE][VERTICE];
 
-int paths[GOAL_X][GOAL_Y];
-
-FILE *fp;
-
-/**
- * Returns the amount of total possible paths in any given x*y matrix
- * TODO Find iterative alternative
- */
-int number_of_paths(int x, int y){
-    if(x == 1 || y == 1){
-        return 1;
+int minDistance(int dist[], bool sptSet[]){
+    int min = INT_MAX; 
+    int min_index;
+ 
+    for (int v = 0; v < VERTICE; v++){
+        if (sptSet[v] == false && dist[v] <= min){
+            min = dist[v], min_index = v;
+        }
     }
-    return number_of_paths(x - 1, y) + number_of_paths(x, y-1);
+    return min_index;
 }
+ 
+void printSolution(int dist[]){
+    printf("Vertex \t\t Distance from Source\n");
+    for (int i = 0; i < VERTICE; i++)
+        printf("%d \t\t\t\t %d\n", i, dist[i]);
+}
+ 
+void dijkstra(int graph[VERTICE][VERTICE], int src){
+    int dist[VERTICE];      // The output array.  dist[i] will hold the
+                            // shortest
+                            // distance from src to i
+ 
+    bool sptSet[VERTICE];   // sptSet[i] will be true if vertex i is
+                            // included in shortest
+                            // path tree or shortest distance from src to i is
+                            // finalized
+ 
+    // Initialize all distances as INFINITE and stpSet[] as false
+    for (int i = 0; i < VERTICE; i++){
+        dist[i] = INT_MAX, sptSet[i] = false;
+    }
+ 
+    // Distance of source vertex from itself is always 0
+    dist[src] = 0;
+ 
+    // Find shortest path for all vertices
+    for (int count = 0; count < VERTICE - 1; count++) {
+        // Pick the minimum distance vertex from the set of
+        // vertices not yet processed. u is always equal to
+        // src in the first iteration.
+        int u = minDistance(dist, sptSet);
+ 
+        // Mark the picked vertex as processed
+        sptSet[u] = true;
+ 
+        // Update dist value of the adjacent vertices of the
+        // picked vertex.
+        for (int v = 0; v < VERTICE; v++){
+            // Update dist[v] only if is not in sptSet,
+            // there is an edge from u to v, and total
+            // weight of path from src to  v through u is
+            // smaller than current value of dist[v]
+            if (!sptSet[v] && graph[u][v] && dist[u] != INT_MAX && dist[u] + graph[u][v] < dist[v]){
+                dist[v] = dist[u] + graph[u][v];
+            }
+        } 
+    }
+ 
+    // print the constructed distance array
+    printSolution(dist);
+}
+ 
+int main(){
+    srand(time(NULL));  // Initialization for randomization process
+                        // Should only be called once.
 
+    printf("Initiating cost array\n");
+    int count = 0;
+    for(int m = 0; m < VERTICE; m++){
+        for(int n = count; n < VERTICE; n++){
+            if(m == n){
+                graph[m][n] = 0;
+                graph[n][m] = 0;
+            } else if(rand() % 4 == 0){
+                graph[m][n] = 0;
+                graph[n][m] = 0;
+            } else {
+                graph[m][n] = rand() % MAX_PATH_COST;
+                graph[n][m] = graph[m][n];
+            }
+        }
+        count += 1;
+    }
 
-// Assume: 2 Dimensional array
-// Assume: May only move to neighbouring cell (Horizontal, Vertical)
-// Assume: Start always at 0,0
-int main(void){
-    // Initialization for randomization process. Should only be called once.
-    srand(time(NULL)); 
-
-    // Only need to calculate paths from 0,0 to X,Y - else redundant calc
-    printf("Initiating path costs.\n");
-    for(int m = 0; m < GOAL_X; m++){
-        for(int n = 0; n < GOAL_Y; n++){
-            paths[m][n] = rand() % MAX_PATH_COST + 1; // Minimum cost of 1
-            printf("\t%d ", paths[m][n]);
+    for(int i = 0; i < VERTICE; i++){
+        for(int j = 0; j < VERTICE; j++){
+            printf("\t%d", graph[i][j]);
         }
         printf("\n");
     }
 
-    // Start Time
-    double time_spent = 0.0;
-    clock_t begin = clock();
-
-
-    // Dijkstra -- #1 Calculate all possible paths. Remember cost + movements
-    int num_paths = number_of_paths(GOAL_X, GOAL_Y);
-    char pathways[num_paths];
-    int sum_paths[num_paths];
-    printf("\tCounted %d possible paths.\n", num_paths);
-
-    // Dijkstra -- #2 Calculate costs of all possible paths
-    for(int i = 0; i < GOAL_X; i++){
-        for(int j = 0; j < GOAL_Y; j++){
-            // TODO score all paths
-        }
-    }
-    
-
-
-    // Dijkstra -- #3 Return cheapest path
-    // TODO Search lowest element in sum_paths
-    // TODO Return pathways.lowest_element
-
-
-
-    // End time, log & return
-    clock_t end = clock();
-    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
-
-    fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Dijkstra, %dx%d, %f, %d\n", GOAL_X, GOAL_Y, time_spent, 1);
-    fclose(fp);
-
+    // Function call
+    dijkstra(graph, 0);
+ 
     return 0;
 }
