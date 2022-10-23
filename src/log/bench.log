@@ -1,0 +1,87 @@
+Matrix multiplication, 100x100x100, 0.003897, 1
+Gaussian Elimination, 100x100, 0.004362, 1
+Dijkstra, 100x100, 0.000085, 1
+Sieve of eratostenes, 50000, 0.144917, 1
+Bubble Sort, 50000, 12.880806, 1
+Bucket Sort, 50000, 0.000719, 1
+Counting Sort, 50000, 0.000486, 1
+Insertion Sort, 50000, 1.302509, 1
+Selection Sort, 50000, 2.025054, 1
+Quick Sort, 50000, 0.149977, 1
+Matrix multiplication, 250x250x250, 0.047435, 1
+Gaussian Elimination, 250x250, 0.048109, 1
+Dijkstra, 250x250, 0.000471, 1
+Sieve of eratostenes, 75000, 0.309683, 1
+Bubble Sort, 75000, 28.595804, 1
+Bucket Sort, 75000, 0.001071, 1
+Counting Sort, 75000, 0.000737, 1
+Insertion Sort, 75000, 2.890147, 1
+Selection Sort, 75000, 4.531901, 1
+Quick Sort, 75000, 0.351423, 1
+Matrix multiplication, 400x400x400, 0.287943, 1
+Gaussian Elimination, 400x400, 0.308509, 1
+Dijkstra, 400x400, 0.001196, 1
+Sieve of eratostenes, 100000, 0.534023, 1
+Bubble Sort, 100000, 51.037230, 1
+Bucket Sort, 100000, 0.001476, 1
+Counting Sort, 100000, 0.000982, 1
+Insertion Sort, 100000, 5.116742, 1
+Selection Sort, 100000, 8.030669, 1
+Quick Sort, 100000, 0.611571, 1
+Matrix multiplication, 550x550x550, 0.595981, 1
+Gaussian Elimination, 550x550, 0.504418, 1
+Dijkstra, 550x550, 0.002214, 1
+Sieve of eratostenes, 125000, 0.830383, 1
+Bubble Sort, 125000, 79.958683, 1
+Bucket Sort, 125000, 0.001932, 1
+Counting Sort, 125000, 0.001285, 1
+Insertion Sort, 125000, 8.057418, 1
+Selection Sort, 125000, 12.733988, 1
+Quick Sort, 125000, 0.917665, 1
+Matrix multiplication, 700x700x700, 1.277602, 1
+Matrix multiplication, 700x700x700, 1.220189, 1
+Matrix multiplication, 700x700x700, 1.360189, 1
+Gaussian Elimination, 550x550, 0.502406, 1
+Dijkstra, 700x700, 0.003472, 1
+Sieve of eratostenes, 150000, 1.172566, 1
+Bubble Sort, 150000, 115.093387, 1
+Bucket Sort, 150000, 0.002159, 1
+Counting Sort, 150000, 0.001497, 1
+Insertion Sort, 150000, 11.671471, 1
+Selection Sort, 150000, 18.268001, 1
+Quick Sort, 150000, 1.332560, 1
+Matrix multiplication, 1000x1000x1000, 4.231012, 1
+Gaussian Elimination, 550x550, 0.514101, 1
+Dijkstra, 1000x1000, 0.006817, 1
+Sieve of eratostenes, 175000, 1.559981, 1
+Bubble Sort, 175000, 156.430573, 1
+Bucket Sort, 175000, 0.002531, 1
+Counting Sort, 175000, 0.001755, 1
+Insertion Sort, 175000, 16.058124, 1
+Selection Sort, 175000, 24.850208, 1
+Quick Sort, 175000, 1.797163, 1
+Matrix multiplication, 2000x2000x2000, 47.951598, 1
+Gaussian Elimination, 550x550, 0.512722, 1
+Dijkstra, 2000x2000, 0.026380, 1
+Sieve of eratostenes, 200000, 2.011332, 1
+Bubble Sort, 200000, 206.104481, 1
+Bucket Sort, 200000, 0.002874, 1
+Counting Sort, 200000, 0.002214, 1
+Insertion Sort, 200000, 21.083857, 1
+Selection Sort, 200000, 32.537245, 1
+Quick Sort, 200000, 2.343889, 1
+Matrix multiplication, 2500x2500x2500, 115.783358, 1
+Dijkstra, 2500x2500, 0.043700, 1
+Sieve of eratostenes, 225000, 2.532474, 1
+Bucket Sort, 225000, 0.003301, 1
+Counting Sort, 225000, 0.002230, 1
+Insertion Sort, 225000, 26.256352, 1
+Selection Sort, 225000, 41.224546, 1
+Quick Sort, 225000, 2.976889, 1
+Dijkstra, 3000x3000, 0.062447, 1
+Sieve of eratostenes, 250000, 3.100351, 1
+Bucket Sort, 225000, 0.003457, 1
+Counting Sort, 225000, 0.002622, 1
+Insertion Sort, 225000, 26.460297, 1
+Selection Sort, 225000, 41.377087, 1
+Quick Sort, 300000, 5.256115, 1

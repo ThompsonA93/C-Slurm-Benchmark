@@ -3,7 +3,7 @@
 #include <time.h>
 #include <sys/time.h>
 
-#define MAX_VALUE 175000
+#define MAX_VALUE 100000
 
 FILE *fp;
 

@@ -3,9 +3,11 @@
 #include <time.h>
 #include <sys/time.h>
 
-#define M 60
-#define N 60
-#define P 60
+#define MAX_VAL 100
+#define M 250
+#define N 250
+#define P 250
+
 
 FILE *fp;
 
@@ -19,9 +21,9 @@ void initialize_2d_array(){
         for(int n = 0; n < N; n++){
             for(int p = 0; p < P; p++){
                 c[m][p] = 0;
-                b[n][p] = rand() % 10;
+                b[n][p] = rand() % MAX_VAL;
             }
-            a[m][n] = rand() % 10; 
+            a[m][n] = rand() % MAX_VAL; 
         }
     }
 }

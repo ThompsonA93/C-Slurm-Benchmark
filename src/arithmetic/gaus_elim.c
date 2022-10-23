@@ -3,9 +3,9 @@
 #include <time.h>
 #include <sys/time.h>
 
-#define MAX_INTEGER_RANGE 255
-#define M 60
-#define N 60
+#define MAX_INTEGER_RANGE 100
+#define M 250
+#define N 250
 
 int a[M][N];
 

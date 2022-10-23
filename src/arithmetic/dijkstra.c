@@ -5,8 +5,8 @@
 #include <time.h>
 #include <sys/time.h>
 
-#define VERTICE 50000
 #define MAX_PATH_COST 100
+#define VERTICE 250
 
 int graph[VERTICE][VERTICE];
 FILE *fp;
@@ -118,7 +118,7 @@ int main(){
     double time_spent = seconds + microseconds*1e-6;
 
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Dijkstra, %d, %5.2lf, %d\n", VERTICE, time_spent, 1);
+    fprintf(fp, "Dijkstra, %dx%d, %f, %d\n", VERTICE, VERTICE, time_spent, 1);
     fclose(fp);
 
     return 0;

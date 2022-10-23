@@ -2,11 +2,13 @@
 #define UTILS_1D_ARRAY
 #include <stdio.h>
 
+/** Highest allowed value per array element**/
+#define ELEMENT_VALUE_RANGE 100
+
 /** Length of arrays to use **/
 #define MAX_ARRAY_ELEMENTS 100000
 
-/** Highest allowed value per array element**/
-#define ELEMENT_VALUE_RANGE 254
+
 
 /**
  * Prints the content of a 1d-array
