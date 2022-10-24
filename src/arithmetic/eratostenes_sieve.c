@@ -3,12 +3,15 @@
 #include <time.h>
 #include <sys/time.h>
 
+
+#ifndef MAX_VALUE
 #define MAX_VALUE 100000
+#endif
 
 FILE *fp;
 
 void filter_primes(int limit){
-    printf("Scanning values up to %d to be prime.\n", limit);
+    //printf("Scanning values up to %d to be prime.\n", limit);
 
     int isPrime = 0;
     for(int i = 0; i <= limit; i++){
@@ -21,7 +24,7 @@ void filter_primes(int limit){
             }       
         }
         if(!isPrime){
-            printf("\t%d is prime\n", i);
+            //printf("\t%d is prime\n", i);
         }
     }
 }
