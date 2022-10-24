@@ -24,9 +24,9 @@ int minDistance(int dist[], bool sptSet[]){
 }
  
 void printSolution(int dist[]){
-    ////printf("Vertex \t\t Distance from Source\n");
+    //printf("Vertex \t\t Distance from Source\n");
     for (int i = 0; i < VERTICE; i++){
-        ////printf("%d \t\t\t\t %d\n", i, dist[i]);
+        //printf("%d \t\t\t\t %d\n", i, dist[i]);
     }
 }
  
@@ -79,7 +79,7 @@ int main(){
     srand(time(NULL));  // Initialization for randomization process
                         // Should only be called once.
 
-    ////printf("Initiating cost array\n");
+    //printf("Initiating cost array\n");
     int count = 0;
     for(int m = 0; m < VERTICE; m++){
         for(int n = count; n < VERTICE; n++){
@@ -99,9 +99,9 @@ int main(){
 
     for(int i = 0; i < VERTICE; i++){
         for(int j = 0; j < VERTICE; j++){
-            ////printf("\t%d", graph[i][j]);
+            //printf("\t%d", graph[i][j]);
         }
-        ////printf("\n");
+        //printf("\n");
     }
 
     // Start measuring time

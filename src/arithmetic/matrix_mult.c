@@ -16,7 +16,7 @@ int b[N][P];
 int c[M][P];
 
 void initialize_2d_array(){
-    //printf("Initializing Array with randomized values.\n");
+    printf("Initializing Array with randomized values.\n");
     for(int m = 0; m < M; m++){
         for(int n = 0; n < N; n++){
             for(int p = 0; p < P; p++){
@@ -29,26 +29,26 @@ void initialize_2d_array(){
 }
 
 void print_2d_array(int* arr, int x, int y){
-    //printf("Printing array:\n\t");
+    printf("Printing array:\n\t");
     for(int i = 0; i < x; i++){
         for(int j = 0; j < y; j++){
-            //printf("%d ", *arr);
+            printf("%d ", *arr);
             arr++;
         }
-        //printf("\n\t");
+        printf("\n\t");
     }
-    //printf("\n");
+    printf("\n");
 }
 
 void multiply_matrices(){
-    //printf("Multiplying matrices.\n");
+    printf("Multiplying matrices.\n");
     for(int i = 0; i < M; i++){
         for(int j = 0; j < P; j++){
             for(int k = 0; k < N; k++){
                 c[i][j] += a[i][k] * b[k][j];
-                //printf("\tc[%d][%d] += a[%d][%d] * b[%d][%d] ... %d * %d = %d\n", i,j,i,k,k,j, a[i][k], b[k][j], c[i][j]);
+                printf("\tc[%d][%d] += a[%d][%d] * b[%d][%d] ... %d * %d = %d\n", i,j,i,k,k,j, a[i][k], b[k][j], c[i][j]);
             }
-            //printf("\t\tc[%d][%d] = %d\n", i, j, c[i][j]);
+            printf("\t\tc[%d][%d] = %d\n", i, j, c[i][j]);
         }
     }
 }

@@ -8,16 +8,21 @@
 | GCC | 9.4.0 |
 | GNU Make | 4.2.1 |
 
+
 ## Todo
+- []Refactor execution (Ty Laubi): 
+> gcc -pg -D MATRIX_SIZE=1000 homework.c -mcmodel=large -lm -pg\
+> srun out.o\
+> gprof out.o gmon.out -b
+- [] Slurm executions: 
+> OMP_NUM_THREADS=4 srun -c 4 build/matrix_mult.out
 - [x] Matrix Multiplication
-- [~] Gaussian Elimination
-    - Bugs the array to 0 on higher dimensions for some reasons.
-- [ ] Dijstkra
+- [x] Gaussian Elimination
+- [x] Dijstkra
 - [x] Sieve of Eratosthenes
 - [x] Bubble sort
 - [x] Bucket sort
 - [x] Counting sort
-    - Incorrect time displayed by clock_t
 - [x] Insertion sort
 - [x] Selection sort
 - [x] Quick sort

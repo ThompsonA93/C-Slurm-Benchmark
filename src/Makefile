@@ -3,6 +3,7 @@ help:
 
 all: matmul gauss dijkstra sieve bubble bucket counting insertion selection quick 
 
+
 lint:
 	cppcheck .
 

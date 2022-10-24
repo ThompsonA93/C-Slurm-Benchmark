@@ -34,9 +34,9 @@ int main(void){
     
     int status = is_sorted(arr, MAX_ARRAY_ELEMENTS);
     if(status){
-        //printf("! Sorting array was successfull.\n");
+        printf("! Sorting array was successfull.\n");
     }else{
-        //printf("! Sorting array was not successfull.\n");
+        printf("! Sorting array was not successfull.\n");
     }
     
     fp = fopen("log/c_std.log", "a");
