@@ -1,0 +1,33 @@
+.SUFFIXES: .c .o
+
+CC=gcc
+CFLAGS=-pg
+BUILDDIR=build
+PROFILES=profile
+
+help:
+	@echo "Run make using \"make run TARGET=script1\""
+	@echo "Compile using \"make script1\""
+
+all: (wildcard *.c)
+	$(CC) $(CFLAGS) $^ -o $@
+
+TARGET=
+run: $(TARGET) mdir
+	@echo "! Running $<"
+	mv $< $(BUILDDIR)/$<
+	$(BUILDDIR)/$<
+	mv gmon.out $(PROFILES)/$<.gmon.out
+	gprof $(BUILDDIR)/$< $(PROFILES)/$<.gmon.out > $(PROFILES)/$<.gmon.log
+	sed -n '5,10p' < $(PROFILES)/$<.gmon.log
+
+mdir:
+	mkdir -p build
+	mkdir -p profile
+
+%: %.c
+	$(CC) $(CFLAGS) $^ -o $@
+
+clean:
+	rm -f build/*
+	rm -f profile/*
