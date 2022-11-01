@@ -9,7 +9,12 @@ PROFILES=profiles
 help:
 	@echo "! Run script using \"make all\""
 
-all: compile
+all: dirs compile
+
+dirs:
+	mkdir -p $(BUILDDIR)
+	mkdir -p $(PROFILES)
+	mkdir -p log
 
 compile: $(C_OBJECTS)
 	@echo "! Successfully compiled and executed script."
