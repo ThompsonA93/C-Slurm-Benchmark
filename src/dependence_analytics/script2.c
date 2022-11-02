@@ -12,6 +12,11 @@ int function_call(){
     return 42;
 }
 
+/**
+ * Dependences: b[i][j] = 42 
+ * Distance: < 0, 0 >
+ * Direction: < =, = > 
+ */
 void a2(){
     for(int i = 0; i < N; i++){
         for(int j = 0; j < N; j++){

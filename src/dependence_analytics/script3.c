@@ -8,7 +8,23 @@
 int a[N];
 int b[N][N];
 
-
+/**
+ * FIXME 
+ * Dependences ( Assuming a[i] = math.random() ): 
+ *  b[i][k] = b[a[i]][k]
+ *  b[1][8] = b[a[1]][k]
+ *  b[1][8] = b[0..100][8]
+ * Distance: < 
+ *  a[i] = i <=> 0
+ *  a[i] < i <=> -1
+ *  a[i] > i <=> 1    
+ * >
+ * Direction: < 
+ *  dist(0)  <=> =
+ *  dist(1)  <=> <
+ *  dist(-1) <=> >
+ * > 
+ */
 void a3(){
     int k = 8;
     for(int i = 0; i < N; i++){

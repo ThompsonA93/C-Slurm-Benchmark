@@ -8,7 +8,12 @@
 int a[N];
 int b[N][N];
 
-
+/**
+ * Dependences: a[i] = a[i-1] + b[i][8]
+ *  a[1] = a[0] + b[1][8]
+ * Distance: < 1 >
+ * Direction: < < > 
+ */
 void a4(){
     int k = 8;
     for(int i = 1; i < N; i++){
