@@ -14,7 +14,7 @@ int function_call(){
 
 /**
  * Dependences: b[i][j] = 42 
- * Distance: < 0, 0 >
+ * Distance: < 0, 0 > -- FIXME: does this example even count?
  * Direction: < =, = > 
  */
 void a2(){

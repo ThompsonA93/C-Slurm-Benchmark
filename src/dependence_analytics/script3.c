@@ -9,15 +9,16 @@ int a[N];
 int b[N][N];
 
 /**
- * FIXME 
+ * Dynamic indezes: i
+ * Static indezes: k
  * Dependences ( Assuming a[i] = math.random() ): 
  *  b[i][k] = b[a[i]][k]
  *  b[1][8] = b[a[1]][k]
  *  b[1][8] = b[0..100][8]
  * Distance: < 
  *  a[i] = i <=> 0
- *  a[i] < i <=> -1
- *  a[i] > i <=> 1    
+ *  a[i] < i <=> 1
+ *  a[i] > i <=> -1    
  * >
  * Direction: < 
  *  dist(0)  <=> =

@@ -27,11 +27,7 @@ compile: $(C_OBJECTS)
 # FIXME: Foreach does not iterate correctly for some reason
 %.o: %.c
 	@echo "! Compiling source: $<"
-	$(foreach var, $(ELEMENTS), \
-		$(CC) $(CFLAGS) -D MAX_ARRAY_ELEMENTS=$(var) $< -o $(BUILDDIR)/$@; \
-		$(BUILDDIR)/$@; \
-		gprof $(BUILDDIR)/$@ gmon.out > $(PROFILES)/$@_gmon.log \
-	)
+	$(foreach var, $(ELEMENTS), $(CC) $(CFLAGS) -D MAX_ARRAY_ELEMENTS=$(var) $< -o $(BUILDDIR)/$@; $(BUILDDIR)/$@; gprof $(BUILDDIR)/$@ gmon.out > $(PROFILES)/$@_gmon.log)
 
 clean:
 	rm -f *.o *.out
