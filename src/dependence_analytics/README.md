@@ -25,4 +25,34 @@ $D(I,J)_k = \begin{cases}
     > & d(I, j)_k < 0 \\
 \end{cases}$
 
-The leftmost element of a direction vector must not be '>'; This would indicate a sink before source.
+The leftmost element of all '=' must be '<', otherwise sink before source.
+
+# Dependence testing & parallelize
+
+(slide 40)
+Write before read: View system of equation; F is lefthand, J is righthand (J-1 => True dependence, J+1 => Anti-dependence)
+
+(slide 43)
+The first Index always carries the dependency
+
+(slide 44, 45)
+If loop index does not appear in lefthandside of an equation, its distance is unconstrained - thus ''*''.
+
+(Slide 47)
+Complications & Unknown variables & Boundaries
+
+(Slide 49)
+'=' can be parallelized.
+
+(Slide 52)
+Inner loops can be parallelized, if the inner loop must be executed sequentially
+
+# Program transformation
+(Slide 55 - Reordering)
+Cache dependency: Columns before rows decreases performance - Cache misses
+- Safe: Semantically same
+- Valid: Safe dependencies
+
+# Dependency elimination
+(Slide 60)
+
