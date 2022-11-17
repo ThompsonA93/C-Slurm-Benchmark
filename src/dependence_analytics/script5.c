@@ -12,10 +12,14 @@ int b[N][N];
 /**
  * Dynamic indezes: i
  * Static indezes: k
- * Dependences: b[i][k] = b[i+abs(k)][k] - a[i];
- *  b[1][8] = b[1+abs(8)][1] - a[1];
- * Distance: < -1 >
- * Direction: < > > 
+ * 
+ * Dependences: 
+ * i=0 | b[0][8] = b[0+abs(8)][8] - a[0];
+ * i=1 | b[1][8] = b[1+abs(8)][8] - a[1];
+ * 
+ *              < i, k, i+abs(k) >
+ * Distance:    < 0, 0, * >
+ * Direction:   < =, =, * > 
  */
 void a5(){
     int k = 8;

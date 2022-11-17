@@ -11,10 +11,14 @@ int b[N][N];
 /**
  * Dynamic indezes: i
  * Static indezes: k
- * Dependences: a[i] = a[i-1] + b[i][8]
- *  a[1] = a[0] + b[1][8]
- * Distance: < 1 >
- * Direction: < < > 
+ * 
+ * Dependences:
+ * i=0 | a[0] = a[-1] + b[0][8]
+ * i=1 | a[1] = a[0] + b[1][8]
+ * 
+ *              < i, k >
+ * Distance:    < 1, * >
+ * Direction:   < <, * > 
  */
 void a4(){
     int k = 8;

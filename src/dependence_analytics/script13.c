@@ -12,6 +12,22 @@ int a[N];
 int b[N][M];
 
 // FIXME Segfaults. Not sure whether due to Indezes or faulty dimension assignment
+/**
+ * Dynamic indezes: i, j
+ * Static indezes: x, y
+ * 
+ * Dependences: 
+ * i=2,j=0  | a[2] = b[3][-2] - 99;
+ *          | b[1][2] = 12 + 18 * 2;
+ * i=2,j=1  | a[2] = b[4][-2] - 99;
+ *          | b[2][2] = 12 + 18 * 2;
+ * i=2,j=2  | a[2] = b[5][-2] - 99;
+ *          | b[3][2] = 12 + 18 * 2;
+ * 
+ *              < i, j >
+ * Distance:    <  >
+ * Direction:   <  > 
+ */
 void a13(){
     int x = 12;
     int y = 18;

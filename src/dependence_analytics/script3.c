@@ -11,20 +11,17 @@ int b[N][N];
 /**
  * Dynamic indezes: i
  * Static indezes: k
+ * 
  * Dependences ( Assuming a[i] = math.random() ): 
- *  b[i][k] = b[a[i]][k]
- *  b[1][8] = b[a[1]][k]
- *  b[1][8] = b[0..100][8]
- * Distance: < 
- *  a[i] = i <=> 0
- *  a[i] < i <=> 1
- *  a[i] > i <=> -1    
- * >
- * Direction: < 
- *  dist(0)  <=> =
- *  dist(1)  <=> <
- *  dist(-1) <=> >
- * > 
+ *  i=0 | b[0][8] = b[a[0]][8]
+ *  i=1 | b[1][8] = b[a[1]][8]
+ * 
+ * ... where a[1] = [0..100]
+ * 
+ *              < i, k >
+ * Distance:    < *, 0 >
+ * Direction:   < *, = >
+ * 
  */
 void a3(){
     int k = 8;

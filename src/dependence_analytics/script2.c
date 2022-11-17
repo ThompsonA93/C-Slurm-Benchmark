@@ -13,9 +13,14 @@ int function_call(){
 }
 
 /**
- * Dependences: b[i][j] = 42 
- * Distance: < 0, 0 > -- FIXME: does this example even count?
- * Direction: < =, = > 
+ * ''If loop index does not appear in subscript of source or sink, its distance is unconstrained and its direction is *''
+ * 
+ * Dependences:
+ * i=0,j=0 | b[0][0] = 42
+ * i=0,j=1 | b[0][1] = 42 
+ * ...
+ * Distance: < *, * >
+ * Direction: < *, * > 
  */
 void a2(){
     for(int i = 0; i < N; i++){
