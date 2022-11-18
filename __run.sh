@@ -1,2 +1,3 @@
 #!/bin/bash
-cd src; make all
+cd src/performance_analytics; make all
+cd ../dependence_analytics; make all

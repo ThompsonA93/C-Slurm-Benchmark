@@ -12,7 +12,7 @@ int a[N];
  *  i=1 | a[1] = 1 
  *  ...
  *
- * Distance: < * >
+ * Distance:  < * >
  * Direction: < * > 
  */
 void a1(){
@@ -21,7 +21,33 @@ void a1(){
     }
 }
 
+
+/**
+ * Replace Loop header for loop L_0
+ *      for(i = L; i < U; i+= S)
+ * with adjusted loop header
+ *      for(i = 0; i < (U - L + 1) / S; i++)
+ * Replace each reference to i in loop by
+ *      i * S - S + L
+ * Insert finalization assignment after loop
+ *      i = i * S - S + L
+ */
+void a1_normalized(){
+    int i = 0;
+
+    int L = 0;
+    int U = N;
+    int S = 1;
+    int i_factor = S - S + L;
+
+    for(i = 0; i < (U - L + 1) / S; i++){
+        a[i*i_factor] = i;
+    }
+    i = i * i_factor;
+}
+
 int main(void){
     a1();
+    a1_normalized();
     return 0;
 }

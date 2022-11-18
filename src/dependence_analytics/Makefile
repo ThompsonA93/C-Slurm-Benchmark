@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-pg
+CFLAGS=-pg -Wno-incompatible-pointer-types
 C_SOURCES=$(wildcard *.c)
 C_OBJECTS=$(C_SOURCES:.c=.o)
 
@@ -7,7 +7,7 @@ BUILDDIR=build
 PROFILES=profiles
 
 help:
-	@echo "! Run script using \"make all\""
+	@echo "! Run script using \"make all\" for base gcc compilation."
 
 all: dirs compile
 
