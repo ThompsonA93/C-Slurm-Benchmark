@@ -1,0 +1,24 @@
+======== Warning: unable to locate cuda driver library, GPU profiling skipped
+
+======== CPU profiling result (bottom up):
+Time(%)      Time  Name
+ 33.33%       0us  __kmp_hardware_timestamp
+ 33.33%       0us  | __kmp_fork_barrier(int, int)
+ 33.33%       0us  |   __kmp_launch_thread
+ 33.33%       0us  |     _ZL19__kmp_launch_workerPv
+ 33.33%       0us  |       start_thread
+ 33.33%       0us  |         __clone
+ 33.33%       0us  __kmp_join_barrier(int)
+ 33.33%       0us  | __kmp_internal_join
+ 33.33%       0us  |   __kmp_join_call
+ 33.33%       0us  |     __kmpc_fork_call
+ 33.33%       0us  |       main
+ 33.33%       0us  pthread_cond_wait@@GLIBC_2.3.2
+ 33.33%       0us    __kmp_suspend_64
+ 33.33%       0us      __kmp_fork_barrier(int, int)
+ 33.33%       0us        __kmp_launch_thread
+ 33.33%       0us          _ZL19__kmp_launch_workerPv
+ 33.33%       0us            start_thread
+ 33.33%       0us              __clone
+
+======== Data collected at 100Hz frequency

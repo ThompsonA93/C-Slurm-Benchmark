@@ -1,0 +1,10 @@
+======== Warning: unable to locate cuda driver library, GPU profiling skipped
+
+======== CPU profiling result (bottom up):
+Time(%)      Time  Name
+ 100.00%       0us  random_r
+ 100.00%       0us    random
+ 100.00%       0us      rand
+ 100.00%       0us        main
+
+======== Data collected at 100Hz frequency

@@ -1,0 +1,16 @@
+======== Warning: unable to locate cuda driver library, GPU profiling skipped
+
+======== CPU profiling result (bottom up):
+Time(%)      Time  Name
+ 76.92%  299.99ms  random
+ 76.92%  299.99ms  | rand
+ 76.92%  299.99ms  |   main
+ 12.82%  49.998ms  main
+  5.13%  19.999ms  ???
+  5.13%  19.999ms  | main
+  5.13%  19.999ms  random_r
+  5.13%  19.999ms    random
+  5.13%  19.999ms      rand
+  5.13%  19.999ms        main
+
+======== Data collected at 100Hz frequency

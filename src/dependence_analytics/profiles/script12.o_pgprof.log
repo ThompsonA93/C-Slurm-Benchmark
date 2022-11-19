@@ -1,0 +1,40 @@
+======== Warning: unable to locate cuda driver library, GPU profiling skipped
+
+======== CPU profiling result (bottom up):
+Time(%)      Time  Name
+ 30.77%       0us  sched_yield
+ 30.77%       0us  | __kmp_fork_barrier(int, int)
+ 30.77%       0us  |   __kmp_launch_thread
+ 30.77%       0us  |     _ZL19__kmp_launch_workerPv
+ 30.77%       0us  |       start_thread
+ 30.77%       0us  |         __clone
+ 23.08%       0us  pthread_cond_wait@@GLIBC_2.3.2
+ 23.08%       0us  | __kmp_suspend_64
+ 23.08%       0us  |   __kmp_fork_barrier(int, int)
+ 23.08%       0us  |     __kmp_launch_thread
+ 23.08%       0us  |       _ZL19__kmp_launch_workerPv
+ 23.08%       0us  |         start_thread
+ 23.08%       0us  |           __clone
+ 15.38%       0us  __kmp_fork_barrier(int, int)
+ 15.38%       0us  | __kmp_launch_thread
+ 15.38%       0us  |   _ZL19__kmp_launch_workerPv
+ 15.38%       0us  |     start_thread
+ 15.38%       0us  |       __clone
+ 15.38%       0us  __kmp_join_barrier(int)
+ 15.38%       0us  | __kmp_launch_thread
+ 15.38%       0us  |   _ZL19__kmp_launch_workerPv
+ 15.38%       0us  |     start_thread
+ 15.38%       0us  |       __clone
+ 15.38%       0us  __kmp_hardware_timestamp
+  7.69%       0us    __kmp_fork_barrier(int, int)
+  7.69%       0us    | __kmp_launch_thread
+  7.69%       0us    |   _ZL19__kmp_launch_workerPv
+  7.69%       0us    |     start_thread
+  7.69%       0us    |       __clone
+  7.69%       0us    __kmp_join_barrier(int)
+  7.69%       0us      __kmp_internal_join
+  7.69%       0us        __kmp_join_call
+  7.69%       0us          __kmpc_fork_call
+  7.69%       0us            main
+
+======== Data collected at 100Hz frequency

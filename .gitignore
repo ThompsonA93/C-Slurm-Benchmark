@@ -1,9 +1,5 @@
-*.out
-*.o
-*.log 
-
 build/
 gprof/
-profiles/
 log/
+
 .vscode

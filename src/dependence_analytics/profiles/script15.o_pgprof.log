@@ -1,0 +1,82 @@
+======== Warning: unable to locate cuda driver library, GPU profiling skipped
+
+======== CPU profiling result (bottom up):
+Time(%)      Time  Name
+ 41.98%  2.87997s  pthread_cond_wait@@GLIBC_2.3.2
+ 41.98%  2.87997s  | __kmp_suspend_64
+ 41.98%  2.87997s  |   __kmp_fork_barrier(int, int)
+ 41.98%  2.87997s  |     __kmp_launch_thread
+ 41.98%  2.87997s  |       _ZL19__kmp_launch_workerPv
+ 41.98%  2.87997s  |         start_thread
+ 41.98%  2.87997s  |           __clone
+ 17.20%  1.17999s  __kmp_hardware_timestamp
+ 16.62%  1.13999s  | __kmp_fork_barrier(int, int)
+ 16.62%  1.13999s  | | __kmp_launch_thread
+ 16.62%  1.13999s  | |   _ZL19__kmp_launch_workerPv
+ 16.62%  1.13999s  | |     start_thread
+ 16.62%  1.13999s  | |       __clone
+  0.44%      30ms  | __kmp_join_barrier(int)
+  0.29%      20ms  | | __kmp_internal_join
+  0.29%      20ms  | | | __kmp_join_call
+  0.29%      20ms  | | |   __kmpc_fork_call
+  0.29%      20ms  | | |     main
+  0.15%  9.9999ms  | | __kmp_launch_thread
+  0.15%  9.9999ms  | |   _ZL19__kmp_launch_workerPv
+  0.15%  9.9999ms  | |     start_thread
+  0.15%  9.9999ms  | |       __clone
+  0.15%  9.9999ms  | __kmp_yield
+  0.15%  9.9999ms  |   __kmp_fork_barrier(int, int)
+  0.15%  9.9999ms  |     __kmp_launch_thread
+  0.15%  9.9999ms  |       _ZL19__kmp_launch_workerPv
+  0.15%  9.9999ms  |         start_thread
+  0.15%  9.9999ms  |           __clone
+ 16.03%  1.09999s  sched_yield
+ 15.89%  1.08999s  | __kmp_fork_barrier(int, int)
+ 15.89%  1.08999s  | | __kmp_launch_thread
+ 15.89%  1.08999s  | |   _ZL19__kmp_launch_workerPv
+ 15.89%  1.08999s  | |     start_thread
+ 15.89%  1.08999s  | |       __clone
+  0.15%  9.9999ms  | __kmp_join_barrier(int)
+  0.15%  9.9999ms  |   __kmp_launch_thread
+  0.15%  9.9999ms  |     _ZL19__kmp_launch_workerPv
+  0.15%  9.9999ms  |       start_thread
+  0.15%  9.9999ms  |         __clone
+ 11.52%  789.99ms  __kmp_fork_barrier(int, int)
+ 11.52%  789.99ms  | __kmp_launch_thread
+ 11.52%  789.99ms  |   _ZL19__kmp_launch_workerPv
+ 11.52%  789.99ms  |     start_thread
+ 11.52%  789.99ms  |       __clone
+  9.18%  629.99ms  random
+  9.18%  629.99ms  | rand
+  9.18%  629.99ms  |   main
+  1.31%  89.999ms  main
+  0.73%  49.999ms  ???
+  0.73%  49.999ms  | main
+  0.58%      40ms  init_1d_array_2F1L70
+  0.58%      40ms  | __kmp_invoke_microtask
+  0.58%      40ms  |   __kmp_invoke_task_func
+  0.58%      40ms  |     __kmp_launch_thread
+  0.58%      40ms  |       _ZL19__kmp_launch_workerPv
+  0.58%      40ms  |         start_thread
+  0.58%      40ms  |           __clone
+  0.58%      40ms  __kmp_yield
+  0.58%      40ms  | __kmp_fork_barrier(int, int)
+  0.58%      40ms  |   __kmp_launch_thread
+  0.58%      40ms  |     _ZL19__kmp_launch_workerPv
+  0.58%      40ms  |       start_thread
+  0.58%      40ms  |         __clone
+  0.58%      40ms  __kmp_join_barrier(int)
+  0.29%      20ms  | __kmp_internal_join
+  0.29%      20ms  | | __kmp_join_call
+  0.29%      20ms  | |   __kmpc_fork_call
+  0.29%      20ms  | |     main
+  0.29%      20ms  | __kmp_launch_thread
+  0.29%      20ms  |   _ZL19__kmp_launch_workerPv
+  0.29%      20ms  |     start_thread
+  0.29%      20ms  |       __clone
+  0.29%      20ms  random_r
+  0.29%      20ms    random
+  0.29%      20ms      rand
+  0.29%      20ms        main
+
+======== Data collected at 100Hz frequency
