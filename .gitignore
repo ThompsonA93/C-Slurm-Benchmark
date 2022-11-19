@@ -1,5 +1,7 @@
 build/
 gprof/
 log/
+profiles/
 
+gmon.out
 .vscode

@@ -5,12 +5,14 @@
 | ----------- | ------- |
 | Ubuntu | 20.04.5 LTS |
 | GCC | 9.4.0 |
+| PGCC | 19.4-0 |
 | GNU Make | 4.2.1 |
 
 ## Todo
 - Dependence Analytics
   - [ ] Theory
   - [ ] Normalisation
+    - [ ] Fix segFaulting scripts (See changelog)
 - Performance Analytics
   - [x] Matrix Multiplication
   - [x] Gaussian Elimination

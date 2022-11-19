@@ -1,4 +1,5 @@
 #!/bin/bash
 # Install some dependencies
-sudo apt install gcc
-echo "! Installed GCC: "; gcc --version
+echo "! GCC required for performance analysis: "; gcc --version
+echo "! PGI required for dependence analysis: "; pgcc --version
+
