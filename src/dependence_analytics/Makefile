@@ -1,5 +1,6 @@
-CC=gcc
-CFLAGS=-pg -Wno-incompatible-pointer-types
+CC=pgcc#gcc
+CFLAGS=-Mconcur -Minfo#-pg -Wno-incompatible-pointer-types
+CPROF=pgprof
 C_SOURCES=$(wildcard *.c)
 C_OBJECTS=$(C_SOURCES:.c=.o)
 
@@ -7,10 +8,7 @@ BUILDDIR=build
 PROFILES=profiles
 
 help:
-	@echo "! Run script using \"make all\" for base gcc compilation."
-
-
-
+	@echo "! Run script using \"make all\" utilizing \"$(CC) $(CFLAGS)\""
 
 all: dirs compile
 dirs:
@@ -24,7 +22,7 @@ compile: $(C_OBJECTS)
 	@echo "! Compiling source: $<"
 	$(CC) $(CFLAGS) $< -o $(BUILDDIR)/$@
 	$(BUILDDIR)/$@
-	gprof $(BUILDDIR)/$@ gmon.out > $(PROFILES)/$@_gmon.log
+	$(CPROF) $(BUILDDIR)/$@ > $(PROFILES)/$@_$(CPROF).log
 
 clean:
 	rm -f *.o *.out
