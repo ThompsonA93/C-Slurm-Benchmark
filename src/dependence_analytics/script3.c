@@ -18,14 +18,13 @@ int b[N][N];
  * 
  * ... where a[1] = [0..100]
  * 
- *              < i, k >
- * Distance:    < *, 0 >
- * Direction:   < *, = >
+ *              < i >
+ * Distance:    < * >
+ * Direction:   < * >
  * 
  * If
- *  a[i] < i <=> True
- *  a[i] > i <=> Anti
- *  a[i] = i <=> Output
+ *  a[i] <= i <=> True
+ *  a[i] >  i <=> Anti
  */
 void a3(){
     int k = 8;

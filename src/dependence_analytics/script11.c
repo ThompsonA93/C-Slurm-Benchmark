@@ -19,7 +19,7 @@ int a[N];
  *      | sum += a[502]; 
  *  
  *              <  i  >
- * Distance:    <  -1  >
+ * Distance:    <  N/2  >
  * Direction:   <  >  >
  */
 void a11(){

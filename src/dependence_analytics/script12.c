@@ -16,10 +16,12 @@ int b[N][N];
  * i=2 | a[2] = a[3]
  * i=4 | a[4] = a[5]
  *  
- *              <  i  >
- * Distance:    <  *  >
- * Direction:   <  *  >
-
+ *              <  i   >
+ * Distance:    <  -1  >
+ * Direction:   <  >   >
+ *
+ * ALTERNATIVE:
+ * Referenced indezes never truly depend, since even index is written, uneven index is read.
  */
 void a12(){
     for(int i = 0; i < N-1; i+=2){

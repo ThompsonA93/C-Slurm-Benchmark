@@ -17,9 +17,9 @@ int b[N][N];
  * i=0 | b[0][8] = b[0+abs(8)][8] - a[0];
  * i=1 | b[1][8] = b[1+abs(8)][8] - a[1];
  * 
- *              < i, k >
- * Distance:    < *, 0 >
- * Direction:   < *, = > 
+ *              < i >
+ * Distance:    < * >
+ * Direction:   < * > 
  * 
  * If
  *  abs(k) = 0 <=> =

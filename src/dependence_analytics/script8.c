@@ -16,13 +16,10 @@ int b[N][N];
  * j=1 | b[42][1] = b[41][1]
  * j=2 | b[42][2] = b[41][2]
  * 
- *              < j, i >
- * Distance:    < 0, 1 >
- * Direction:   < =, < > 
+ *              < j >
+ * Distance:    < 0 >
+ * Direction:   < = > 
  * 
- * Output dep
- * Dist = 1
- * Dir = <
  */
 void a8(){
     int i = 42;

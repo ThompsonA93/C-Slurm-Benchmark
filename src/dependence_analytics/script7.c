@@ -16,13 +16,8 @@ int a[N];
  * i=2 | a[4*2] = a[2*2-1] <=> a[8] = a[3]
  * 
  *              < i >
- * Distance:    < 1 >
+ * Distance:    < 2*i+1 >
  * Direction:   < < >
- * 
- * i*4 > i*2-1 <=> write before read 
- * True dependency 
- * dist:        2*i+1
- * direction:   <
  */
 void a7(){
     for(int i = 0; i < N; i++){

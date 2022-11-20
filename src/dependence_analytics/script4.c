@@ -16,9 +16,9 @@ int b[N][N];
  * i=0 | a[0] = a[-1] + b[0][8]
  * i=1 | a[1] = a[0] + b[1][8]
  * 
- *              < i, k >
- * Distance:    < 1, * >
- * Direction:   < <, * > 
+ *              < i >
+ * Distance:    < 1 >
+ * Direction:   < < > 
  */
 void a4(){
     int k = 8;

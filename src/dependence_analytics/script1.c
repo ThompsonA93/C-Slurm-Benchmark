@@ -12,8 +12,7 @@ int a[N];
  *  i=1 | a[1] = 1 
  *  ...
  *
- * Distance:  < * >
- * Direction: < * > 
+ * There are no dependencies.
  */
 void a1(){
     for(int i = 0; i < N; i++){

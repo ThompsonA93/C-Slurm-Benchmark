@@ -22,11 +22,11 @@ int b[N][N];
  * i=2  | b[3][8] = a[3];
         |    a[2] = b[2][8];
  * 
- * S1: Anti-Dependency
+ * Array B: Anti-Dependency
  * Distance = -1
  * Direction = >
  * 
- * S2: True-Dependency
+ * Array A: True-Dependency
  * Distance = 1
  * Direction = <
  * 

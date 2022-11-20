@@ -28,8 +28,8 @@ int b[N][M];
  * Distance:    < 2, -2  >
  * Direction:   < <,  >  > 
  *
- * a.: True dep
- * b.: Anti dep
+ * a.: No dependency
+ * b.: Anti-Dependency
  */
 void a13(){
     int x = 12;

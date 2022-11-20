@@ -19,7 +19,7 @@ int b[N][N];
  * Distance:    < -1, 1  >
  * Direction:   <  >, <  > 
  * 
- * ALT:
+ * ALTERNATIVE:
  * i hat keine dependency weil gerade & ungerade angesprochen werden
  * True dependency mit J
  * Distance: < 0,1 >

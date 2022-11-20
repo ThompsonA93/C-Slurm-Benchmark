@@ -18,9 +18,8 @@ int function_call(){
  * Dependences:
  * i=0,j=0 | b[0][0] = 42
  * i=0,j=1 | b[0][1] = 42 
- * ...
- * Distance: < *, * >
- * Direction: < *, * > 
+ *
+ * There are no dependencies
  */
 void a2(){
     for(int i = 0; i < N; i++){

@@ -21,8 +21,8 @@ int a[N];
  * Direction:   < * > 
  * 
  * if
- *  k<=0    <=> True
- *  k>0     <=> Anti
+ *  k <= 0     <=> True
+ *  k >  0     <=> Anti
  */
 void a6(){
     int k = 8;
