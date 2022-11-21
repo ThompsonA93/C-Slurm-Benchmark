@@ -21,6 +21,8 @@ int a[N];
  *              <  i  >
  * Distance:    <  N/2  >
  * Direction:   <  >  >
+ * 
+ * Anti-Dependency with loop-carried True dependency
  */
 void a11(){
     int sum = 0;

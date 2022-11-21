@@ -23,6 +23,7 @@ int a[N][M][P];
  * Distance:    < 2, -2, 12  >
  * Direction:   < <,  >,  <  >  
  * 
+ * First index: Read then write, Anti-Dependency
  **/
 void a14(){
     for(int i = 2; i < N; i++){

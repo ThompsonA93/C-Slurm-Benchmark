@@ -29,8 +29,6 @@ void a2(){
     }
 }
 
-
-
 /**
  * Replace Loop header for loop L_0
  *      for(i = L; i < U; i+= S)

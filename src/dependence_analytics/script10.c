@@ -35,7 +35,8 @@ void a10(){
     int k = 8;
     for(int i = 0; i < N-1; i++){
         b[i+1][k] = a[i+1];
-        a[i] = b[i][k];
+        a[i] = b[i][k]; // b[i][k] is replacable by a[i]
+                        // Splitting loop is also possible
     }
 }
 

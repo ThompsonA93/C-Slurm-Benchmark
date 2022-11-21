@@ -30,6 +30,8 @@ int b[N][M];
  *
  * a.: No dependency
  * b.: Anti-Dependency
+ * 
+ * True dependency given i.
  */
 void a13(){
     int x = 12;

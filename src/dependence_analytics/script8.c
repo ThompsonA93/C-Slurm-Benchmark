@@ -20,6 +20,8 @@ int b[N][N];
  * Distance:    < 0 >
  * Direction:   < = > 
  * 
+ * No dependency given i and i-1 never correlate
+ * 
  */
 void a8(){
     int i = 42;
