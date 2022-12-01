@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <sys/time.h>
+#include <omp.h>
 
 #define MAX_ELEMENT_RANGE 100
 
@@ -52,6 +53,7 @@ void print_2d_array(int* arr, int x, int y){
 
 void multiply_matrices(){
     //printf("Multiplying matrices.\n");
+    #pragma omp parallel for schedule(static) num_threads(12)
     for(int i = 0; i < M; i++){
         for(int j = 0; j < P; j++){
             for(int k = 0; k < N; k++){

@@ -1,8 +1,8 @@
 DIJKSTRA_VERTICES=5			# Dijkstra
 SIEVE_MAX_VALUE=100			# Sieve
-MATRIX_OP_DIM_1=5			# Matrix multiplication, Gauss elimination
-MATRIX_OP_DIM_2=5			# Matrix multiplication, Gauss elimination
-MATRIX_OP_DIM_3=5			# Matrix multiplication
+MATRIX_OP_DIM_1=2000			# Matrix multiplication, Gauss elimination
+MATRIX_OP_DIM_2=2000		# Matrix multiplication, Gauss elimination
+MATRIX_OP_DIM_3=2000			# Matrix multiplication
 SORTING_ELEMENTS=100000		# All sorting algorithms
 
 help:
@@ -29,6 +29,13 @@ matmul: mkdirs
 	build/matrix_mult.out
 	gprof build/matrix_mult.out gmon.out > profiles/matrix_mult.log
 	sed -n '5,11p' < profiles/matrix_mult.log
+
+omp_matmul: mkdirs
+	gcc -pg -fopenmp -D M=$(MATRIX_OP_DIM_1) -D N=$(MATRIX_OP_DIM_2) -D P=$(MATRIX_OP_DIM_3) arithmetic/omp_matrix_mult.c -o build/omp_matrix_mult.out
+	build/omp_matrix_mult.out
+	gprof build/omp_matrix_mult.out gmon.out > profiles/omp_matrix_mult.log
+	sed -n '5,11p' < profiles/omp_matrix_mult.log
+
 
 gauss: mkdirs
 	gcc -pg -D M=$(MATRIX_OP_DIM_1) -D N=$(MATRIX_OP_DIM_2) arithmetic/gaus_elim.c -o build/gaus_elim.out
