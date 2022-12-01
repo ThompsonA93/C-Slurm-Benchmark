@@ -6,6 +6,8 @@
 #include "utils_1d_array.h"
 #include "utils_sort.h"
 #include "counting_sort.h"
+#include "omp_counting_sort.h"
+
 FILE *fp;
 int arr[MAX_ARRAY_ELEMENTS];
 
@@ -24,7 +26,7 @@ int main(void){
     gettimeofday(&begin, 0);
     
 
-    counting_sort(arr, MAX_ARRAY_ELEMENTS);
+    omp_counting_sort(arr, MAX_ARRAY_ELEMENTS);
 
     // Stop measuring time and calculate the elapsed time
     gettimeofday(&end, 0);

@@ -3,7 +3,7 @@ SIEVE_MAX_VALUE=100			# Sieve
 MATRIX_OP_DIM_1=2000			# Matrix multiplication, Gauss elimination
 MATRIX_OP_DIM_2=2000		# Matrix multiplication, Gauss elimination
 MATRIX_OP_DIM_3=2000			# Matrix multiplication
-SORTING_ELEMENTS=10		# All sorting algorithms
+SORTING_ELEMENTS=1000		# All sorting algorithms
 
 help:
 	@echo "Run project via make using command: all matmul gauss dijkstra sieve bubble bucket counting insertion selection quick clean"

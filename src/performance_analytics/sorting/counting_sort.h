@@ -21,6 +21,7 @@ void counting_sort(int arr[], int n){
     int count[max+1];
     int output[n];
 
+
     // Initialize count with all zeros. SegFaults if omitted
     for (int i = 0; i <= max; i++) {
         count[i] = 0;
