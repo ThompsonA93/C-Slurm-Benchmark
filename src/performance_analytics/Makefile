@@ -3,7 +3,7 @@ SIEVE_MAX_VALUE=100			# Sieve
 MATRIX_OP_DIM_1=5			# Matrix multiplication, Gauss elimination
 MATRIX_OP_DIM_2=5			# Matrix multiplication, Gauss elimination
 MATRIX_OP_DIM_3=5			# Matrix multiplication
-SORTING_ELEMENTS=300		# All sorting algorithms
+SORTING_ELEMENTS=100000		# All sorting algorithms
 
 help:
 	@echo "Run project via make using command: all matmul gauss dijkstra sieve bubble bucket counting insertion selection quick clean"
@@ -49,7 +49,7 @@ sieve: mkdirs
 	sed -n '5,9p' < profiles/eratostenes_sieve.log
 
 bubble: mkdirs
-	gcc -pg -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) sorting/bubble_sort.c -o build/bubble_sort.out
+	gcc -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) sorting/bubble_sort.c -o build/bubble_sort.out
 	build/bubble_sort.out
 	gprof build/bubble_sort.out gmon.out > profiles/bubble_sort.log
 	sed -n '5,13p' < profiles/bubble_sort.log

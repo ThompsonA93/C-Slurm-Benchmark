@@ -2,10 +2,12 @@
 #include <stdio.h>
 #include <time.h>
 #include <sys/time.h>
+#include <omp.h>
 
 #include "utils_1d_array.h"
 #include "utils_sort.h"
 #include "bubble_sort.h"
+#include "omp_bubble_sort.h"
 
 FILE *fp;
 int arr[MAX_ARRAY_ELEMENTS];
@@ -21,7 +23,7 @@ int main(void){
     struct timeval begin, end;
     gettimeofday(&begin, 0);
     
-    bubble_sort(arr, MAX_ARRAY_ELEMENTS);
+    omp_bubble_sort(arr, MAX_ARRAY_ELEMENTS);
 
     // Stop measuring time and calculate the elapsed time
     gettimeofday(&end, 0);
@@ -33,9 +35,9 @@ int main(void){
 
     int status = is_sorted(arr, MAX_ARRAY_ELEMENTS);
     if(status){
-        //printf("! Sorting array was successfull.\n");
+        printf("! Sorting array was successfull.\n");
     }else{
-        //printf("! Sorting array was not successfull.\n");
+        printf("! Sorting array was not successfull.\n");
     }
     
     fp = fopen("log/c_std.log", "a");
