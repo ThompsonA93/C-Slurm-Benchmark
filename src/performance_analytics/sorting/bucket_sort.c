@@ -6,6 +6,8 @@
 #include "utils_1d_array.h"
 #include "utils_sort.h"
 #include "bucket_sort.h"
+#include "omp_bucket_sort.h"
+
 FILE *fp;
 int arr[MAX_ARRAY_ELEMENTS];
 
@@ -21,7 +23,7 @@ int main(void){
     gettimeofday(&begin, 0);
     
 
-    bucket_sort(arr, MAX_ARRAY_ELEMENTS);
+    omp_bucket_sort(arr, MAX_ARRAY_ELEMENTS);
 
 
     // Stop measuring time and calculate the elapsed time
