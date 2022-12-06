@@ -3,7 +3,7 @@
 
 #include "utils_sort.h"
 #include <omp.h>
-
+#include <stdbool.h>
 /**
  * Implementation for simple bubble sort
  * @param arr as array to sort
@@ -12,18 +12,30 @@
 
 void omp_bubble_sort(int arr[], int n)
 {
-    #pragma omp parallel for schedule(static) num_threads(12)
-    for (int i = 0; i < n - 1; i++)
+	bool sorted = false;
+    while (!sorted)
     {
-        for (int j = 0; j < n - 1; j++)
+	sorted = true;
+    	#pragma omp parallel for schedule(static) default(none) shared(arr) shared(n)  reduction(&&:sorted) 
+        for (int j = 1; j < n - 1; j+=2)
         {
             if (arr[j] > arr[j + 1])  
             {
                 int t = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = t;
+		sorted = false;
             }
         }
+	#pragma omp parallel for schedule(static) reduction(&&:sorted)
+	for(int j = 0; j < n -1; j+=2){
+	   if (arr[j] > arr[j +1]){
+		int t = arr[j];
+     		arr[j] = arr[j + 1];
+		arr[j + 1] = t;
+		sorted = false;		
+	   }
+	}
     }
 }
 

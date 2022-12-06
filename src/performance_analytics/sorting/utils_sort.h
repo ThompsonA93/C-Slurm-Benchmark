@@ -1,5 +1,6 @@
 #ifndef UTILS_SORT
 #define UTILS_SORT
+#include "insertion_sort.h"
 
 /**
  * Swap 2 elements. Implements XOR-Swap
@@ -18,22 +19,16 @@ void swap(int *x, int *y)
  * @param n as array lenght
  * @return 1 if sorted, 0 if not sorted
  */
-int is_sorted(int arr[], int n)
+int is_sorted(int arr[], int orig[], int n)
 {
+	insertion_sort(orig,n);
+	for(int i = 0; i < n; i++){
+		if(arr[i] != orig[i]){
+			return 0;
+		}
 
-    for (int i = 0; i < n; i++)
-    {
-        if (i == n - 1)
-        {
-            return 1;
-        }
-
-        if (arr[i + 1] < arr[i])
-        {
-            return 0;
-        }
-    }
-    return 1;
+	}
+	return 1;
 }
 
 #endif

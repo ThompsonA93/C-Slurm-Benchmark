@@ -1,9 +1,10 @@
 DIJKSTRA_VERTICES=5			# Dijkstra
 SIEVE_MAX_VALUE=100			# Sieve
-MATRIX_OP_DIM_1=2000			# Matrix multiplication, Gauss elimination
-MATRIX_OP_DIM_2=2000		# Matrix multiplication, Gauss elimination
-MATRIX_OP_DIM_3=2000			# Matrix multiplication
-SORTING_ELEMENTS=1000		# All sorting algorithms
+MATRIX_OP_DIM_1=1000			# Matrix multiplication, Gauss elimination
+MATRIX_OP_DIM_2=1000		# Matrix multiplication, Gauss elimination
+MATRIX_OP_DIM_3=1000			# Matrix multiplication
+SORTING_ELEMENTS=75000		# All sorting algorithms
+THREADS=1
 
 help:
 	@echo "Run project via make using command: all matmul gauss dijkstra sieve bubble bucket counting insertion selection quick clean"

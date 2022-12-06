@@ -20,9 +20,9 @@
  * @attention '0' as array-parameter will cause error
  */
 void print_array(int arr[MAX_ARRAY_ELEMENTS], int x){
-    //printf("Printing array:\n\t");
+    printf("Printing array:\n\t");
     for(int i = 0; i < x; i++){
-        //printf("%d ", arr[i]);
+        printf("%d ", arr[i]);
     }
     //printf("\n");
 }
