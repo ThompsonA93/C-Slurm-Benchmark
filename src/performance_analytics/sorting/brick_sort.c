@@ -7,7 +7,7 @@
 
 #include "utils_1d_array.h"
 #include "utils_sort.h"
-#include "bubble_sort.h"
+#include "brick_sort.h"
 
 FILE *fp;
 int arr[MAX_ARRAY_ELEMENTS];
@@ -27,7 +27,7 @@ int main(void){
     struct timeval begin, end;
     gettimeofday(&begin, 0);
     
-    bubble_sort(arr, MAX_ARRAY_ELEMENTS);
+    brick_sort(arr, MAX_ARRAY_ELEMENTS);
 
     // Stop measuring time and calculate the elapsed time
     gettimeofday(&end, 0);
@@ -43,9 +43,13 @@ int main(void){
     }else{
         printf("! Sorting array was not successfull.\n");
     }
-    
+
+    const char* nthreads = getenv("OMP_NUM_THREADS");
+
+    printf("AAAAAAAAAA: %s", nthreads);
+
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Bubble Sort, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
+    fprintf(fp, "Brick Sort, %d, %s, %f, %d\n", MAX_ARRAY_ELEMENTS, nthreads, time_spent, status);
     fclose(fp);
 
 }
