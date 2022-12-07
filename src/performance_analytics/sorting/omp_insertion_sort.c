@@ -7,7 +7,7 @@
 
 #include "utils_1d_array.h"
 #include "utils_sort.h"
-#include "omp_selection_sort.h"
+#include "omp_insertion_sort.h"
 #include "quick_sort.h"
 
 FILE *fp;
@@ -30,7 +30,7 @@ int main(void){
     struct timeval begin, end;
     gettimeofday(&begin, 0);
     
-    omp_selection_sort(arr, MAX_ARRAY_ELEMENTS);
+    omp_insertion_sort(arr, MAX_ARRAY_ELEMENTS);
 
     // Stop measuring time and calculate the elapsed time
     gettimeofday(&end, 0);
@@ -47,7 +47,7 @@ int main(void){
     }
 
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "OMP Selection Sort, %d, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, OMP_THREADS, time_spent, status);
+    fprintf(fp, "OMP Insertion Sort, %d, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, OMP_THREADS, time_spent, status);
     fclose(fp);
 
 }

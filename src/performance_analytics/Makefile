@@ -10,7 +10,9 @@ help:
 	@echo "Run project via make using command: all matmul gauss dijkstra sieve bubble bucket counting insertion selection quick clean"
 	@echo "Always initialize running \"make mkdirs\""
 
-all: matmul gauss dijkstra sieve bubble bucket counting insertion selection quick omp_matmul brick omp_bucket omp_counting omp_selection
+all: mkdirs matmul gauss dijkstra sieve bubble bucket counting insertion selection quick
+
+all-omp: omp_matmul omp_brick omp_bucket omp_selection omp_insertion omp_counting
 
 clean:
 	rm -f *.out
@@ -27,12 +29,6 @@ matmul:
 	gcc -pg -D M=$(MATRIX_OP_DIM_1) -D N=$(MATRIX_OP_DIM_2) -D P=$(MATRIX_OP_DIM_3) arithmetic/matrix_mult.c -o build/matrix_mult.out
 	build/matrix_mult.out
 	gprof build/matrix_mult.out gmon.out > profiles/matrix_mult.log
-	tail -1 log/c_std.log
-
-omp_matmul:
-	gcc -pg -fopenmp -D M=$(MATRIX_OP_DIM_1) -D N=$(MATRIX_OP_DIM_2) -D P=$(MATRIX_OP_DIM_3) -D OMP_THREADS=$(THREADS) arithmetic/omp_matrix_mult.c -o build/omp_matrix_mult.out
-	build/omp_matrix_mult.out
-	gprof build/omp_matrix_mult.out gmon.out > profiles/omp_matrix_mult.log
 	tail -1 log/c_std.log
 
 gauss:
@@ -59,23 +55,10 @@ bubble:
 	gprof build/bubble_sort.out gmon.out > profiles/bubble_sort.log
 	tail -1 log/c_std.log
 
-brick:
-	gcc -pg -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) sorting/brick_sort.c -o build/brick_sort.out
-	build/brick_sort.out
-	gprof build/brick_sort.out gmon.out > profiles/brick_sort.log
-	tail -1 log/c_std.log
-
-
 bucket:
 	gcc -mcmodel=large -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) sorting/bucket_sort.c -o build/bucket_sort.out
 	build/bucket_sort.out
 	gprof build/bucket_sort.out gmon.out > profiles/bucket_sort.log
-	tail -1 log/c_std.log
-
-omp_bucket:
-	gcc -mcmodel=large -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) sorting/omp_bucket_sort.c -o build/omp_bucket_sort.out
-	build/omp_bucket_sort.out
-	gprof build/bucket_sort.out gmon.out > profiles/omp_bucket_sort.log
 	tail -1 log/c_std.log
 
 counting:
@@ -83,13 +66,6 @@ counting:
 	build/counting_sort.out
 	gprof build/counting_sort.out gmon.out > profiles/counting_sort.log
 	tail -1 log/c_std.log
-
-omp_counting:
-	gcc -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) sorting/omp_counting_sort.c -o build/omp_counting_sort.out
-	build/omp_counting_sort.out
-	gprof build/omp_counting_sort.out gmon.out > profiles/omp_counting_sort.log
-	tail -1 log/c_std.log
-
 
 insertion:
 	gcc -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) sorting/insertion_sort.c -o build/insertion_sort.out
@@ -107,4 +83,40 @@ quick:
 	gcc -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) sorting/quick_sort.c -o build/quick_sort.out
 	build/quick_sort.out
 	gprof build/quick_sort.out gmon.out > profiles/quick_sort.log
+	tail -1 log/c_std.log
+
+omp_matmul:
+	gcc -pg -fopenmp -D M=$(MATRIX_OP_DIM_1) -D N=$(MATRIX_OP_DIM_2) -D P=$(MATRIX_OP_DIM_3) -D OMP_THREADS=$(THREADS) arithmetic/omp_matrix_mult.c -o build/omp_matrix_mult.out
+	build/omp_matrix_mult.out
+	gprof build/omp_matrix_mult.out gmon.out > profiles/omp_matrix_mult.log
+	tail -1 log/c_std.log
+
+omp_brick:
+	gcc -pg -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) sorting/omp_brick_sort.c -o build/omp_brick_sort.out
+	build/omp_brick_sort.out
+	gprof build/omp_brick_sort.out gmon.out > profiles/omp_brick_sort.log
+	tail -1 log/c_std.log
+
+omp_bucket:
+	gcc -mcmodel=large -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) sorting/omp_bucket_sort.c -o build/omp_bucket_sort.out
+	build/omp_bucket_sort.out
+	gprof build/bucket_sort.out gmon.out > profiles/omp_bucket_sort.log
+	tail -1 log/c_std.log
+
+omp_counting:
+	gcc -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) sorting/omp_counting_sort.c -o build/omp_counting_sort.out
+	build/omp_counting_sort.out
+	gprof build/omp_counting_sort.out gmon.out > profiles/omp_counting_sort.log
+	tail -1 log/c_std.log
+
+omp_insertion:
+	gcc -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) sorting/omp_insertion_sort.c -o build/omp_insertion_sort.out
+	build/omp_insertion_sort.out
+	gprof build/omp_insertion_sort.out gmon.out > profiles/omp_insertion_sort.log
+	tail -1 log/c_std.log
+
+omp_selection:
+	gcc -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) sorting/omp_selection_sort.c -o build/omp_selection_sort.out
+	build/omp_selection_sort.out
+	gprof build/omp_selection_sort.out gmon.out > profiles/omp_selection_sort.log
 	tail -1 log/c_std.log

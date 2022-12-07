@@ -13,7 +13,7 @@
  * @param arr as array to sort
  * @param n as amount of elements in the array
  */
-void selection_sort(int arr[], int n)
+void omp_selection_sort(int arr[], int n)
 {
     int i, j, minimum;
     for (i = 0; i < n - 1; i++)

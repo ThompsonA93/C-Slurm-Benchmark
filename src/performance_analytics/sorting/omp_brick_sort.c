@@ -7,7 +7,7 @@
 
 #include "utils_1d_array.h"
 #include "utils_sort.h"
-#include "brick_sort.h"
+#include "omp_brick_sort.h"
 #include "quick_sort.h"
 
 FILE *fp;
@@ -47,7 +47,7 @@ int main(void){
     }
 
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Brick Sort, %d, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, OMP_THREADS, time_spent, status);
+    fprintf(fp, "OMP Brick Sort, %d, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, OMP_THREADS, time_spent, status);
     fclose(fp);
 
 }
