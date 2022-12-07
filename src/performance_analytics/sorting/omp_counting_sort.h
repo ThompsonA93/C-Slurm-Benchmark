@@ -10,7 +10,8 @@
 #endif
 
 /**
- * Implementation for simple counting sort
+ * Implementation for simple counting sort using OpenMP Pragmas
+ * TODO
  * @param arr as arr to sort
  * @param n as amount of elements in the arr
  */

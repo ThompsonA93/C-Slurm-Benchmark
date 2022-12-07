@@ -3,12 +3,6 @@
 
 #include "utils_sort.h"
 
-/** Amount of threads to use **/
-#ifndef OMP_THREADS
-#define OMP_THREADS 2
-#endif
-
-
 /**
  * Implementation for simple counting sort
  * @param arr as arr to sort

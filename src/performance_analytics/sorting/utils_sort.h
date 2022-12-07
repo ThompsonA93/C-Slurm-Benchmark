@@ -1,6 +1,5 @@
 #ifndef UTILS_SORT
 #define UTILS_SORT
-#include "insertion_sort.h"
 
 /**
  * Swap 2 elements. Implements XOR-Swap

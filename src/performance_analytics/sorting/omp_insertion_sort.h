@@ -1,5 +1,5 @@
-#ifndef INSERTION_SORT
-#define INSERTION_SORT
+#ifndef OMP_INSERTION_SORT
+#define OMP_INSERTION_SORT
 
 #include "utils_sort.h"
 
@@ -9,11 +9,11 @@
 #endif
 
 /**
- * Implementation for simple quick sort
+ * Implementation for simple insertion sort using OpenMP Pragmas
+ * TODO
  * @param arr as array to sort
  * @param n as amount of elements in the array
  */
-
 void omp_insertion_sort(int arr[], int n){
     int cur_el, j;
     for(int i = 1; i < n; i++){

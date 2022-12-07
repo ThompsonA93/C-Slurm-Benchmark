@@ -6,7 +6,6 @@
 #include "utils_1d_array.h"
 #include "utils_sort.h"
 #include "bucket_sort.h"
-#include "quick_sort.h"
 
 FILE *fp;
 int arr[MAX_ARRAY_ELEMENTS];

@@ -3,17 +3,12 @@
 
 #include "utils_sort.h"
 
-/** Amount of threads to use **/
-#ifndef OMP_THREADS
-#define OMP_THREADS 2
-#endif
 
 /**
- * Implementation for simple quick sort
+ * Implementation for simple insertion sort
  * @param arr as array to sort
  * @param n as amount of elements in the array
  */
-
 void insertion_sort(int arr[], int n){
     int cur_el, j;
     for(int i = 1; i < n; i++){

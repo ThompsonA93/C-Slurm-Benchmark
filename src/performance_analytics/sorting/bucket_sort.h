@@ -5,11 +5,6 @@
 #include "insertion_sort.h"
 #include "utils_1d_array.h"
 
-/** Amount of threads to use **/
-#ifndef OMP_THREADS
-#define OMP_THREADS 2
-#endif
-
 /**
  * Approximates square root for given value
  * @see https://en.wikipedia.org/wiki/Integer_square_root#Algorithm_using_linear_search
@@ -31,7 +26,6 @@ int isqrt(int value)
  * @param arr as array to sort
  * @param n as amount of elements in the array
  * 
- * Parallelization: https://www.sjsu.edu/people/robert.chun/courses/cs159/s3/N.pdf
  */
 void bucket_sort(int arr[], int n)
 {

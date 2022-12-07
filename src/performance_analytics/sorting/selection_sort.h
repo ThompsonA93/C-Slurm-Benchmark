@@ -1,12 +1,7 @@
-#ifndef BUCKET_SORT
-#define BUCKET_SORT
+#ifndef SELECTION_SORT
+#define SELECTION_SORT
 
 #include "utils_sort.h"
-
-/** Amount of threads to use **/
-#ifndef OMP_THREADS
-#define OMP_THREADS 2
-#endif
 
 /**
  * Implementation for simple selection sort

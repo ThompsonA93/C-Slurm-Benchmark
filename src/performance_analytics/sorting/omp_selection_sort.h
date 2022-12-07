@@ -1,5 +1,5 @@
-#ifndef BUCKET_SORT
-#define BUCKET_SORT
+#ifndef OMP_SELECTION_SORT
+#define OMP_SELECTION_SORT
 
 #include "utils_sort.h"
 
@@ -9,7 +9,8 @@
 #endif
 
 /**
- * Implementation for simple selection sort
+ * Implementation for simple selection sort using OpenMP Pragmas
+ * TODO
  * @param arr as array to sort
  * @param n as amount of elements in the array
  */
