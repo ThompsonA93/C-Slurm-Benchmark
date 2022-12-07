@@ -9,10 +9,16 @@
 | GNU Make | 4.2.1 |
 
 ## Todo
+- Parallelization
+  - [X] Matrix Multiplication
+  - [X] Odd-Even sort
+  - [ ] Bucket sort
+  - [ ] Counting sort
+  - [ ] Insertion sort
+  - [ ] Selection sort
 - Dependence Analytics
-  - [ ] Theory
-  - [ ] Normalisation
-    - [ ] Fix segFaulting scripts (See changelog)
+  - [X] Theory
+  - [X] Normalisation
 - Performance Analytics
   - [x] Matrix Multiplication
   - [x] Gaussian Elimination

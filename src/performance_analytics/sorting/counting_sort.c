@@ -6,7 +6,7 @@
 #include "utils_1d_array.h"
 #include "utils_sort.h"
 #include "counting_sort.h"
-#include "omp_counting_sort.h"
+#include "quick_sort.h"
 
 FILE *fp;
 int arr[MAX_ARRAY_ELEMENTS];
@@ -24,9 +24,8 @@ int main(void){
     // Start measuring time
     struct timeval begin, end;
     gettimeofday(&begin, 0);
-    
 
-    omp_counting_sort(arr, MAX_ARRAY_ELEMENTS);
+    counting_sort(arr, MAX_ARRAY_ELEMENTS);
 
     // Stop measuring time and calculate the elapsed time
     gettimeofday(&end, 0);
@@ -35,16 +34,17 @@ int main(void){
     double time_spent = seconds + microseconds*1e-6;
 
 
-    print_array(arr, MAX_ARRAY_ELEMENTS);
+    //print_array(arr, MAX_ARRAY_ELEMENTS);
     
+    //print_array(arr, MAX_ARRAY_ELEMENTS);
     int status = is_sorted(arr, MAX_ARRAY_ELEMENTS);
     if(status){
-        //printf("! Sorting array was successfull.\n");
+        printf("! Sorting array was successfull.\n");
     }else{
-        //printf("! Sorting array was not successfull.\n");
+        printf("! Sorting array was not successfull.\n");
     }
     
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Counting Sort, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
+    fprintf(fp, "Counting Sort, %d, 1, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
     fclose(fp);
 }

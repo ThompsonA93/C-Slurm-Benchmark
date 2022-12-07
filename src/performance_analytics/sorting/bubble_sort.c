@@ -20,9 +20,6 @@ int main(void){
     randomize_array(arr, MAX_ARRAY_ELEMENTS);
     //print_array(arr, MAX_ARRAY_ELEMENTS);
     
-    int orig[MAX_ARRAY_ELEMENTS];
-    memcpy(orig, arr, MAX_ARRAY_ELEMENTS*sizeof(int));
-
     // Start measuring time
     struct timeval begin, end;
     gettimeofday(&begin, 0);
@@ -37,7 +34,7 @@ int main(void){
 
     //print_array(arr, MAX_ARRAY_ELEMENTS);
 
-    int status = is_sorted(arr,orig, MAX_ARRAY_ELEMENTS);
+    int status = is_sorted(arr, MAX_ARRAY_ELEMENTS);
     if(status){
         printf("! Sorting array was successfull.\n");
     }else{
@@ -45,7 +42,7 @@ int main(void){
     }
     
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Bubble Sort, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
+    fprintf(fp, "Bubble Sort, %d, 1, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
     fclose(fp);
 
 }

@@ -6,7 +6,7 @@
 #include "utils_1d_array.h"
 #include "utils_sort.h"
 #include "bucket_sort.h"
-#include "omp_bucket_sort.h"
+#include "quick_sort.h"
 
 FILE *fp;
 int arr[MAX_ARRAY_ELEMENTS];
@@ -21,10 +21,8 @@ int main(void){
     // Start measuring time
     struct timeval begin, end;
     gettimeofday(&begin, 0);
-    
 
-    omp_bucket_sort(arr, MAX_ARRAY_ELEMENTS);
-
+    bucket_sort(arr, MAX_ARRAY_ELEMENTS);
 
     // Stop measuring time and calculate the elapsed time
     gettimeofday(&end, 0);
@@ -42,6 +40,6 @@ int main(void){
     }
     
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Bucket Sort, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
+    fprintf(fp, "Bucket Sort, %d, 1, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
     fclose(fp);
 }

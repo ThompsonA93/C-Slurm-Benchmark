@@ -41,6 +41,6 @@ int main(void){
     }
     
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "Insertion Sort, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
+    fprintf(fp, "Insertion Sort, %d, 1, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
     fclose(fp);
 }
