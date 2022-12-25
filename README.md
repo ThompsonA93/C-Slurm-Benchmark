@@ -12,8 +12,8 @@
 - Parallelization
   - [X] Matrix Multiplication
   - [X] Odd-Even sort
-  - [ ] Bucket sort
-  - [ ] Counting sort
+  - [X] Bucket sort
+  - [X] Counting sort
   - [ ] Insertion sort
   - [ ] Selection sort
 - Dependence Analytics

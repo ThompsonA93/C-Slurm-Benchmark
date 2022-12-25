@@ -32,7 +32,7 @@ int omp_isqrt(int value)
  * TODO
  * @param arr as array to sort
  * @param n as amount of elements in the array
- * 
+ *
  * Parallelization: https://www.sjsu.edu/people/robert.chun/courses/cs159/s3/N.pdf
  */
 void omp_bucket_sort(int arr[], int n)
@@ -62,6 +62,7 @@ void omp_bucket_sort(int arr[], int n)
 
     // printf("bucket_count: %d,  max: %d\n", bucket_count, max);
     //  Create buckets
+
     for (int i = 0; i < n; i++)
     {
         int bucket_index = (bucket_count * arr[i]) / (max);
@@ -69,7 +70,8 @@ void omp_bucket_sort(int arr[], int n)
         bucket_index_count[bucket_index]++;
         ////printf("Inserting value  %d, into bucket %d, bucket size new: %d\n", arr[i], ((bucket_count * arr[i]) / (max)), bucket_index_count[bucket_index]);
     }
-#pragma omp parallel for schedule(static) num_threads(12)
+
+    #pragma omp parallel for schedule(static) 
     for (int i = 0; i < bucket_count; i++)
     {
         insertion_sort(buckets[i], bucket_index_count[i]);
