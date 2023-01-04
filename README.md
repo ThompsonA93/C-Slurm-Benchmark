@@ -12,13 +12,13 @@
 - Parallelization
   - [X] Matrix Multiplication
   - [X] Odd-Even sort
-  - [X] Bucket sort
+  - [ ] Bucket sort
+    - [ ] Segmentation fault upon execution
   - [X] Counting sort
   - [X] Insertion sort
   - [X] Selection sort
 - Dependence Analytics
-  - [X] Theory
-  - [X] Normalisation
+  - [ ] Required rewriting
 - Performance Analytics
   - [x] Matrix Multiplication
   - [x] Gaussian Elimination
@@ -31,7 +31,9 @@
   - [x] Selection sort
   - [x] Quick sort
  
-
 # Misc. Information
 ## Installation & Execution 
 Refer to __install.sh and __run.sh respectively.
+
+## Bulk testing
+Reconfigure and execute __autoTest.sh
