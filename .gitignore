@@ -1,7 +1,18 @@
+# C files
 build/
 gprof/
 log/
 profiles/
-
 gmon.out
+
+# VSCode custom setups (.vscode)
 .vscode
+
+# TeX (documentation/reports)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc

@@ -1,5 +1,6 @@
 # Mi 04 Jän 2023 22:31:55 CET
 - Restructure repository following closed issue
+- Added report templates
 
 # Sa 19 Nov 2022 10:20:46 CET
 - Fix executables and workflows
