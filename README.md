@@ -14,8 +14,8 @@
   - [X] Odd-Even sort
   - [X] Bucket sort
   - [X] Counting sort
-  - [ ] Insertion sort
-  - [ ] Selection sort
+  - [X] Insertion sort
+  - [X] Selection sort
 - Dependence Analytics
   - [X] Theory
   - [X] Normalisation

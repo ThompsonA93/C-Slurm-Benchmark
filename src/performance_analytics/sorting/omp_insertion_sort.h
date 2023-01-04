@@ -2,6 +2,7 @@
 #define OMP_INSERTION_SORT
 
 #include "utils_sort.h"
+#include <omp.h>
 
 /** Amount of threads to use **/
 #ifndef OMP_THREADS
