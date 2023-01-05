@@ -1,7 +1,6 @@
 # C files
 build/
 gprof/
-log/
 profiles/
 gmon.out
 

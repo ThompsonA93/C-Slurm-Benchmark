@@ -1,0 +1,282 @@
+OMP Matrix multiplication, 250x250x250, 1, 0.083931, 1
+OMP Matrix multiplication, 500x500x500, 1, 0.670873, 1
+OMP Matrix multiplication, 750x750x750, 1, 2.262531, 1
+OMP Matrix multiplication, 1000x1000x1000, 1, 5.386497, 1
+OMP Matrix multiplication, 1250x1250x1250, 1, 10.481312, 1
+OMP Matrix multiplication, 1500x1500x1500, 1, 18.036298, 1
+OMP Matrix multiplication, 1750x1750x1750, 1, 30.132275, 1
+OMP Matrix multiplication, 2000x2000x2000, 1, 47.300525, 1
+OMP Matrix multiplication, 250x250x250, 2, 0.042069, 1
+OMP Matrix multiplication, 500x500x500, 2, 0.340902, 1
+OMP Matrix multiplication, 750x750x750, 2, 1.128455, 1
+OMP Matrix multiplication, 1000x1000x1000, 2, 2.727898, 1
+OMP Matrix multiplication, 1250x1250x1250, 2, 5.185890, 1
+OMP Matrix multiplication, 1500x1500x1500, 2, 9.117562, 1
+OMP Matrix multiplication, 1750x1750x1750, 2, 15.897889, 1
+OMP Matrix multiplication, 2000x2000x2000, 2, 23.936402, 1
+OMP Matrix multiplication, 250x250x250, 4, 0.021917, 1
+OMP Matrix multiplication, 500x500x500, 4, 0.170243, 1
+OMP Matrix multiplication, 750x750x750, 4, 0.572218, 1
+OMP Matrix multiplication, 1000x1000x1000, 4, 1.330941, 1
+OMP Matrix multiplication, 1250x1250x1250, 4, 2.622776, 1
+OMP Matrix multiplication, 1500x1500x1500, 4, 4.565926, 1
+OMP Matrix multiplication, 1750x1750x1750, 4, 7.415666, 1
+OMP Matrix multiplication, 2000x2000x2000, 4, 11.846684, 1
+OMP Matrix multiplication, 250x250x250, 8, 0.011868, 1
+OMP Matrix multiplication, 500x500x500, 8, 0.086333, 1
+OMP Matrix multiplication, 750x750x750, 8, 0.288012, 1
+OMP Matrix multiplication, 1000x1000x1000, 8, 0.678523, 1
+OMP Matrix multiplication, 1250x1250x1250, 8, 1.311820, 1
+OMP Matrix multiplication, 1500x1500x1500, 8, 2.296822, 1
+OMP Matrix multiplication, 1750x1750x1750, 8, 3.726810, 1
+OMP Matrix multiplication, 2000x2000x2000, 8, 5.927307, 1
+OMP Matrix multiplication, 250x250x250, 12, 0.008558, 1
+OMP Matrix multiplication, 500x500x500, 12, 0.057889, 1
+OMP Matrix multiplication, 750x750x750, 12, 0.294654, 1
+OMP Matrix multiplication, 1000x1000x1000, 12, 0.697784, 1
+OMP Matrix multiplication, 1250x1250x1250, 12, 1.081396, 1
+OMP Matrix multiplication, 1500x1500x1500, 12, 2.289110, 1
+OMP Matrix multiplication, 1750x1750x1750, 12, 3.671471, 1
+OMP Matrix multiplication, 2000x2000x2000, 12, 4.439622, 1
+OMP Matrix multiplication, 250x250x250, 16, 0.023610, 1
+OMP Matrix multiplication, 500x500x500, 16, 0.077038, 1
+OMP Matrix multiplication, 750x750x750, 16, 0.310776, 1
+OMP Matrix multiplication, 1000x1000x1000, 16, 0.669149, 1
+OMP Matrix multiplication, 1250x1250x1250, 16, 1.155945, 1
+OMP Matrix multiplication, 1500x1500x1500, 16, 1.762362, 1
+OMP Matrix multiplication, 1750x1750x1750, 16, 2.996819, 1
+OMP Matrix multiplication, 2000x2000x2000, 16, 4.103733, 1
+OMP Brick Sort, 25000, 1, 2.183825, 1
+OMP Brick Sort, 50000, 1, 9.127257, 1
+OMP Brick Sort, 75000, 1, 20.996577, 1
+OMP Brick Sort, 100000, 1, 37.413841, 1
+OMP Brick Sort, 125000, 1, 58.498266, 1
+OMP Brick Sort, 150000, 1, 84.389483, 1
+OMP Brick Sort, 175000, 1, 114.643085, 1
+OMP Brick Sort, 200000, 1, 149.993463, 1
+OMP Brick Sort, 25000, 2, 2.230021, 1
+OMP Brick Sort, 50000, 2, 9.222610, 1
+OMP Brick Sort, 75000, 2, 20.999395, 1
+OMP Brick Sort, 100000, 2, 37.475324, 1
+OMP Brick Sort, 125000, 2, 57.819128, 1
+OMP Brick Sort, 150000, 2, 83.408500, 1
+OMP Brick Sort, 175000, 2, 114.932896, 1
+OMP Brick Sort, 200000, 2, 147.899176, 1
+OMP Brick Sort, 25000, 4, 2.189450, 1
+OMP Brick Sort, 50000, 4, 9.198589, 1
+OMP Brick Sort, 75000, 4, 20.994606, 1
+OMP Brick Sort, 100000, 4, 37.529565, 1
+OMP Brick Sort, 125000, 4, 58.651688, 1
+OMP Brick Sort, 150000, 4, 84.377167, 1
+OMP Brick Sort, 175000, 4, 114.734948, 1
+OMP Brick Sort, 200000, 4, 149.528787, 1
+OMP Brick Sort, 25000, 8, 2.198613, 1
+OMP Brick Sort, 50000, 8, 9.291098, 1
+OMP Brick Sort, 75000, 8, 20.728214, 1
+OMP Brick Sort, 100000, 8, 37.371011, 1
+OMP Brick Sort, 125000, 8, 58.648587, 1
+OMP Brick Sort, 150000, 8, 84.391271, 1
+OMP Brick Sort, 175000, 8, 113.423304, 1
+OMP Brick Sort, 200000, 8, 149.863374, 1
+OMP Brick Sort, 25000, 12, 2.231522, 1
+OMP Brick Sort, 50000, 12, 9.108102, 1
+OMP Brick Sort, 75000, 12, 21.026943, 1
+OMP Brick Sort, 100000, 12, 37.292237, 1
+OMP Brick Sort, 125000, 12, 58.546288, 1
+OMP Brick Sort, 150000, 12, 84.436381, 1
+OMP Brick Sort, 175000, 12, 112.898623, 1
+OMP Brick Sort, 200000, 12, 150.354656, 1
+OMP Brick Sort, 25000, 16, 2.233950, 1
+OMP Brick Sort, 50000, 16, 9.251352, 1
+OMP Brick Sort, 75000, 16, 20.870475, 1
+OMP Brick Sort, 100000, 16, 37.509004, 1
+OMP Brick Sort, 125000, 16, 58.629954, 1
+OMP Brick Sort, 150000, 16, 84.168330, 1
+OMP Brick Sort, 175000, 16, 114.649083, 1
+OMP Brick Sort, 200000, 16, 149.987717, 1
+OMP Bucket Sort, 25000, 1, 1.340761, 0
+OMP Bucket Sort, 50000, 1, 2.219557, 0
+OMP Bucket Sort, 75000, 1, 3.289340, 0
+OMP Bucket Sort, 100000, 1, 0.820395, 0
+OMP Bucket Sort, 125000, 1, 0.556476, 0
+OMP Bucket Sort, 150000, 1, 1.354307, 0
+OMP Bucket Sort, 175000, 1, 1.788957, 0
+OMP Bucket Sort, 200000, 1, 0.524686, 0
+OMP Bucket Sort, 25000, 2, 0.277668, 0
+OMP Bucket Sort, 50000, 2, 2.705880, 0
+OMP Bucket Sort, 75000, 2, 3.266842, 0
+OMP Bucket Sort, 100000, 2, 0.654060, 0
+OMP Bucket Sort, 125000, 2, 0.395583, 0
+OMP Bucket Sort, 150000, 2, 4.631668, 0
+OMP Bucket Sort, 175000, 2, 0.462529, 0
+OMP Bucket Sort, 200000, 2, 4.087767, 0
+OMP Bucket Sort, 25000, 4, 0.193069, 0
+OMP Bucket Sort, 50000, 4, 2.075320, 0
+OMP Bucket Sort, 75000, 4, 1.652026, 0
+OMP Bucket Sort, 100000, 4, 0.992170, 0
+OMP Bucket Sort, 125000, 4, 3.928721, 0
+OMP Bucket Sort, 150000, 4, 1.894524, 0
+OMP Bucket Sort, 175000, 4, 3.697732, 0
+OMP Bucket Sort, 200000, 4, 1.544339, 0
+OMP Bucket Sort, 25000, 8, 1.657956, 0
+OMP Bucket Sort, 50000, 8, 2.683687, 0
+OMP Bucket Sort, 75000, 8, 3.284312, 0
+OMP Bucket Sort, 100000, 8, 0.493699, 0
+OMP Bucket Sort, 125000, 8, 4.226797, 0
+OMP Bucket Sort, 150000, 8, 1.798619, 0
+OMP Bucket Sort, 175000, 8, 0.055491, 0
+OMP Bucket Sort, 200000, 8, 2.620617, 0
+OMP Bucket Sort, 25000, 12, 1.906706, 0
+OMP Bucket Sort, 50000, 12, 0.358877, 0
+OMP Bucket Sort, 75000, 12, 1.822927, 0
+OMP Bucket Sort, 100000, 12, 2.389990, 0
+OMP Bucket Sort, 125000, 12, 4.225766, 0
+OMP Bucket Sort, 150000, 12, 2.192536, 0
+OMP Bucket Sort, 175000, 12, 5.004804, 0
+OMP Bucket Sort, 200000, 12, 0.457379, 0
+OMP Bucket Sort, 25000, 16, 1.960987, 0
+OMP Bucket Sort, 50000, 16, 0.577398, 0
+OMP Bucket Sort, 75000, 16, 0.478266, 0
+OMP Bucket Sort, 100000, 16, 0.192795, 0
+OMP Bucket Sort, 125000, 16, 0.744661, 0
+OMP Bucket Sort, 150000, 16, 0.122755, 0
+OMP Bucket Sort, 175000, 16, 0.478718, 0
+OMP Bucket Sort, 200000, 16, 0.188003, 0
+OMP Counting Sort, 25000, 0.045322, 1
+OMP Counting Sort, 50000, 0.036664, 1
+OMP Counting Sort, 75000, 0.036838, 1
+OMP Counting Sort, 100000, 0.065349, 1
+OMP Counting Sort, 125000, 0.080151, 1
+OMP Counting Sort, 150000, 0.037317, 1
+OMP Counting Sort, 175000, 0.108788, 1
+OMP Counting Sort, 200000, 0.037102, 1
+OMP Counting Sort, 25000, 0.036022, 1
+OMP Counting Sort, 50000, 0.030823, 1
+OMP Counting Sort, 75000, 0.080349, 1
+OMP Counting Sort, 100000, 0.042638, 1
+OMP Counting Sort, 125000, 0.036965, 1
+OMP Counting Sort, 150000, 0.082952, 1
+OMP Counting Sort, 175000, 0.037181, 1
+OMP Counting Sort, 200000, 0.037075, 1
+OMP Counting Sort, 25000, 0.053911, 1
+OMP Counting Sort, 50000, 0.060580, 1
+OMP Counting Sort, 75000, 0.049935, 1
+OMP Counting Sort, 100000, 0.036948, 1
+OMP Counting Sort, 125000, 0.036808, 1
+OMP Counting Sort, 150000, 0.143348, 1
+OMP Counting Sort, 175000, 0.075410, 1
+OMP Counting Sort, 200000, 0.039468, 1
+OMP Counting Sort, 25000, 0.036713, 1
+OMP Counting Sort, 50000, 0.036305, 1
+OMP Counting Sort, 75000, 0.042689, 1
+OMP Counting Sort, 100000, 0.036692, 1
+OMP Counting Sort, 125000, 0.138702, 1
+OMP Counting Sort, 150000, 0.043260, 1
+OMP Counting Sort, 175000, 0.101373, 1
+OMP Counting Sort, 200000, 0.037212, 1
+OMP Counting Sort, 25000, 0.076666, 1
+OMP Counting Sort, 50000, 0.042731, 1
+OMP Counting Sort, 75000, 0.069399, 1
+OMP Counting Sort, 100000, 0.041841, 1
+OMP Counting Sort, 125000, 0.036940, 1
+OMP Counting Sort, 150000, 0.037110, 1
+OMP Counting Sort, 175000, 0.037090, 1
+OMP Counting Sort, 200000, 0.016552, 1
+OMP Counting Sort, 25000, 0.036036, 1
+OMP Counting Sort, 50000, 0.036705, 1
+OMP Counting Sort, 75000, 0.036910, 1
+OMP Counting Sort, 100000, 0.036722, 1
+OMP Counting Sort, 125000, 0.052181, 1
+OMP Counting Sort, 150000, 0.036911, 1
+OMP Counting Sort, 175000, 0.031425, 1
+OMP Counting Sort, 200000, 0.037336, 1
+OMP Insertion Sort, 25000, 1, 0.968000, 1
+OMP Insertion Sort, 50000, 1, 3.764131, 1
+OMP Insertion Sort, 75000, 1, 8.283366, 1
+OMP Insertion Sort, 100000, 1, 14.759770, 1
+OMP Insertion Sort, 125000, 1, 23.355295, 1
+OMP Insertion Sort, 150000, 1, 32.799562, 1
+OMP Insertion Sort, 175000, 1, 45.475264, 1
+OMP Insertion Sort, 200000, 1, 58.346962, 1
+OMP Insertion Sort, 25000, 2, 0.231418, 1
+OMP Insertion Sort, 50000, 2, 0.924851, 1
+OMP Insertion Sort, 75000, 2, 2.128548, 1
+OMP Insertion Sort, 100000, 2, 3.748531, 1
+OMP Insertion Sort, 125000, 2, 5.659786, 1
+OMP Insertion Sort, 150000, 2, 8.361249, 1
+OMP Insertion Sort, 175000, 2, 11.072054, 1
+OMP Insertion Sort, 200000, 2, 14.712188, 1
+OMP Insertion Sort, 25000, 4, 0.064806, 1
+OMP Insertion Sort, 50000, 4, 0.240493, 1
+OMP Insertion Sort, 75000, 4, 0.516620, 1
+OMP Insertion Sort, 100000, 4, 0.897162, 1
+OMP Insertion Sort, 125000, 4, 1.408753, 1
+OMP Insertion Sort, 150000, 4, 2.027636, 1
+OMP Insertion Sort, 175000, 4, 2.782026, 1
+OMP Insertion Sort, 200000, 4, 3.608482, 1
+OMP Insertion Sort, 25000, 8, 0.021966, 1
+OMP Insertion Sort, 50000, 8, 0.066301, 1
+OMP Insertion Sort, 75000, 8, 0.146693, 1
+OMP Insertion Sort, 100000, 8, 0.241685, 1
+OMP Insertion Sort, 125000, 8, 0.389619, 1
+OMP Insertion Sort, 150000, 8, 0.530733, 1
+OMP Insertion Sort, 175000, 8, 0.782277, 1
+OMP Insertion Sort, 200000, 8, 0.947600, 1
+OMP Insertion Sort, 25000, 12, 0.050140, 1
+OMP Insertion Sort, 50000, 12, 0.035940, 1
+OMP Insertion Sort, 75000, 12, 0.069725, 1
+OMP Insertion Sort, 100000, 12, 0.249332, 1
+OMP Insertion Sort, 125000, 12, 0.230107, 1
+OMP Insertion Sort, 150000, 12, 0.314499, 1
+OMP Insertion Sort, 25000, 16, 0.019256, 1
+OMP Insertion Sort, 50000, 16, 0.041324, 1
+OMP Insertion Sort, 75000, 16, 0.093174, 1
+OMP Insertion Sort, 100000, 16, 0.101280, 1
+OMP Selection Sort, 25000, 1, 1.099789, 1
+OMP Selection Sort, 50000, 1, 2.881807, 1
+OMP Selection Sort, 75000, 1, 2.641006, 1
+OMP Selection Sort, 100000, 1, 10.687872, 1
+OMP Selection Sort, 125000, 1, 7.932666, 1
+OMP Selection Sort, 150000, 1, 5.952246, 0
+OMP Selection Sort, 175000, 1, 4.832673, 1
+OMP Selection Sort, 200000, 1, 12.650504, 1
+OMP Selection Sort, 25000, 2, 7.273809, 1
+OMP Selection Sort, 50000, 2, 2.372650, 1
+OMP Selection Sort, 75000, 2, 6.074013, 1
+OMP Selection Sort, 100000, 2, 11.226862, 1
+OMP Selection Sort, 125000, 2, 10.546741, 1
+OMP Selection Sort, 150000, 2, 5.714517, 1
+OMP Selection Sort, 175000, 2, 10.227559, 1
+OMP Selection Sort, 200000, 2, 5.686386, 1
+OMP Selection Sort, 25000, 4, 0.708796, 1
+OMP Selection Sort, 50000, 4, 0.833104, 1
+OMP Selection Sort, 75000, 4, 1.916130, 1
+OMP Selection Sort, 100000, 4, 2.352708, 1
+OMP Selection Sort, 125000, 4, 3.098848, 1
+OMP Selection Sort, 150000, 4, 5.512219, 1
+OMP Selection Sort, 175000, 4, 6.171174, 1
+OMP Selection Sort, 200000, 4, 33.132497, 1
+OMP Selection Sort, 25000, 8, 1.387398, 1
+OMP Selection Sort, 50000, 8, 3.150224, 1
+OMP Selection Sort, 75000, 8, 1.444477, 0
+OMP Selection Sort, 100000, 8, 3.102379, 1
+OMP Selection Sort, 125000, 8, 2.997417, 1
+OMP Selection Sort, 150000, 8, 6.905654, 1
+OMP Selection Sort, 175000, 8, 10.180948, 1
+OMP Selection Sort, 200000, 8, 6.969456, 1
+OMP Selection Sort, 25000, 12, 1.584698, 1
+OMP Selection Sort, 50000, 12, 2.465866, 1
+OMP Selection Sort, 75000, 12, 1.506352, 1
+OMP Selection Sort, 100000, 12, 4.681095, 1
+OMP Selection Sort, 125000, 12, 5.341434, 1
+OMP Selection Sort, 150000, 12, 6.142192, 1
+OMP Selection Sort, 175000, 12, 18.326347, 1
+OMP Selection Sort, 200000, 12, 6.515974, 1
+OMP Selection Sort, 25000, 16, 1.510647, 1
+OMP Selection Sort, 50000, 16, 4.949849, 1
+OMP Selection Sort, 75000, 16, 2.939240, 1
+OMP Selection Sort, 100000, 16, 2.271510, 1
+OMP Selection Sort, 125000, 16, 3.637594, 1
+OMP Selection Sort, 150000, 16, 8.894188, 1
+OMP Selection Sort, 175000, 16, 5.017245, 1
+OMP Selection Sort, 200000, 16, 10.619552, 1
