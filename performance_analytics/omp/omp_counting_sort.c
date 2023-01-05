@@ -51,6 +51,6 @@ int main(void){
     }
     
     fp = fopen("log/c_std.log", "a");
-    fprintf(fp, "OMP Counting Sort, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
+    fprintf(fp, "OMP Counting Sort, %d, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, OMP_THREADS, time_spent, status);
     fclose(fp);
 }
