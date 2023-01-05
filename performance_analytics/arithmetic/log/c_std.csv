@@ -1,27 +1,27 @@
-Matrix multiplication, 250x250x250, 0.084761, 1
-Matrix multiplication, 500x500x500, 0.674519, 1
-Matrix multiplication, 750x750x750, 2.269763, 1
-Matrix multiplication, 1000x1000x1000, 5.377331, 1
-Matrix multiplication, 1250x1250x1250, 10.537694, 1
-Matrix multiplication, 1500x1500x1500, 18.089249, 1
-Matrix multiplication, 1750x1750x1750, 30.408583, 1
-Matrix multiplication, 2000x2000x2000, 47.772817, 1
-Gaussian Elimination, 250x250, 0.101977, 1
-Gaussian Elimination, 500x500, 0.819333, 1
-Dijkstra, 2500x2500, 0.051276, 1
-Dijkstra, 5000x5000, 0.218780, 1
-Dijkstra, 7500x7500, 0.599993, 1
-Dijkstra, 10000x10000, 1.136495, 1
-Dijkstra, 12500x12500, 1.960320, 1
-Dijkstra, 15000x15000, 2.776571, 1
-Dijkstra, 17500x17500, 3.588415, 1
-Dijkstra, 20000x20000, 4.324504, 1
-Sieve of eratostenes, 100000, 1.045535, 1
-Sieve of eratostenes, 150000, 2.264047, 1
-Sieve of eratostenes, 200000, 3.923598, 1
-Sieve of eratostenes, 250000, 6.003503, 1
-Sieve of eratostenes, 300000, 8.517100, 1
-Sieve of eratostenes, 350000, 11.297828, 1
-Sieve of eratostenes, 400000, 14.556507, 1
-Sieve of eratostenes, 450000, 18.194146, 1
-Sieve of eratostenes, 500000, 22.609138, 1
+Matrix multiplication, 250x250x250, 0.083336, 1
+Matrix multiplication, 500x500x500, 0.676446, 1
+Matrix multiplication, 750x750x750, 2.269510, 1
+Matrix multiplication, 1000x1000x1000, 5.300449, 1
+Matrix multiplication, 1250x1250x1250, 10.492742, 1
+Matrix multiplication, 1500x1500x1500, 18.187403, 1
+Matrix multiplication, 1750x1750x1750, 29.821098, 1
+Matrix multiplication, 2000x2000x2000, 47.620496, 1
+Gaussian Elimination, 250x250, 0.103370, 1
+Gaussian Elimination, 500x500, 0.821416, 1
+Dijkstra, 2500x2500, 0.052039, 1
+Dijkstra, 5000x5000, 0.222414, 1
+Dijkstra, 7500x7500, 0.622886, 1
+Dijkstra, 10000x10000, 1.055454, 1
+Dijkstra, 12500x12500, 1.941402, 1
+Dijkstra, 15000x15000, 2.727909, 1
+Dijkstra, 17500x17500, 3.595030, 1
+Dijkstra, 20000x20000, 4.373049, 1
+Sieve of eratostenes, 100000, 1.043899, 1
+Sieve of eratostenes, 150000, 2.262486, 1
+Sieve of eratostenes, 200000, 3.860816, 1
+Sieve of eratostenes, 250000, 5.977740, 1
+Sieve of eratostenes, 300000, 8.481799, 1
+Sieve of eratostenes, 350000, 11.278165, 1
+Sieve of eratostenes, 400000, 14.786069, 1
+Sieve of eratostenes, 450000, 18.453647, 1
+Sieve of eratostenes, 500000, 22.554543, 1
