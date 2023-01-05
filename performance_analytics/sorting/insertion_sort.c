@@ -41,7 +41,7 @@ int main(void){
         //printf("! Sorting array was not successfull.\n");
     }
     
-    fp = fopen("log/c_std.log", "a");
+    fp = fopen("log/c_std.csv", "a");
     fprintf(fp, "Insertion Sort, %d, 1, %f, %d\n", MAX_ARRAY_ELEMENTS, time_spent, status);
     fclose(fp);
 }

@@ -49,8 +49,11 @@ int main(void){
     }else{
         printf("! Sorting array was not successfull.\n");
     }
-    
-    fp = fopen("log/c_std.log", "a");
+
+    //print_array(orig, MAX_ARRAY_ELEMENTS);
+    //print_array(arr, MAX_ARRAY_ELEMENTS);
+
+    fp = fopen("log/c_std.csv", "a");
     fprintf(fp, "OMP Bucket Sort, %d, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, OMP_THREADS, time_spent, status);
     fclose(fp);
 }

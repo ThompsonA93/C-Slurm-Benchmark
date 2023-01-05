@@ -85,7 +85,7 @@ int main(void){
     double time_spent = seconds + microseconds*1e-6;
 
 
-    fp = fopen("log/c_std.log", "a");
+    fp = fopen("log/c_std.csv", "a");
     fprintf(fp, "Matrix multiplication, %dx%dx%d, %f, %d\n", M,N,P , time_spent, 1);  // If at this point, likely was successfull hence 1.
     fclose(fp);
 

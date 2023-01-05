@@ -67,7 +67,7 @@ int main(void){
         //printf("\n");
     }
 
-    fp = fopen("log/c_std.log", "a");
+    fp = fopen("log/c_std.csv", "a");
     fprintf(fp, "Gaussian Elimination, %dx%d, %f, %d\n", M, N, time_spent, 1);
     fclose(fp);
 

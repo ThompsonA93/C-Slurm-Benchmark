@@ -69,8 +69,8 @@ void omp_bucket_sort(int arr[], int n)
     //printf("bucket_count: %d,  max: %d\n", bucket_count, max);
 
     // Create buckets
-    #pragma omp parallel for schedule(static)
-    // Initialization is parallelizable
+    // @dev: parallelizing this section creates weird errors (print output array + original array) 
+    //      #pragma omp parallel for schedule(static)
     for (int i = 0; i < n; i++)
     {
         int bucket_index = (bucket_count * arr[i]) / (max);
@@ -79,17 +79,39 @@ void omp_bucket_sort(int arr[], int n)
         ////printf("Inserting value  %d, into bucket %d, bucket size new: %d\n", arr[i], ((bucket_count * arr[i]) / (max)), bucket_index_count[bucket_index]);
     }
 
+
+    /* @dev: Original code
+    // Cannot parallelize outer loop since array keeps changing given insertion_sort
     int arr_index = 0;
 
-
-    // Cannot parallelize outer loop since array keeps changing given insertion_sort
     for (int i = 0; i < bucket_count; i++)
     {
         insertion_sort(buckets[i], bucket_index_count[i]);
 
         // Can parallelize inner loop
+        //@dev: parallelizing this section creates weird errors (print output array + original array) 
         #pragma omp parallel for schedule(static)
         for (int j = 0; j < bucket_index_count[i]; j++)
+        {
+            arr[arr_index] = buckets[i][j];
+            arr_index++;
+        }
+    }
+    */
+
+    /* @dev: Restructured code to fit parallelized execution
+    *  @author: orazefabian
+    */
+    #pragma omp parallel for schedule(static) 
+    for (int i = 0; i < bucket_count; i++)
+    {
+        insertion_sort(buckets[i], bucket_index_count[i]);
+    }
+
+    int arr_index = 0;
+    for (int i = 0; i < bucket_count; i++)
+    {
+        for (int j = 0; j < bucket_index_count[i]; j++) // critical region
         {
             arr[arr_index] = buckets[i][j];
             arr_index++;

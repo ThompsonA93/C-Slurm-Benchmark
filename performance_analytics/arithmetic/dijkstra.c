@@ -121,7 +121,7 @@ int main(){
     long microseconds = end.tv_usec - begin.tv_usec;
     double time_spent = seconds + microseconds*1e-6;
 
-    fp = fopen("log/c_std.log", "a");
+    fp = fopen("log/c_std.csv", "a");
     fprintf(fp, "Dijkstra, %dx%d, %f, %d\n", VERTICE, VERTICE, time_spent, 1);
     fclose(fp);
 

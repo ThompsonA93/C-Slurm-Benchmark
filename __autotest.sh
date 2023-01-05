@@ -37,7 +37,6 @@ for elements in 100000 150000 200000 250000 300000 350000 400000 450000 500000
 do
     (cd arithmetic && make SIEVE_MAX_VALUE=$elements sieve)
 done
-mv performance_analytics/arithmetic/log/c_std.log performance_analytics/arithmetic/log/c_std.csv
 
 echo "! Executing sorting performance tests"
 sleep 3
@@ -73,7 +72,6 @@ for elements in 25000 50000 75000 100000 125000 150000 175000 200000
 do
     (cd sorting && make SORTING_ELEMENTS=$elements quick)
 done 
-mv performance_analytics/sorting/log/c_std.log performance_analytics/sorting/log/c_std.csv
 
 echo "! Executing OMP Performance tests"
 sleep 3
@@ -126,4 +124,3 @@ do
     (cd omp && make THREADS=$threads SORTING_ELEMENTS=$elements selection)
 done
 done
-mv performance_analytics/omp/log/c_std.log performance_analytics/omp/log/c_std.csv

@@ -47,7 +47,7 @@ int main(void){
         printf("! Sorting array was not successfull.\n");
     }
 
-    fp = fopen("log/c_std.log", "a");
+    fp = fopen("log/c_std.csv", "a");
     fprintf(fp, "OMP Selection Sort, %d, %d, %f, %d\n", MAX_ARRAY_ELEMENTS, OMP_THREADS, time_spent, status);
     fclose(fp);
 
