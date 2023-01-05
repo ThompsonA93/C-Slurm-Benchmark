@@ -4,7 +4,7 @@
 #include <omp.h>
 
 #include "../sorting/insertion_sort.h"
-#include "../utils/utils_1d_array.h"
+#include "../utils/utils_sort.h"
 #include "../utils/utils_sort.h"
 
 /** Amount of threads to use **/
@@ -30,40 +30,47 @@ int omp_isqrt(int value)
 
 /**
  * Implementation for simple bucket sort using OpenMP Pragmas
- * TODO
  * @param arr as array to sort
  * @param n as amount of elements in the array
  *
- * Parallelization: https://www.sjsu.edu/people/robert.chun/courses/cs159/s3/N.pdf
  */
 void omp_bucket_sort(int arr[], int n)
 {
 
+    // Todo :: Transform to for and use omp?
     int bucket_count = (omp_isqrt(n));
     int bucket_interval = n / bucket_count;
-
-    // Increase offset in order not to lose any values
     while (bucket_count * bucket_interval < n)
     {
         bucket_interval += 1;
     }
 
-    int buckets[bucket_count][n]; // how should be best assign the size of each bucket??
+    int buckets[bucket_count][bucket_interval*2]; // how should be best assign the size of each bucket??
     int bucket_index_count[bucket_count];
-    for (int i = 0; i < bucket_count; i++)
+    
+    // Iteration to set 0 is parallelizable
+    #pragma omp parallel for schedule(static) 
+    for (int i = 0; i < bucket_count; i++){
         bucket_index_count[i] = 0;
+    }
 
+    
     int max = arr[0];
+    // Searching and updating value to max can be parallelized - we only write to max
+    #pragma omp parallel for schedule(static) 
     for (int i = 1; i < n; i++)
     {
-        if (arr[i] > max)
+        if (arr[i] > max){
             max = arr[i];
+        }
     }
     max++;
 
-    // printf("bucket_count: %d,  max: %d\n", bucket_count, max);
-    //  Create buckets
+    //printf("bucket_count: %d,  max: %d\n", bucket_count, max);
 
+    // Create buckets
+    #pragma omp parallel for schedule(static)
+    // Initialization is parallelizable
     for (int i = 0; i < n; i++)
     {
         int bucket_index = (bucket_count * arr[i]) / (max);
@@ -72,16 +79,17 @@ void omp_bucket_sort(int arr[], int n)
         ////printf("Inserting value  %d, into bucket %d, bucket size new: %d\n", arr[i], ((bucket_count * arr[i]) / (max)), bucket_index_count[bucket_index]);
     }
 
-    #pragma omp parallel for schedule(static) 
+    int arr_index = 0;
+
+
+    // Cannot parallelize outer loop since array keeps changing given insertion_sort
     for (int i = 0; i < bucket_count; i++)
     {
         insertion_sort(buckets[i], bucket_index_count[i]);
-    }
 
-    int arr_index = 0;
-    for (int i = 0; i < bucket_count; i++)
-    {
-        for (int j = 0; j < bucket_index_count[i]; j++) // critical region
+        // Can parallelize inner loop
+        #pragma omp parallel for schedule(static)
+        for (int j = 0; j < bucket_index_count[i]; j++)
         {
             arr[arr_index] = buckets[i][j];
             arr_index++;
