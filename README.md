@@ -12,8 +12,7 @@
 - Parallelization
   - [X] Matrix Multiplication
   - [X] Odd-Even sort
-  - [ ] Bucket sort
-    - [ ] Segmentation fault upon execution
+  - [X] Bucket sort
   - [X] Counting sort
   - [X] Insertion sort
   - [X] Selection sort

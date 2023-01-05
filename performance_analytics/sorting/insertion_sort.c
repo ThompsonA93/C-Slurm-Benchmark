@@ -14,9 +14,9 @@ int arr[MAX_ARRAY_ELEMENTS];
 int main(void){
     srand(time(NULL));  // Initialization for randomization process
                         // Should only be called once.
-    print_array(arr, MAX_ARRAY_ELEMENTS);
+    //print_array(arr, MAX_ARRAY_ELEMENTS);
     randomize_array(arr, MAX_ARRAY_ELEMENTS);
-    print_array(arr, MAX_ARRAY_ELEMENTS);
+    //print_array(arr, MAX_ARRAY_ELEMENTS);
 
 
     // Start measuring time
@@ -32,8 +32,7 @@ int main(void){
     long microseconds = end.tv_usec - begin.tv_usec;
     double time_spent = seconds + microseconds*1e-6;
 
-
-    print_array(arr, MAX_ARRAY_ELEMENTS);
+    //print_array(arr, MAX_ARRAY_ELEMENTS);
     
     int status = is_sorted(arr, MAX_ARRAY_ELEMENTS);
     if(status){
