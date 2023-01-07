@@ -1,0 +1,27 @@
+Matrix multiplication, 250x250x250, 0.083328, 1
+Matrix multiplication, 500x500x500, 0.678112, 1
+Matrix multiplication, 750x750x750, 2.271244, 1
+Matrix multiplication, 1000x1000x1000, 5.396622, 1
+Matrix multiplication, 1250x1250x1250, 10.530757, 1
+Matrix multiplication, 1500x1500x1500, 18.321015, 1
+Matrix multiplication, 1750x1750x1750, 29.625076, 1
+Matrix multiplication, 2000x2000x2000, 47.614645, 1
+Gaussian Elimination, 250x250, 0.102186, 1
+Gaussian Elimination, 500x500, 0.807172, 1
+Dijkstra, 2500x2500, 0.051129, 1
+Dijkstra, 5000x5000, 0.219053, 1
+Dijkstra, 7500x7500, 0.549953, 1
+Dijkstra, 10000x10000, 1.128445, 1
+Dijkstra, 12500x12500, 1.861211, 1
+Dijkstra, 15000x15000, 2.783576, 1
+Dijkstra, 17500x17500, 3.569560, 1
+Dijkstra, 20000x20000, 4.342231, 1
+Sieve of eratostenes, 100000, 1.045252, 1
+Sieve of eratostenes, 150000, 2.266056, 1
+Sieve of eratostenes, 200000, 3.863907, 1
+Sieve of eratostenes, 250000, 5.983993, 1
+Sieve of eratostenes, 300000, 8.509220, 1
+Sieve of eratostenes, 350000, 11.509846, 1
+Sieve of eratostenes, 400000, 14.800855, 1
+Sieve of eratostenes, 450000, 18.273062, 1
+Sieve of eratostenes, 500000, 22.211740, 1
