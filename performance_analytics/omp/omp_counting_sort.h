@@ -31,7 +31,7 @@ void omp_counting_sort(int arr[], int n)
     int output[n];
 
 
-    // Initialize count with all zeros. SegFaults if omitted
+    // Initialize count with all zeros
     #pragma omp parallel for schedule(static)
     for (int i = 0; i <= max; i++) {
         count[i] = 0;

@@ -263,3 +263,4 @@ OMP Selection Sort, 100000, 8, 2.079098, 1
 OMP Selection Sort, 125000, 8, 5.609046, 1
 OMP Selection Sort, 150000, 8, 28.757704, 1
 OMP Selection Sort, 175000, 8, 9.797945, 1
+Bubble Sort, 25000, 1, 0.312916, 1

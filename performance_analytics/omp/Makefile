@@ -29,8 +29,14 @@ matmul:
 	gprof build/omp_matrix_mult.out gmon.out > profiles/omp_matrix_mult.log
 	tail -1 log/c_std.csv
 
+bubble:
+	gcc -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) omp_bubble_sort.c -o build/omp_bubble_sort.out
+	build/omp_bubble_sort.out
+	gprof build/omp_bubble_sort.out gmon.out > profiles/brick_sort.log
+	tail -1 log/c_std.csv
+
 brick:
-	gcc -pg -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) omp_brick_sort.c -o build/brick_sort.out
+	gcc -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) omp_brick_sort.c -o build/brick_sort.out
 	build/brick_sort.out
 	gprof build/brick_sort.out gmon.out > profiles/brick_sort.log
 	tail -1 log/c_std.csv
