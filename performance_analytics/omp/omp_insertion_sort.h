@@ -18,6 +18,21 @@
  */
 void omp_insertion_sort(int arr[], int n)
 {
+
+    int cur_el, j;
+
+    // Not parallelizable
+    //#pragma omp parallel for schedule(static)
+    for(int i = 1; i < n; i++){
+        cur_el = arr[i];
+        for(j = i-1; j >= 0 && arr[j] > cur_el; ){
+            arr[j+1] = arr[j];
+            j = j-1;
+        }
+        arr[j+1] = cur_el;
+    }
+    
+    /*
     int bucket_count = OMP_THREADS;
     int bucket_interval = n / bucket_count;
 
@@ -79,6 +94,7 @@ void omp_insertion_sort(int arr[], int n)
             arr_index++;
         }
     }
+    */
 }
 
 #endif

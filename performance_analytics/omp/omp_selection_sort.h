@@ -22,8 +22,8 @@ void omp_selection_sort(int arr[], int n)
     {
         minimum = i;
 
-        // Seems to work: 0.55 -> 0.15 on 25000 elements
-        #pragma omp parallel for
+        // Must use reduction using struct !
+        #pragma omp parallel for schedule(static) reduction(=:minimum)
         for (j = i + 1; j < n; j++)
         {
             if (arr[minimum] > arr[j]){

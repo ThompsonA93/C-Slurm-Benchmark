@@ -3,8 +3,10 @@ SIEVE_MAX_VALUE=100			# Sieve
 MATRIX_OP_DIM_1=250		# Matrix multiplication, Gauss elimination
 MATRIX_OP_DIM_2=250		# Matrix multiplication, Gauss elimination
 MATRIX_OP_DIM_3=250		# Matrix multiplication
-SORTING_ELEMENTS=25000		# All sorting algorithms
-THREADS=2					# OMP Threads
+
+
+SORTING_ELEMENTS=50000		# All sorting algorithms
+THREADS=8					# OMP Threads
 
 help:
 	@echo "! Run project via make using command: all mkdirs matmul brick bucket selection insertion counting clean"
