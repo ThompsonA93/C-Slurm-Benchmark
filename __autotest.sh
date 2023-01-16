@@ -22,3 +22,4 @@ do
     (cd omp && make THREADS=$threads SORTING_ELEMENTS=$elements selection)
 done
 done
+
