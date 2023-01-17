@@ -16,6 +16,10 @@
   - [X] Counting sort
   - [X] Insertion sort
   - [X] Selection sort
+  - [ ] Gaussion elimination
+  - [ ] Dijkstra
+  - [ ] Sieve of Eratosthenes
+  - [ ] Quick sort
 - Dependence Analytics
   - [ ] Required rewriting
 - Performance Analytics
