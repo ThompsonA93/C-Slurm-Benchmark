@@ -6,7 +6,7 @@ MATRIX_OP_DIM_3=250		# Matrix multiplication
 
 
 SORTING_ELEMENTS=50000		# All sorting algorithms
-THREADS=8					# OMP Threads
+THREADS=2					# OMP Threads
 
 help:
 	@echo "! Run project via make using command: all mkdirs matmul brick bucket selection insertion counting clean"
@@ -65,4 +65,16 @@ selection:
 	gcc -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) omp_selection_sort.c -o build/selection_sort.out
 	build/selection_sort.out
 	gprof build/selection_sort.out gmon.out > profiles/selection_sort.log
+	tail -1 log/c_std.csv
+
+quick:
+	gcc -mcmodel=large -pg -fopenmp -D MAX_ARRAY_ELEMENTS=$(SORTING_ELEMENTS) -D OMP_THREADS=$(THREADS) omp_quick_sort.c -o build/quick_sort.out
+	build/quick_sort.out
+	gprof build/quick_sort.out gmon.out > profiles/quick_sort.log
+	tail -1 log/c_std.csv
+
+sieve:
+	gcc -mcmodel=large -pg -fopenmp -D SIEVE_MAX_VALUE=$(SIEVE_MAX_VALUE) -D OMP_THREADS=$(THREADS) omp_sieve.c -o build/omp_sieve.out
+	build/omp_sieve.out
+	gprof build/omp_sieve.out gmon.out > profiles/omp_sieve.log
 	tail -1 log/c_std.csv

@@ -17,9 +17,9 @@ echo "! Executing OMP Performance tests"
 
 for threads in 1 2 4 8
 do
-for elements in 50000 100000 150000 200000
+for elements in 100000000 100000000 100000000 100000000 200000000 200000000 200000000 200000000
 do
-    (cd omp && make THREADS=$threads SORTING_ELEMENTS=$elements selection)
+    (cd omp && make THREADS=$threads SIEVE_MAX_VALUE=$elements sieve)
 done
 done
 
