@@ -3,7 +3,7 @@ gauss:
 	./gaus_elim.o
 
 sieve:
-	gcc -fopenmp sieve.c -o sieve.o
+	gcc -mcmodel=large -fopenmp sieve.c -o sieve.o
 	./sieve.o
 
 clean:
