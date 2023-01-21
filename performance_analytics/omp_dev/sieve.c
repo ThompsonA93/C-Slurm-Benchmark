@@ -32,7 +32,7 @@ int main(void){
     sieve_parallel();
     int res = test_equality();
 
-    printf("! Gauss success: %d\n", res);
+    printf("! Sieve success: %d\n", res);
     if(res != 0){
         fp = fopen("log/c_std.csv", "a");
         fprintf(fp, "Sieve of Erastothenes error: Parallel and Sequential results differ.");
