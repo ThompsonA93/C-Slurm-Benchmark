@@ -5,8 +5,14 @@
 // Set 1 to use printer
 #define DEBUG 0
 
-#define NUM_THREADS 8
-#define DIM 1000000000
+#ifndef THREADS
+#define THREADS 1
+#endif
+
+#ifndef DIM
+#define DIM 10
+#endif
+
 #define MAX_ELEMENT_RANGE INT_MAX
 
 FILE *fp;
@@ -24,8 +30,8 @@ int test_equality();
  * @note: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
  */
 int main(void){
-    omp_set_num_threads(NUM_THREADS);
-    printf("! Utilizing %d threads\n", NUM_THREADS);
+    omp_set_num_threads(THREADS);
+    printf("! Utilizing %d threads\n", THREADS);
 
     initialize();
     sieve_sequential();
@@ -151,7 +157,7 @@ void sieve_parallel(){
 
     double time = omp_get_wtime() - start_time;
     fp = fopen("log/c_std.csv", "a");
-    fprintf(fp, "Sieve of Erastothenes, %d, %d, %f\n", DIM, NUM_THREADS, time);
+    fprintf(fp, "Sieve of Erastothenes, %d, %d, %f\n", DIM, THREADS, time);
     fclose(fp);
 
     printf("! Executed parallelized sieve: %f\n", time);

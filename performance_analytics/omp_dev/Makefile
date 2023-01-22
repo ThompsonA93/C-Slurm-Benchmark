@@ -6,7 +6,7 @@ gauss:
 	./gauss.o
 
 sieve:
-	gcc -mcmodel=large -fopenmp sieve.c -o sieve.o
+	gcc -mcmodel=large -fopenmp -DTHREADS=$(THREADS) -DDIM=$(DIM) sieve.c -o sieve.o
 	./sieve.o
 
 quick:
