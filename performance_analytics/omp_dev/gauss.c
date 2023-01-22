@@ -2,12 +2,19 @@
 #include <stdio.h>
 #include <limits.h>
 #include <time.h>
+#include <stdlib.h>
 
 // Set 1 to use printer
 #define DEBUG 1
 
-#define NUM_THREADS 2
+#ifndef THREADS
+#define THREADS 1
+#endif
+
+#ifndef DIM
 #define DIM 2
+#endif
+
 #define MAX_ELEMENT_RANGE INT_MAX
 
 FILE *fp;
@@ -24,8 +31,8 @@ int test_equality();
  */
 int main(void)
 {
-    omp_set_num_threads(NUM_THREADS);
-    printf("! Utilizing %d threads\n", NUM_THREADS);
+    omp_set_num_threads(THREADS);
+    printf("! Utilizing %d threads\n", THREADS);
 
     srand(time(NULL)); // Initialization, should only be called once.
 
@@ -58,7 +65,7 @@ void initialize()
     {
         for (int j = 0; j < DIM; j++)
         {
-            int r = rand() % 20 + 1; // Returns a pseudo-random integer between 0 and RAND_MAX.
+            int r = rand() % 9 + 1; // Returns a pseudo-random integer between 0 and RAND_MAX.
             a_seq[i][j] = r;
             a_par[i][j] = r;
             if (DEBUG)
@@ -66,6 +73,23 @@ void initialize()
         }
     }
     test_equality();
+}
+
+
+/**
+ * Calculates least common divisor
+*/
+int lcm(int val1, int val2){
+    int count = 1, gcd = 0;
+    int low = (val1 < val2) ? val1 : val2;
+
+    while(count <= low){
+        if(val1 % count == 0 && val2 % count == 0){
+            gcd = count;
+        }
+        count++;
+    }
+    return val1 * val2 / gcd;
 }
 
 /**
@@ -78,17 +102,23 @@ void gauss_sequential()
 
 
     // FIXME :: I just don't fucking know
-    for (int i = 0; i < DIM - 1; i++)
+    for (int i = 0; i < DIM; i++)
     {
-        for (int j = i; j < DIM; j++)
+        for (int j = 0; j < DIM; j++)
         {
-            int ratio = a_seq[j][i] / a_seq[i][i];
-            printf("\tCalculating ratio from %d / %d = %d == %d = Ratio\n", a_seq[j][i], a_seq[i][i], a_seq[j][i] / a_seq[i][i], ratio);
-            for (int k = i; k < DIM; k++)
-            {
-                printf("\tSetting %d at %d %d to %d\n", a_seq[j][k], j, k, a_seq[j][k] - (ratio * a_seq[i][k]));
-                a_seq[j][k] = a_seq[j][k] - (ratio * a_seq[i][k]);
+            int pivot;
+            printf("\t[%d][%d] = %d\n", i, j, a_seq[i][j]);
+
+            if(i == j){
+                pivot = a_seq[i][j];
+                printf("\t[%d][%d] Selected Pivot: %d\n", i, j, a_seq[i][j]);
             }
+            // Case 1 -- Below Pivot
+            for(int k = i+1; k < DIM; k++){
+                int factor = lcm(a_seq[i][j], a_seq[k][j]);
+                printf("\t\t[%d][%d] Eliminating on %d with lcm of %d\n", k, j, a_seq[k][j], factor);
+            }
+
         }
     }
 
@@ -113,7 +143,7 @@ void gauss_parallel()
 
     double time = omp_get_wtime() - start_time;
     fp = fopen("log/c_std.csv", "a");
-    fprintf(fp, "Gauss, %d, %d, %f\n", DIM, NUM_THREADS, time);
+    fprintf(fp, "Gauss, %d, %d, %f\n", DIM, THREADS, time);
     fclose(fp);
 
     printf("! Executed parallelized gauss: %f\n", time);
