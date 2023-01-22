@@ -1,3 +1,6 @@
+THREADS=1
+DIM=100
+
 gauss:
 	gcc -mcmodel=large -fopenmp gauss.c -o gauss.o
 	./gauss.o
@@ -7,7 +10,7 @@ sieve:
 	./sieve.o
 
 quick:
-	gcc -mcmodel=large -fopenmp quick.c -o quick.o
+	gcc -mcmodel=large -fopenmp -DTHREADS=$(THREADS) -DDIM=$(DIM) quick.c -o quick.o
 	./quick.o
 
 clean:

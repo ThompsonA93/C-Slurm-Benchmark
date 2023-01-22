@@ -1,14 +1,19 @@
 #include <omp.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <limits.h>
 #include <time.h>
 
 // Set 1 to use printer
-#define DEBUG 1
+#define DEBUG 0
 
-#define NUM_THREADS 3
-#define DIM 11
-#define MAX_ELEMENT_RANGE INT_MAX
+#ifndef THREADS
+#define THREADS 2
+#endif
+
+#ifndef DIM
+#define DIM 25
+#endif
 
 FILE *fp;
 int a_seq[DIM];
@@ -19,13 +24,15 @@ void quick_sequential();
 void quick_parallel();
 int test_equality();
 
+
+static int chunksize = 10;
 /**
  * @note: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
  */
 int main(void)
 {
-    omp_set_num_threads(NUM_THREADS);
-    printf("! Utilizing %d threads\n", NUM_THREADS);
+    omp_set_num_threads(THREADS);
+    printf("! Utilizing %d threads over %d elements\n", THREADS, DIM);
 
     initialize();
 
@@ -36,26 +43,11 @@ int main(void)
     printf("! Executed sequential quicksort: %f\n", time);
 
     start_time = omp_get_wtime();
-
+    chunksize = DIM / THREADS;
     #pragma omp parallel
     {
-        int id = omp_get_thread_num();
-        int nthrds = omp_get_num_threads();
-
-        int datachunk = DIM / nthrds;
-        int overhead = DIM - datachunk*nthrds;
-
-        printf("\t#%d from %d threads running over dataset of %d to %d\n", id, nthrds, id*datachunk, id*datachunk+datachunk);
-        printf("\tAppending overhead of remaining %d to last thread #%d\n", overhead, NUM_THREADS);
-        
-        int low = id*datachunk;
-        int high = id*datachunk+datachunk;
-
-        if(id == NUM_THREADS-1){
-            high += overhead;
-        }
-
-        quick_parallel(a_par, low, high);
+        #pragma omp single
+        quick_parallel(a_par, 0, DIM - 1);
     }
 
     time = omp_get_wtime() - start_time;
@@ -72,7 +64,7 @@ int main(void)
     else
     {
         fp = fopen("log/c_std.csv", "a");
-        fprintf(fp, "Quicksort, %d, %d, %f\n", DIM, NUM_THREADS, time);
+        fprintf(fp, "Quicksort, %d, %d, %f\n", DIM, THREADS, time);
         fclose(fp);
     }
 
@@ -134,12 +126,29 @@ void quick_sequential(int arr[], int low, int high)
 
 void quick_parallel(int arr[], int low, int high)
 {
+    /*
     if (low < high)
     {
         int pt = partition(arr, low, high);
-        quick_parallel(arr, low, pt - 1);
-        quick_parallel(arr, pt + 1, high);
+        #pragma omp parallel sections
+        {
+            #pragma omp section
+            quick_sequential(arr, low, pt - 1);
+            #pragma omp section
+            quick_sequential(arr, pt + 1, high);
+        }
     }
+    */
+    if (low < high)
+    {
+        int pt = partition(arr, low, high);
+        #pragma omp task shared(arr) if(high-low > chunksize)
+        quick_sequential(arr, low, pt - 1);
+        #pragma omp task shared(arr) if(high-low > chunksize)
+        quick_sequential(arr, pt + 1, high);
+    }
+
+
 }
 
 /**
