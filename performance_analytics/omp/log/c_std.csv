@@ -191,4 +191,21 @@ Sieve of eratostenes, 100000000, 8, 1.013807, 1
 Sieve of eratostenes, 200000000, 8, 1.732163, 1
 Sieve of eratostenes, 200000000, 8, 1.411175, 1
 Sieve of eratostenes, 200000000, 8, 1.832866, 1
-Sieve of eratostenes, 200000000, 8, 1.763671, 1
+Sieve of eratostenes, 200000000, 8, 1.763671, 
+
+OMP Quick Sort, 100000, 1, 0.148792, 1
+OMP Quick Sort, 200000, 1, 0.595623, 1
+OMP Quick Sort, 400000, 1, 2.293862, 1
+OMP Quick Sort, 800000, 1, 9.108288, 1
+OMP Quick Sort, 100000, 2, 0.071324, 1
+OMP Quick Sort, 200000, 2, 0.296930, 1
+OMP Quick Sort, 400000, 2, 0.942653, 1
+OMP Quick Sort, 800000, 2, 3.556852, 1
+OMP Quick Sort, 100000, 4, 0.053236, 1
+OMP Quick Sort, 200000, 4, 0.153941, 1
+OMP Quick Sort, 400000, 4, 0.558553, 1
+OMP Quick Sort, 800000, 4, 2.161361, 1
+OMP Quick Sort, 100000, 8, 0.024558, 1
+OMP Quick Sort, 200000, 8, 0.099277, 1
+OMP Quick Sort, 400000, 8, 0.428160, 1
+OMP Quick Sort, 800000, 8, 1.573679, 1
