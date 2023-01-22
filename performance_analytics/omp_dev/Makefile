@@ -1,8 +1,8 @@
 THREADS=1
-DIM=100
+DIM=2
 
 gauss:
-	gcc -mcmodel=large -fopenmp gauss.c -o gauss.o
+	gcc -mcmodel=large -fopenmp -DTHREADS=$(THREADS) -DDIM=$(DIM) gauss.c -o gauss.o
 	./gauss.o
 
 sieve:

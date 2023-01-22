@@ -8,11 +8,11 @@
 #define DEBUG 0
 
 #ifndef THREADS
-#define THREADS 2
+#define THREADS 1
 #endif
 
 #ifndef DIM
-#define DIM 25
+#define DIM 10
 #endif
 
 FILE *fp;
@@ -23,7 +23,6 @@ void initialize();
 void quick_sequential();
 void quick_parallel();
 int test_equality();
-
 
 static int chunksize = 10;
 /**
@@ -143,9 +142,9 @@ void quick_parallel(int arr[], int low, int high)
     {
         int pt = partition(arr, low, high);
         #pragma omp task shared(arr) if(high-low > chunksize)
-        quick_sequential(arr, low, pt - 1);
+        quick_parallel(arr, low, pt - 1);
         #pragma omp task shared(arr) if(high-low > chunksize)
-        quick_sequential(arr, pt + 1, high);
+        quick_parallel(arr, pt + 1, high);
     }
 
 
