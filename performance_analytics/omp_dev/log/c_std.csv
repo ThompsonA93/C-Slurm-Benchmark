@@ -1,40 +1,22 @@
-Sieve of Erastothenes, 1000000000, 1, 13.540532
-Sieve of Erastothenes, 1000000000, 2, 12.616406
-Sieve of Erastothenes, 1000000000, 4, 9.722455
-Sieve of Erastothenes, 1000000000, 8, 8.617581
-Gauss, 5, 2, 0.000000
-Gauss, 5, 2, 0.000000
-Sieve of Erastothenes, 1000000000, 8, 7.737937
-Gauss, 5, 2, 0.000000
-Gauss, 5, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss error: Parallel and Sequential results differ.Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
-Gauss, 3, 2, 0.000000
+Quicksort, 20, 4, 0.000001
+Quicksort, 20, 4, 0.000002
+Quicksort, 20, 4, 0.000002
+Quicksort, 20, 4, 0.000002
+Quicksort error: Parallel and Sequential results differ.Quicksort, 20, 4, 0.001261
+Quicksort, 20, 4, 0.000146
+Quicksort, 10, 4, 0.000109
+Quicksort, 10, 4, 0.005758
+Quicksort, 10, 4, 0.000144
+Quicksort, 11, 3, 0.000510
+Quicksort, 11, 3, 0.000853
+Quicksort, 11, 3, 0.000101
+Quicksort, 11, 3, 0.005645
+Quicksort, 11, 3, 0.000084
+Quicksort, 11, 3, 0.000092
+Quicksort, 11, 3, 0.000102
+Quicksort, 11, 3, 0.000208
+Quicksort, 11, 3, 0.000077
+Quicksort, 11, 3, 0.000094
+Quicksort, 11, 3, 0.000097
+Quicksort, 11, 3, 0.006168
+Quicksort error: Parallel and Sequential results differ.
