@@ -4,11 +4,14 @@
 #include <omp.h>
 #include "../utils/utils_sort.h"
 #include "../sorting/quick_sort.h"
+#include "../sorting/bubble_sort.h"
 
 /** Amount of threads to use **/
 #ifndef OMP_THREADS
 #define OMP_THREADS 2
 #endif
+
+int chunksize;
 
 int omp_assemble_partition(int arr[], int low, int high)
 {
@@ -35,35 +38,40 @@ void omp_quick_sort_task(int arr[], int p1, int p2)
     {
         return;
     }
+
+    int diff = p2 - p1;
+    if (diff < 8)
+    {
+        bubble_sort(arr, diff);
+    }
+
     int pt = omp_assemble_partition(arr, p1, p2);
 
-    int low_limit = 1000;
-    // if sub array size is very small -> sequential
-    if (p2 - p1 < low_limit)
-    {
-        quick_sort(arr, p1, p2);
-    }
-    else
-    {
-#pragma omp parallel sections
-        {
-#pragma omp section
-            omp_quick_sort_task(arr, p1, pt - 1);
+#pragma omp task shared(arr) if (p2 - p1 > chunksize)
+    omp_quick_sort_task(arr, p1, pt - 1);
 
-#pragma omp section
-            omp_quick_sort_task(arr, pt + 1, p2);
-        }
-    }
+#pragma omp task shared(arr) if (p2 - p1 > chunksize)
+    omp_quick_sort_task(arr, pt + 1, p2);
 }
+
 /**
  * Implementation for simple quick sort
  * @param arr as array to sort
  * @param p1 as partition point 1 (lower limit)
  * @param p2 as partition point 2 (higher limit)
  */
-void omp_quick_sort(int arr[], int p1, int p2)
+void omp_quick_sort(int arr[], int p1, int p2, int size)
 {
-    omp_quick_sort_task(arr, p1, p2);
+
+    chunksize = size / OMP_THREADS;
+
+    #pragma omp parallel shared(arr)
+    {
+        #pragma omp single nowait
+        {
+            omp_quick_sort_task(arr, p1, p2);
+        }
+    }
 }
 
 #endif

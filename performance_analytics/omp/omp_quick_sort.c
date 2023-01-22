@@ -11,6 +11,10 @@
 #include "../utils/utils_sort.h"
 #include "../sorting/quick_sort.h"
 
+#ifndef OMP_THREADS
+#define OMP_THREADS 2
+#endif
+
 FILE *fp;
 int arr[MAX_ARRAY_ELEMENTS];
 
@@ -32,9 +36,7 @@ int main(void)
     struct timeval begin, end;
     gettimeofday(&begin, 0);
 
-    omp_set_num_threads(OMP_THREADS);
-
-    omp_quick_sort(arr, 0, MAX_ARRAY_ELEMENTS - 1);
+    omp_quick_sort(arr, 0, MAX_ARRAY_ELEMENTS - 1, MAX_ARRAY_ELEMENTS);
     // Stop measuring time and calculate the elapsed time
     gettimeofday(&end, 0);
     long seconds = end.tv_sec - begin.tv_sec;
