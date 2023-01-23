@@ -1,9 +1,10 @@
-DIJKSTRA_VERTICES=5			# Dijkstra
+SIZE=5			# Dijkstra
 SIEVE_MAX_VALUE=100			# Sieve
 MATRIX_OP_DIM_1=250		# Matrix multiplication, Gauss elimination
 MATRIX_OP_DIM_2=250		# Matrix multiplication, Gauss elimination
 MATRIX_OP_DIM_3=250		# Matrix multiplication
-
+M=100
+N=100
 
 SORTING_ELEMENTS=50000		# All sorting algorithms
 THREADS=2					# OMP Threads
@@ -68,4 +69,15 @@ quick:
 sieve:
 	gcc -mcmodel=large -fopenmp -D SIEVE_MAX_VALUE=$(SIEVE_MAX_VALUE) -D OMP_THREADS=$(THREADS) omp_sieve.c -o build/omp_sieve.out
 	build/omp_sieve.out
+	tail -1 log/c_std.csv
+
+dijkstra:
+	gcc -fopenmp -D SIZE=$(SIZE) -D OMP_THREADS=$(THREADS) omp_dijkstra.c -o build/omp_dijkstra.out
+	build/omp_dijkstra.out
+	tail -1 log/c_std.csv
+
+
+gauss:
+	gcc -fopenmp -D M=$(M) -D N=$(N) -D OMP_THREADS=$(THREADS) omp_gauss.c -o build/omp_gauss.out
+	build/omp_gauss.out
 	tail -1 log/c_std.csv
