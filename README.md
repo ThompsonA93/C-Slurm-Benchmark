@@ -17,9 +17,9 @@
   - [X] Insertion sort
   - [X] Selection sort
   - [ ] Gaussion elimination
-  - [ ] Dijkstra
-  - [ ] Sieve of Eratosthenes
-  - [ ] Quick sort
+  - [X] Dijkstra
+  - [X] Sieve of Eratosthenes
+  - [X] Quick sort
 - Dependence Analytics
   - [ ] Required rewriting
 - Performance Analytics
