@@ -25,10 +25,6 @@ void sieve_sequential();
 void sieve_parallel();
 int test_equality();
 
-
-/**
- * @note: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
- */
 int main(void){
     omp_set_num_threads(THREADS);
     printf("! Utilizing %d threads\n", THREADS);
@@ -69,7 +65,7 @@ void initialize(){
 
 
 /**
- * 
+ * Calculates the integer square root of value
  */
 int isqrt(int value){
     int res = 0;
@@ -87,15 +83,8 @@ int isqrt(int value){
 
 
 /**
- *  O(n log(log(n)))
- * 
- *  for i = 2, 3, 4, ..., not exceeding √n do
- *      if A[i] is true
- *          for j = i2, i2+i, i2+2i, i2+3i, ..., not exceeding n do
- *              set A[j] := false
- * 
- * FIXME :: J is not getting updated ?
-*/
+ * @note: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+ */
 void sieve_sequential(){
     if(DEBUG) printf("! Executing sequential sieve.\n");
     double start_time = omp_get_wtime();
@@ -127,8 +116,7 @@ void sieve_sequential(){
 
 
 /**
- * Executes Sieve of Erastothenes parallel, using openmp
- * @note: 
+ * @note: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
  */
 void sieve_parallel(){
     double start_time = omp_get_wtime();

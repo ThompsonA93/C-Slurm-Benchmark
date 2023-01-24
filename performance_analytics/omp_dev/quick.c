@@ -25,9 +25,8 @@ void quick_parallel();
 int test_equality();
 
 static int chunksize = 10;
-/**
- * @note: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
- */
+
+
 int main(void)
 {
     omp_set_num_threads(THREADS);
@@ -70,12 +69,6 @@ int main(void)
     return 0;
 }
 
-/**
- * Given an integer n > 1 (DIM), let A be an array of boolean values (0 || 1) indexed by n.
- * Initialize all boolean values to true
- *
- * @Note: Despite convention, assumed that 0 is true (FIXME)
- */
 void initialize()
 {
     if (DEBUG)
@@ -123,36 +116,8 @@ void quick_sequential(int arr[], int low, int high)
     }
 }
 
-/**
- * Src.: https://stackoverflow.com/questions/68502197/how-do-omp-single-and-omp-task-provide-parallelism
- * 
- * First, when encountering the parallel construct, the main thread spawns the parallel region and creates a bunch of worker threads. 
- *  Then you have n threads running and executing the parallel region.
- * Second, the single construct picks any one of the n threads and executes the code inside the curly braces of the single construct. 
- *  All other n-1 threads will proceed to the barrier in line 10. 
- *  There, they will wait for the last thread to catch up and complete the barrier synchronization. 
- *  While these threads are waiting there, they are not only wasting time but also wait for work to arrive.
- * Third, the thread that was picked by the single construct (the "producer") executes the for loop and for each iteration it creates a new task. 
- *  This task is then put into a task pool so that another thread (one of the ones in the barrier) can pick it up and execute it. 
- *  Once the producer is done creating tasks, it will join the barrier and if there are still tasks in the task pool waiting for execution, it will help the other threads execute tasks.
- * Fourth, once all tasks have been generated and executed that way, all threads are done and the barrier synchronization is complete.
- * 
- * **/
 void quick_parallel(int arr[], int low, int high)
 {
-    /*
-    if (low < high)
-    {
-        int pt = partition(arr, low, high);
-        #pragma omp parallel sections
-        {
-            #pragma omp section
-            quick_sequential(arr, low, pt - 1);
-            #pragma omp section
-            quick_sequential(arr, pt + 1, high);
-        }
-    }
-    */
     if (low < high)
     {
         int pt = partition(arr, low, high);

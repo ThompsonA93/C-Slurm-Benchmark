@@ -1,17 +1,27 @@
-THREADS=1
-DIM=2
+THREADS=2
+DIM=5
 
-gauss:
-	gcc -mcmodel=large -fopenmp -DTHREADS=$(THREADS) -DDIM=$(DIM) gauss.c -o gauss.o
-	./gauss.o
+all: gauss sieve quick dijkstra
 
-sieve:
-	gcc -mcmodel=large -fopenmp -DTHREADS=$(THREADS) -DDIM=$(DIM) sieve.c -o sieve.o
-	./sieve.o
+mkdirs:
+	mkdir -p log
 
-quick:
-	gcc -mcmodel=large -fopenmp -DTHREADS=$(THREADS) -DDIM=$(DIM) quick.c -o quick.o
-	./quick.o
+gauss: mkdirs
+	gcc -mcmodel=large -fopenmp -DTHREADS=$(THREADS) -DDIM=$(DIM) gauss.c -o gauss.out
+	./gauss.out
+
+sieve: mkdirs
+	gcc -mcmodel=large -fopenmp -DTHREADS=$(THREADS) -DDIM=$(DIM) sieve.c -o sieve.out
+	./sieve.out
+
+quick: mkdirs
+	gcc -mcmodel=large -fopenmp -DTHREADS=$(THREADS) -DDIM=$(DIM) quick.c -o quick.out
+	./quick.out
+
+dijkstra: mkdirs
+	gcc -mcmodel=large -fopenmp -DTHREADS=$(THREADS) -DDIM=$(DIM) dijkstra.c -o dijkstra.out
+	./dijkstra.out
 
 clean:
-	rm *.o
+	rm -f *.out
+	rm -f log/*.csv

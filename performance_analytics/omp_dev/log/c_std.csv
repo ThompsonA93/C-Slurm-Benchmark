@@ -1,19 +1,60 @@
--- With IF Pragma
-Quicksort, 100000, 1, 1.221842
-Quicksort, 100000, 2, 0.703768
-Quicksort, 100000, 4, 0.488693
-Quicksort, 100000, 8, 0.292568
--- Without IF Pragma
-Quicksort, 100000, 1, 1.232481
-Quicksort, 100000, 2, 0.593817
-Quicksort, 100000, 4, 0.342082
-Quicksort, 100000, 8, 0.259570
-
-Quicksort, 100000, 1, 1.096077
-Quicksort, 100000, 2, 0.592423
-Quicksort, 100000, 4, 0.370403
-Quicksort, 100000, 8, 0.282344
-Sieve of Erastothenes, 10000000, 1, 0.118706
-Sieve of Erastothenes, 10000000, 2, 0.104243
-Sieve of Erastothenes, 10000000, 4, 0.084243
-Sieve of Erastothenes, 10000000, 8, 0.068530
+Quicksort, 50000, 1, 0.210537
+Quicksort, 50000, 2, 0.133577
+Quicksort, 50000, 4, 0.076846
+Quicksort, 50000, 8, 0.076019
+Quicksort, 100000, 1, 0.807369
+Quicksort, 100000, 2, 0.440886
+Quicksort, 100000, 4, 0.307202
+Quicksort, 100000, 8, 0.266246
+Quicksort, 150000, 1, 1.855921
+Quicksort, 150000, 2, 1.456716
+Quicksort, 150000, 4, 1.012789
+Quicksort, 150000, 8, 0.882385
+Quicksort, 200000, 1, 3.774997
+Quicksort, 200000, 2, 2.262644
+Quicksort, 200000, 4, 1.741847
+Quicksort, 200000, 8, 1.991695
+Quicksort, 250000, 1, 8.099962
+Quicksort, 250000, 2, 3.757578
+Quicksort, 250000, 4, 3.102316
+Quicksort, 250000, 8, 2.921421
+Sieve of Erastothenes, 10000000, 1, 0.218797
+Sieve of Erastothenes, 10000000, 2, 0.215513
+Sieve of Erastothenes, 10000000, 4, 0.125675
+Sieve of Erastothenes, 10000000, 8, 0.090049
+Sieve of Erastothenes, 20000000, 1, 0.448574
+Sieve of Erastothenes, 20000000, 2, 0.436285
+Sieve of Erastothenes, 20000000, 4, 0.245094
+Sieve of Erastothenes, 20000000, 8, 0.170229
+Sieve of Erastothenes, 30000000, 1, 0.713453
+Sieve of Erastothenes, 30000000, 2, 0.659052
+Sieve of Erastothenes, 30000000, 4, 0.399747
+Sieve of Erastothenes, 30000000, 8, 0.278856
+Sieve of Erastothenes, 40000000, 1, 0.899000
+Sieve of Erastothenes, 40000000, 2, 0.860368
+Sieve of Erastothenes, 40000000, 4, 0.524992
+Sieve of Erastothenes, 40000000, 8, 0.420729
+Sieve of Erastothenes, 50000000, 1, 1.141433
+Sieve of Erastothenes, 50000000, 2, 1.079041
+Sieve of Erastothenes, 50000000, 4, 0.639703
+Sieve of Erastothenes, 50000000, 8, 0.483197
+Gauss, 500, 1, 0.112434
+Gauss, 500, 2, 0.082418
+Gauss, 500, 4, 0.053931
+Gauss, 500, 8, 0.964734
+Gauss, 1000, 1, 0.859150
+Gauss, 1000, 2, 0.498914
+Gauss, 1000, 4, 0.400226
+Gauss, 1000, 8, 1.835503
+Gauss, 1500, 1, 2.754739
+Gauss, 1500, 2, 1.742987
+Gauss, 1500, 4, 1.161132
+Gauss, 1500, 8, 0.880121
+Gauss, 2000, 1, 6.523000
+Gauss, 2000, 2, 4.000258
+Gauss, 2000, 4, 3.275640
+Gauss, 2000, 8, 2.334490
+Gauss, 2500, 1, 14.269693
+Gauss, 2500, 2, 9.603749
+Gauss, 2500, 4, 6.420211
+Gauss, 2500, 8, 4.493229
