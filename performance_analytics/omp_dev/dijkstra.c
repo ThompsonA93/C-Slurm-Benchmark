@@ -74,7 +74,6 @@ void dijkstra_sequential(){
             }
         }
     }
-    printf("! Sequential: Total measured distance: %d\n", total_distance);
 }
 
 
@@ -100,7 +99,6 @@ void dijkstra_parallel(){
             }
         }
     }
-    printf("! Parallel: Total measured distance: %d\n", total_distance);
 }
 
 /**

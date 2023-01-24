@@ -1,8 +1,14 @@
 \chapter{Discussion}
 
-Most of the algorithms have returned satisfiable results, while
-some data points are reasons of concern.
+The results of parallelizing algorithms show significant changes in 
+execution time at the cost of efficiency per process.
 
-Selection sort performed horrendously on just 1 thread.
-Bucket sort did not significantly improve in execution time for ($n > 2$) threads.
-Counting sort worsened with multi-threading.
+The speedup of Gaussian Elimination and Quicksort were the most 
+remarkable, with up to 6x faster execution time,
+with similarly low negative impact of efficiency per utilized processor, 
+ranking from 10 to 25\%.
+Dijkstra did not experience any significant boost with at most 0.1x 
+improvement in execution time, but at extreme efficiency penalties 
+of up to 90\%.
+The Sieve of eratosthenes reached speedups of up to 3x, at the 
+cost of up to 60\% processor efficiency.
