@@ -74,7 +74,7 @@ void dijkstra_sequential(){
             }
         }
     }
-    printf("\tSequential: Total measured distance: %d\n", total_distance);
+    printf("! Sequential: Total measured distance: %d\n", total_distance);
 }
 
 
@@ -100,7 +100,7 @@ void dijkstra_parallel(){
             }
         }
     }
-    printf("\tParallel: Total measured distance: %d\n", total_distance);
+    printf("! Parallel: Total measured distance: %d\n", total_distance);
 }
 
 /**
@@ -110,11 +110,6 @@ void dijkstra_parallel(){
 int test_equality()
 {
     if (DEBUG) printf("! Asserting equality\n");
-
-    printf("! Asserted distances of %d and %d\n", dist_seq, dist_par);
-    if(dist_seq != dist_par){
-        return 1;
-    }
 
     if (DEBUG) printf("\ta_seq\t|\ta_par\n");
     for (int i = 0; i < DIM; i++)

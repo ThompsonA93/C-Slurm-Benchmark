@@ -1,0 +1,25 @@
+\chapter{Methods and Resources}
+
+The algorithms were performed on a AMD EPYC 7702P 64-Core Processor 
+via the programming language C and the library OpenMP.
+The program implementations are available on 
+\href{https://github.com/ThompsonA93/C-Slurm-Benchmark}{Github.com}.
+
+The methodical approach was to run each program execution 
+via different input parameters, ranging from different element 
+dimension to varying amounts of threads utilized.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}\hline
+        Algorithm & Elements & Threads \\\hline
+        Quicksort & 50000 100000 150000 200000 250000 &  1 2 4 8 \\
+        Sieve & 10000000 20000000 30000000 40000000 50000000 & 1 2 4 8 \\
+        Dijkstra & 10000 20000 30000 40000 50000 & 1 2 4 8 \\
+        Gauss & 500 1000 1500 2000 2500 & 1 2 4 8 \\
+        
+    \end{tabular}
+    \caption{The parametrization of each algorithm. Each process execution would run the set number of threads with each of the stated amount of elements.}
+    \label{tab:my_label}
+\end{table}
+
