@@ -12,6 +12,6 @@ jobs:
         os: [ubuntu-20.04, ubuntu-22.04]
     steps:
       - uses: actions/checkout@v2
-      - name: Compile C Programs
+      - name: Execute C Programs
         run: |
           ./__run.sh

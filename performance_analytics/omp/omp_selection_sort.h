@@ -22,8 +22,8 @@ void omp_selection_sort(int arr[], int n)
     {
         minimum = i;
 
-        // Must use reduction using struct !
-        #pragma omp parallel for schedule(static) reduction(=:minimum)
+        // Must use reduction using struct ! FIXME :: Reduction throws error
+        #pragma omp parallel for schedule(static) // reduction(=:minimum)
         for (j = i + 1; j < n; j++)
         {
             if (arr[minimum] > arr[j]){
