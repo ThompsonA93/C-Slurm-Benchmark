@@ -15,13 +15,13 @@ cd performance_analytics
 echo "! Executing OMP Performance tests"
 (cd omp && make mkdirs)
 
-for threads in 1 2 4 8
-do
-for elements in 100000 200000 400000 800000
-do
-    (cd omp && make THREADS=$threads SORTING_ELEMENTS=$elements quick)
-done
-done
+# for elements in 400000 800000 1600000 3200000
+# do
+# for threads in 1 2 4 8
+# do
+#     (cd omp && make THREADS=$threads SORTING_ELEMENTS=$elements quick)
+# done
+# done
 
 
 # for threads in 1 2 4 8
@@ -32,3 +32,18 @@ done
 # done
 # done
 
+# for elements in 2000 4000 8000 16000
+# do
+# for threads in 1 2 4 8
+# do
+#     (cd omp && make THREADS=$threads SIZE=$elements dijkstra)
+# done
+# done
+
+for elements in 2000 4000 8000 16000
+do
+for threads in 1 2 4 8
+do
+    (cd omp && make THREADS=$threads M=$elements N=$elements gauss)
+done
+done

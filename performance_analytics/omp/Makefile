@@ -76,7 +76,6 @@ dijkstra:
 	build/omp_dijkstra.out
 	tail -1 log/c_std.csv
 
-
 gauss:
 	gcc -fopenmp -D M=$(M) -D N=$(N) -D OMP_THREADS=$(THREADS) omp_gauss.c -o build/omp_gauss.out
 	build/omp_gauss.out
